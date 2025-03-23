@@ -1,8 +1,8 @@
 import urllib.request
 import re
 import csv
-import time
 from datetime import datetime
+import os
 
 def get_occupancy():
     try:
@@ -31,26 +31,31 @@ def save_to_csv(occupancy):
     day_of_week = now.strftime('%A')
     time_str = now.strftime('%H:%M')
     
+    # Ensure we're using the correct path in GitHub Actions
+    csv_path = 'data/pool_occupancy.csv'
+    os.makedirs('data', exist_ok=True)
+    
+    # Check if file exists and create with headers if needed
+    if not os.path.exists(csv_path):
+        with open(csv_path, 'w', newline='') as f:
+            writer = csv.writer(f)
+            writer.writerow(['Day', 'Time', 'Occupancy'])
+    
     try:
-        with open('pool_occupancy.csv', 'a', newline='') as f:
+        with open(csv_path, 'a', newline='') as f:
             writer = csv.writer(f)
             writer.writerow([day_of_week, time_str, occupancy])
         print(f"Recorded: {day_of_week} {time_str} - {occupancy}")
+        return True
     except Exception as e:
         print(f"Error saving to CSV: {e}")
+        return False
 
 def main():
-    # Create CSV file with headers if it doesn't exist
-    try:
-        with open('pool_occupancy.csv', 'x', newline='') as f:
-            writer = csv.writer(f)
-            writer.writerow(['Day', 'Time', 'Occupancy'])
-    except FileExistsError:
-        pass
-
     occupancy = get_occupancy()
     if occupancy is not None:
-        save_to_csv(occupancy)
+        return save_to_csv(occupancy)
+    return False
 
 if __name__ == "__main__":
     main()
