@@ -48,14 +48,9 @@ def main():
     except FileExistsError:
         pass
 
-    print("Starting pool occupancy tracker...")
-    print("Recording data every 5 minutes. Press Ctrl+C to stop.")
-    
-    while True:
-        occupancy = get_occupancy()
-        if occupancy is not None:
-            save_to_csv(occupancy)
-        time.sleep(300)  # Wait for 5 minutes
+    occupancy = get_occupancy()
+    if occupancy is not None:
+        save_to_csv(occupancy)
 
 if __name__ == "__main__":
     main()
