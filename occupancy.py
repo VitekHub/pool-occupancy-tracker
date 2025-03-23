@@ -2,6 +2,8 @@ import urllib.request
 import re
 import csv
 from datetime import datetime
+from datetime import timezone
+from zoneinfo import ZoneInfo
 import os
 
 def get_occupancy():
@@ -27,9 +29,13 @@ def get_occupancy():
         return None
 
 def save_to_csv(occupancy):
-    now = datetime.now()
+    # Get current UTC time
+    now = datetime.now(timezone.utc)
+    prague_time = now.astimezone(ZoneInfo("Europe/Prague"))
+    
+    # Format the time in Prague timezone
     day_of_week = now.strftime('%A')
-    time_str = now.strftime('%H:%M')
+    time_str = prague_time.strftime('%H:%M')
     
     # Ensure we're using the correct path in GitHub Actions
     csv_path = 'data/pool_occupancy.csv'
