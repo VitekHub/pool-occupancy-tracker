@@ -27,7 +27,10 @@ jobs:
     - name: Commit and push if changed
       run: |
         if [[ -n $(git status -s) ]]; then
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
           git add data/pool_occupancy.csv
           git commit -m "Update pool occupancy data"
           git push
         fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
