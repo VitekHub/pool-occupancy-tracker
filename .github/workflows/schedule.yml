@@ -2,7 +2,7 @@ name: Pool Occupancy Tracker
 
 on:
   schedule:
-    - cron: '*/10 4-22 * * *'  # Run every 10 minutes between 4:00-22:00 UTC to cover Prague time year-round
+    - cron: '*/10 4-19 * * *'  # Run every 10 minutes between 6:00-21:59 Prague daylight saving time
 
 jobs:
   track-occupancy:
