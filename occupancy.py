@@ -34,6 +34,7 @@ def save_to_csv(occupancy):
     prague_time = now.astimezone(ZoneInfo("Europe/Prague"))
     
     # Format the time in Prague timezone
+    date_str = prague_time.strftime('%d.%m.%Y')
     day_of_week = now.strftime('%A')
     time_str = prague_time.strftime('%H:%M')
     
@@ -45,12 +46,12 @@ def save_to_csv(occupancy):
     if not os.path.exists(csv_path):
         with open(csv_path, 'w', newline='') as f:
             writer = csv.writer(f)
-            writer.writerow(['Day', 'Time', 'Occupancy'])
+            writer.writerow(['Date', 'Day', 'Time', 'Occupancy'])
     
     try:
         with open(csv_path, 'a', newline='') as f:
             writer = csv.writer(f)
-            writer.writerow([day_of_week, time_str, occupancy])
+            writer.writerow([date_str, day_of_week, time_str, occupancy])
         print(f"Recorded: {day_of_week} {time_str} - {occupancy}")
         return True
     except Exception as e:

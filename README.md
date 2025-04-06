@@ -16,8 +16,9 @@ A Python script that tracks and records the occupancy of the Kraví Hora swimmin
 ├── .github/workflows/
 │   └── schedule.yml    # GitHub Actions workflow configuration
 ├── data/
-│   └── pool_occupancy.csv    # Collected occupancy data
-└── occupancy.py       # Main Python script
+│   └── pool_occupancy.csv  # Collected occupancy data
+├── occupancy.py           # Main Python script
+└── requirements.txt       # Python dependencies
 ```
 
 ## Features
@@ -32,6 +33,7 @@ A Python script that tracks and records the occupancy of the Kraví Hora swimmin
 ## Requirements
 
 - Python 3.x
+- tzdata==2024.1 (for timezone support)
 - GitHub Actions (already configured)
 - Write permissions for GitHub Actions workflow
 
@@ -56,6 +58,7 @@ The CSV file contains three columns:
 To run the script locally:
 
 ```bash
+pip install -r requirements.txt
 python occupancy.py
 ```
 
