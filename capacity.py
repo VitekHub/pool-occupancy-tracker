@@ -135,43 +135,81 @@ def get_capacity_data(date_str):
         print(f"Error fetching data for {date_str}: {e}")
         return []
 
-def save_to_csv(data):
-    """Save capacity data to CSV file."""
-    os.makedirs('data', exist_ok=True)
-    csv_path = 'data/capacity.csv'
+def write_csv_headers(file):
+    """Write headers to a CSV file."""
+    writer = csv.writer(file)
+    writer.writerow(['Date', 'Day', 'Hour', 'Maximum Occupancy'])
+
+def write_csv_data(file, data):
+    """Write data rows to a CSV file."""
+    writer = csv.writer(file)
+    for row in data:
+        writer.writerow(row)
+
+def save_csv_data(data, filename, *, append=False):
+    """Save capacity data to a CSV file.
     
-    # Create file with headers if it doesn't exist
-    if not os.path.exists(csv_path):
-        with open(csv_path, 'w', newline='', encoding='utf-8') as f:
-            writer = csv.writer(f)
-            writer.writerow(['Date', 'Day', 'Hour', 'Maximum Occupancy'])
+    Args:
+        data: List of rows to save
+        filename: Name of the file (without path)
+        append: If True, append to existing file; if False, overwrite
+    """
+    """Ensure the data directory exists."""
+    os.makedirs('data', exist_ok=True)
+    csv_path = f'data/{filename}'
+    mode = 'a' if append else 'w'
     
     try:
-        with open(csv_path, 'a', newline='', encoding='utf-8') as f:
-            writer = csv.writer(f)
-            for row in data:
-                writer.writerow(row)
+        # Handle append mode with new file
+        if append and not os.path.exists(csv_path):
+            with open(csv_path, 'w', newline='', encoding='utf-8') as f:
+                write_csv_headers(f)
+        
+        # Write or append data
+        with open(csv_path, mode, newline='', encoding='utf-8') as f:
+            if not append:  # Write headers for new files
+                write_csv_headers(f)
+            write_csv_data(f, data)
         return True
     except Exception as e:
-        print(f"Error saving to CSV: {e}")
+        print(f"Error saving data to {filename}: {e}")
         return False
 
+def save_capacity_to_csv(data):
+    """Save capacity data to CSV file."""
+    return save_csv_data(data, 'capacity.csv', append=True)
+
+def save_week_capacity_to_csv(data):
+    """Save weekly capacity data to CSV file."""
+    return save_csv_data(data, 'week_capacity.csv', append=False)
+
 def main():
-    # Get data for three weeks
-    start_date = datetime(2025, 3, 24)  # Starting from March 24, 2025
+    # Get data for today
+    start_date = datetime.now()
     
-    for week in range(10):
-        current_date = start_date + timedelta(weeks=week)
-        date_str = current_date.strftime('%Y-%m-%d')
+    # Calculate Monday of the current week
+    days_since_monday = start_date.weekday()  # Monday is 0, Sunday is 6
+    monday = start_date - timedelta(days=days_since_monday)
+    monday_str = monday.strftime('%Y-%m-%d')
+    today_str = start_date.strftime('%d.%m.%Y')
+
+    print(f"Fetching data for {monday_str}")
+    data = get_capacity_data(monday_str)
+    
+    if data:
+        # Save full week data
+        save_week_capacity_to_csv(data)
+        print(f"Saved weekly data starting from {monday_str}")
         
-        print(f"Fetching data for week starting {date_str}")
-        data = get_capacity_data(date_str)
-        
-        if data:
-            save_to_csv(data)
-            print(f"Saved data for week starting {date_str}")
+        # Filter and save today's data
+        today_data = [row for row in data if row[0] == today_str]
+        if today_data:
+            save_capacity_to_csv(today_data)
+            print(f"Saved today's data for {today_str}")
         else:
-            print(f"No data available for week starting {date_str}")
+            print(f"No data available for today ({today_str})")
+    else:
+        print(f"No data available for the week of {monday_str}")
 
 if __name__ == "__main__":
     main()
