@@ -184,22 +184,17 @@ def save_week_capacity_to_csv(data):
     return save_csv_data(data, 'week_capacity.csv', append=False)
 
 def main():
-    # Get data for today
     start_date = datetime.now()
-    
-    # Calculate Monday of the current week
-    days_since_monday = start_date.weekday()  # Monday is 0, Sunday is 6
-    monday = start_date - timedelta(days=days_since_monday)
-    monday_str = monday.strftime('%Y-%m-%d')
     today_str = start_date.strftime('%d.%m.%Y')
+    date_str = start_date.strftime('%Y-%m-%d')
 
-    print(f"Fetching data for {monday_str}")
-    data = get_capacity_data(monday_str)
+    print(f"Fetching data for {date_str}")
+    data = get_capacity_data(date_str)
     
     if data:
         # Save full week data
         save_week_capacity_to_csv(data)
-        print(f"Saved weekly data starting from {monday_str}")
+        print(f"Saved weekly data starting from {date_str}")
         
         # Filter and save today's data
         today_data = [row for row in data if row[0] == today_str]
@@ -209,7 +204,7 @@ def main():
         else:
             print(f"No data available for today ({today_str})")
     else:
-        print(f"No data available for the week of {monday_str}")
+        print(f"No data available for {date_str}")
 
 if __name__ == "__main__":
     main()
