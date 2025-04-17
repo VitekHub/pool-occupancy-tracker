@@ -104,12 +104,19 @@ def get_capacity_data(date_str):
                         
                         # Case 1: Full hour reservation (colspan="2")
                         if 'colspan' in hour_cell.attrs and hour_cell['colspan'] == '2':
-                            is_available = 'reserved' not in hour_cell.get('class', [])
+                            cell_classes = hour_cell.get('class', [])
+                            is_available = 'reserved' not in cell_classes and 'closed' not in cell_classes
                         # Case 2: Two half-hour slots
                         elif next_cell:
                             # Both half-hour slots must be unreserved
-                            is_available = ('reserved' not in hour_cell.get('class', []) and 
-                                           'reserved' not in next_cell.get('class', []))
+                            hour_cell_classes = hour_cell.get('class', [])
+                            next_cell_classes = next_cell.get('class', [])
+                            is_available = (
+                                'reserved' not in hour_cell_classes and 
+                                'closed' not in hour_cell_classes and
+                                'reserved' not in next_cell_classes and
+                                'closed' not in next_cell_classes
+                            )
                         
                         if is_available:
                             available_lanes += 1
