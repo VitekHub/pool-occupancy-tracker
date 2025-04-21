@@ -6,6 +6,9 @@ from datetime import timezone
 from zoneinfo import ZoneInfo
 import os
 
+WEEKEND_OPENING_HOUR = 8
+WEEKEND_CLOSING_HOUR = 21
+
 def get_occupancy():
     try:
         # Get the webpage content
@@ -32,6 +35,12 @@ def save_to_csv(occupancy):
     # Get current UTC time
     now = datetime.now(timezone.utc)
     prague_time = now.astimezone(ZoneInfo("Europe/Prague"))
+    
+    # Do not record Occupancy outside weekend operating hours
+    is_weekend = prague_time.strftime('%A') in ['Saturday', 'Sunday']
+    hour = int(prague_time.strftime('%H'))
+    if is_weekend and (hour < WEEKEND_OPENING_HOUR or hour >= WEEKEND_CLOSING_HOUR) and occupancy > 0:
+        occupancy = 0
     
     # Format the time in Prague timezone
     date_str = prague_time.strftime('%d.%m.%Y')
