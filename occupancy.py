@@ -9,21 +9,15 @@ import os
 WEEKEND_OPENING_HOUR = 8
 WEEKEND_CLOSING_HOUR = 21
 
-def get_occupancy():
+def fetch_occupancy(url, pattern):
     try:
-        # Get the webpage content
-        url = "https://www.kravihora-brno.cz/kryta-plavecka-hala"
         req = urllib.request.Request(
             url,
             headers={'User-Agent': 'Mozilla/5.0'}
         )
         response = urllib.request.urlopen(req)
         html = response.read().decode('utf-8')
-        
-        # Find occupancy using regex
-        pattern = r'<p>obsazenost:<strong>\s*(\d+)\s*/\s*\d+</strong></p>'
-        match = re.search(pattern, html)
-        
+        match = re.search(pattern, html, re.IGNORECASE)
         if match:
             return int(match.group(1))
         return None
@@ -31,7 +25,17 @@ def get_occupancy():
         print(f"Error fetching data: {e}")
         return None
 
-def save_to_csv(occupancy):
+def get_inside_occupancy():
+    url = "https://www.kravihora-brno.cz/kryta-plavecka-hala"
+    pattern = r'<p>obsazenost:<strong>\s*(\d+)\s*/\s*\d+</strong></p>'
+    return fetch_occupancy(url, pattern)
+
+def get_outside_occupancy():
+    url = "https://www.kravihora-brno.cz/venkovni-bazeny"
+    pattern = r'<p>Obsazenost:\s*<strong>(\d+)<\/strong><\/p>'
+    return fetch_occupancy(url, pattern)
+
+def save_to_csv(occupancy, file_name):
     # Get current UTC time
     now = datetime.now(timezone.utc)
     prague_time = now.astimezone(ZoneInfo("Europe/Prague"))
@@ -48,7 +52,7 @@ def save_to_csv(occupancy):
     time_str = prague_time.strftime('%H:%M')
     
     # Ensure we're using the correct path in GitHub Actions
-    csv_path = 'data/pool_occupancy.csv'
+    csv_path = f'data/{file_name}'
     os.makedirs('data', exist_ok=True)
     
     # Check if file exists and create with headers if needed
@@ -68,10 +72,21 @@ def save_to_csv(occupancy):
         return False
 
 def main():
-    occupancy = get_occupancy()
-    if occupancy is not None:
-        return save_to_csv(occupancy)
-    return False
+    inside_occupancy = get_inside_occupancy()
+    outside_occupancy = get_outside_occupancy()
+    success = True
+
+    if inside_occupancy is not None:
+        success &= save_to_csv(inside_occupancy, 'pool_occupancy.csv')
+    else:
+        success = False
+
+    if outside_occupancy is not None:
+        success &= save_to_csv(outside_occupancy, 'outside_pool_occupancy.csv')
+    else:
+        success = False
+
+    return success
 
 if __name__ == "__main__":
     main()
