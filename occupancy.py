@@ -1,6 +1,7 @@
 import urllib.request
 import re
 import csv
+import json
 from datetime import datetime
 from datetime import timezone
 from zoneinfo import ZoneInfo
@@ -10,50 +11,15 @@ import os
 WEEKEND_OPENING_HOUR = 8
 WEEKEND_CLOSING_HOUR = 21
 
-POOL_SOURCES = [
-    {
-        'name': 'Kraví Hora Krytá hala',
-        'url': 'https://www.kravihora-brno.cz/kryta-plavecka-hala',
-        'pattern': r'obsazenost:\s*(\d+)\s*/',
-        'csv_file': 'pool_occupancy.csv'
-    },
-    {
-        'name': 'Kraví Hora Venkovní bazény',
-        'url': 'https://www.kravihora-brno.cz/venkovni-bazeny',
-        'pattern': r'obsazenost:\s*(\d+)',
-        'csv_file': 'outside_pool_occupancy.csv'
-    },
-    {
-        'name': 'Koupaliště Dobrák',
-        'url': 'https://www.koupalistebrno.cz/',
-        'pattern': r'(\d+)\s*počet\s*návštěvníků',
-        'csv_file': 'koupaliste_dobrak_occupancy.csv'
-    },
-    {
-        'name': 'Koupaliště Riviéra',
-        'url': 'https://riviera.starez.cz/',
-        'pattern': r'návštěvnost\s*(\d+)\s*/',
-        'csv_file': 'koupaliste_riviera_occupancy.csv'
-    },
-    {
-        'name': 'Koupaliště Zábrdovice',
-        'url': 'https://zabrdovice.starez.cz/',
-        'pattern': r'návštěvnost\s*(\d+)\s*/',
-        'csv_file': 'koupaliste_zabrdovice_occupancy.csv'
-    },
-    {
-        'name': 'Aquapark Kohoutovice',
-        'url': 'https://aquapark.starez.cz/',
-        'pattern': r'bazény a posilovna\s*(\d+)\s*/',
-        'csv_file': 'aquapark_kohoutovice_occupancy.csv'
-    },
-    {
-        'name': 'Bazény Lužánky',
-        'url': 'https://bazenyluzanky.starez.cz/',
-        'pattern': r'bazény\s*(\d+)\s*/',
-        'csv_file': 'bazeny_luzanky_occupancy.csv'
-    }
-]
+
+def load_pool_config():
+    """Load pool configuration from JSON file."""
+    try:
+        with open('data/pool_occupancy_config.json', 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"Error loading pool configuration: {e}")
+        return []
 
 
 def fetch_html(url):
@@ -119,19 +85,50 @@ def save_to_csv(occupancy, file_name, pool_name):
         return False
 
 
+def process_pool_type(pool_config, pool_type_key, pool_name):
+    """Process a specific pool type (insidePool or outsidePool) for a given pool."""
+    pool_type_config = pool_config.get(pool_type_key)
+    if not pool_type_config:
+        return True  # Skip if this pool type doesn't exist for this pool
+    
+    # Check if we should collect stats for this pool
+    if not pool_type_config.get('collectStats', False):
+        print(f"Skipping {pool_name} {pool_type_key} - collectStats is false")
+        return True
+    
+    url = pool_type_config['url']
+    pattern = pool_type_config['pattern']
+    csv_file = pool_type_config['csvFile']
+    
+    occupancy = fetch_occupancy(url, pattern)
+    
+    if occupancy is not None:
+        pool_type_name = f"{pool_name} ({'Inside' if pool_type_key == 'insidePool' else 'Outside'} Pool)"
+        return save_to_csv(occupancy, csv_file, pool_type_name)
+    else:
+        print(f"Failed to get occupancy data for {pool_name} {pool_type_key}")
+        return False
+
+
 def main():
     """Main function to process all pool sources."""
+    pool_configs = load_pool_config()
+    if not pool_configs:
+        print("No pool configurations loaded")
+        return False
+    
     overall_success = True
     
-    for pool_config in POOL_SOURCES:
-        occupancy = fetch_occupancy(pool_config['url'], pool_config['pattern'])
+    for pool_config in pool_configs:
+        pool_name = pool_config['name']
         
-        if occupancy is not None:
-            success = save_to_csv(occupancy, pool_config['csv_file'], pool_config['name'])
-            overall_success &= success
-        else:
-            print(f"Failed to get occupancy data for {pool_config['name']}")
-            overall_success = False
+        # Process inside pool if it exists
+        success_inside = process_pool_type(pool_config, 'insidePool', pool_name)
+        overall_success &= success_inside
+        
+        # Process outside pool if it exists
+        success_outside = process_pool_type(pool_config, 'outsidePool', pool_name)
+        overall_success &= success_outside
     
     return overall_success
 

@@ -1,0 +1,78 @@
+[
+    {
+        "name": "Kraví Hora",
+        "insidePool": {
+            "url": "https://www.kravihora-brno.cz/kryta-plavecka-hala",
+            "pattern": "obsazenost:\\s*(\\d+)\\s*/",
+            "csvFile": "kravi_hora_inside_pool_occupancy.csv",
+            "maximumCapacity": 135,
+            "totalLanes": 6,
+            "collectStats": true,
+            "viewStats": true
+        },
+        "outsidePool": {
+            "url": "https://www.kravihora-brno.cz/venkovni-bazeny",
+            "pattern": "obsazenost:\\s*(\\d+)",
+            "csvFile": "kravi_hora_outside_pool_occupancy.csv",
+            "maximumCapacity": 2000,
+            "collectStats": true,
+            "viewStats": true
+        }
+    },
+    {
+        "name": "Koupaliště Dobrák",
+        "outsidePool": {
+            "url": "https://www.koupalistebrno.cz/",
+            "pattern": "(\\d+)\\s*počet\\s*návštěvníků",
+            "csvFile": "koupaliste_dobrak_occupancy.csv",
+            "maximumCapacity": 400,
+            "collectStats": true,
+            "viewStats": true
+        }
+    },
+    {
+        "name": "Koupaliště Riviéra",
+        "outsidePool": {
+            "url": "https://riviera.starez.cz/",
+            "pattern": "návštěvnost\\s*(\\d+)\\s*/",
+            "csvFile": "koupaliste_riviera_occupancy.csv",
+            "maximumCapacity": 7850,
+            "collectStats": true,
+            "viewStats": true
+        }
+    },
+    {
+        "name": "Koupaliště Zábrdovice",
+        "outsidePool": {
+            "url": "https://zabrdovice.starez.cz/",
+            "pattern": "návštěvnost\\s*(\\d+)\\s*/",
+            "csvFile": "koupaliste_zabrdovice_occupancy.csv",
+            "maximumCapacity": 3775,
+            "collectStats": true,
+            "viewStats": true
+        }
+    },
+    {
+        "name": "Aquapark Kohoutovice",
+        "outsidePool": {
+            "url": "https://aquapark.starez.cz/",
+            "pattern": "bazény a posilovna\\s*(\\d+)\\s*/",
+            "csvFile": "aquapark_kohoutovice_occupancy.csv",
+            "maximumCapacity": 220,
+            "collectStats": true,
+            "viewStats": true
+        }
+    },
+    {
+        "name": "Bazény Lužánky",
+        "insidePool": {
+            "url": "https://bazenyluzanky.starez.cz/",
+            "pattern": "bazény\\s*(\\d+)\\s*/",
+            "csvFile": "bazeny_luzanky_occupancy.csv",
+            "maximumCapacity": 634,
+            "totalLanes": 16,
+            "collectStats": true,
+            "viewStats": true
+        }
+    }
+]
