@@ -19,6 +19,9 @@ jobs:
       with:
         python-version: '3.x'
     
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+    
     - name: Configure Git
       run: |
         git config --global user.name 'GitHub Actions Bot'
@@ -31,7 +34,7 @@ jobs:
       run: |
         if [[ -n $(git status -s) ]]; then
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
-          git add data/pool_occupancy.csv data/outside_pool_occupancy.csv
+          git add data/*.csv
           git commit -m "Update pool occupancy data"
           git push
         fi
