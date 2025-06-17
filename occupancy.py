@@ -4,90 +4,43 @@ import csv
 from datetime import datetime
 from datetime import timezone
 from zoneinfo import ZoneInfo
-from bs4 import BeautifulSoup
 import os
 
 WEEKEND_OPENING_HOUR = 8
 WEEKEND_CLOSING_HOUR = 21
 
-POOL_SOURCES = [
-    {
-        'name': 'Kraví Hora Krytá hala',
-        'url': 'https://www.kravihora-brno.cz/kryta-plavecka-hala',
-        'pattern': r'obsazenost:\s*(\d+)\s*/',
-        'csv_file': 'pool_occupancy.csv'
-    },
-    {
-        'name': 'Kraví Hora Venkovní bazény',
-        'url': 'https://www.kravihora-brno.cz/venkovni-bazeny',
-        'pattern': r'obsazenost:\s*(\d+)',
-        'csv_file': 'outside_pool_occupancy.csv'
-    },
-    {
-        'name': 'Koupaliště Dobrák',
-        'url': 'https://www.koupalistebrno.cz/',
-        'pattern': r'(\d+)\s*počet\s*návštěvníků',
-        'csv_file': 'koupaliste_dobrak_occupancy.csv'
-    },
-    {
-        'name': 'Koupaliště Riviéra',
-        'url': 'https://riviera.starez.cz/',
-        'pattern': r'návštěvnost\s*(\d+)\s*/',
-        'csv_file': 'koupaliste_riviera_occupancy.csv'
-    },
-    {
-        'name': 'Koupaliště Zábrdovice',
-        'url': 'https://zabrdovice.starez.cz/',
-        'pattern': r'návštěvnost\s*(\d+)\s*/',
-        'csv_file': 'koupaliste_zabrdovice_occupancy.csv'
-    },
-    {
-        'name': 'Aquapark Kohoutovice',
-        'url': 'https://aquapark.starez.cz/',
-        'pattern': r'bazény a posilovna\s*(\d+)\s*/',
-        'csv_file': 'aquapark_kohoutovice_occupancy.csv'
-    },
-    {
-        'name': 'Bazény Lužánky',
-        'url': 'https://bazenyluzanky.starez.cz/',
-        'pattern': r'bazény\s*(\d+)\s*/',
-        'csv_file': 'bazeny_luzanky_occupancy.csv'
-    }
-]
-
-
-def fetch_html(url):
-    """Fetch HTML content from a given URL."""
+def fetch_occupancy(url, pattern):
     try:
         req = urllib.request.Request(
             url,
             headers={'User-Agent': 'Mozilla/5.0'}
         )
         response = urllib.request.urlopen(req)
-        return response.read().decode('utf-8')
-    except Exception as e:
-        print(f"Error fetching HTML from {url}: {e}")
-        return None
-
-
-def fetch_occupancy(url, pattern):
-    """Fetch occupancy data from a URL using the given regex pattern."""
-    html_content = fetch_html(url)
-    if html_content:
-        text_content = BeautifulSoup(html_content, 'html.parser').get_text()
-        match = re.search(pattern, text_content, re.IGNORECASE)
+        html = response.read().decode('utf-8')
+        match = re.search(pattern, html, re.IGNORECASE)
         if match:
             return int(match.group(1))
-    return None
+        return None
+    except Exception as e:
+        print(f"Error fetching data: {e}")
+        return None
 
+def get_inside_occupancy():
+    url = "https://www.kravihora-brno.cz/kryta-plavecka-hala"
+    pattern = r'<p>obsazenost:<strong>\s*(\d+)\s*/\s*\d+</strong></p>'
+    return fetch_occupancy(url, pattern)
 
-def save_to_csv(occupancy, file_name, pool_name):
-    """Save occupancy data to CSV file."""
+def get_outside_occupancy():
+    url = "https://www.kravihora-brno.cz/venkovni-bazeny"
+    pattern = r'<p>Obsazenost:\s*<strong>(\d+)<\/strong><\/p>'
+    return fetch_occupancy(url, pattern)
+
+def save_to_csv(occupancy, file_name):
     # Get current UTC time
     now = datetime.now(timezone.utc)
     prague_time = now.astimezone(ZoneInfo("Europe/Prague"))
     
-    # Do not record occupancy outside weekend operating hours
+    # Do not record Occupancy outside weekend operating hours
     is_weekend = prague_time.strftime('%A') in ['Saturday', 'Sunday']
     hour = int(prague_time.strftime('%H'))
     if is_weekend and (hour < WEEKEND_OPENING_HOUR or hour >= WEEKEND_CLOSING_HOUR) and occupancy > 0:
@@ -112,29 +65,28 @@ def save_to_csv(occupancy, file_name, pool_name):
         with open(csv_path, 'a', newline='') as f:
             writer = csv.writer(f)
             writer.writerow([date_str, day_of_week, time_str, occupancy])
-        print(f"Recorded occupancy for '{pool_name}': {date_str} {day_of_week} {time_str} - {occupancy}")
+        print(f"Recorded: {day_of_week} {time_str} - {occupancy}")
         return True
     except Exception as e:
-        print(f"Error saving to CSV for {pool_name}: {e}")
+        print(f"Error saving to CSV: {e}")
         return False
 
-
 def main():
-    """Main function to process all pool sources."""
-    overall_success = True
-    
-    for pool_config in POOL_SOURCES:
-        occupancy = fetch_occupancy(pool_config['url'], pool_config['pattern'])
-        
-        if occupancy is not None:
-            success = save_to_csv(occupancy, pool_config['csv_file'], pool_config['name'])
-            overall_success &= success
-        else:
-            print(f"Failed to get occupancy data for {pool_config['name']}")
-            overall_success = False
-    
-    return overall_success
+    inside_occupancy = get_inside_occupancy()
+    outside_occupancy = get_outside_occupancy()
+    success = True
 
+    if inside_occupancy is not None:
+        success &= save_to_csv(inside_occupancy, 'pool_occupancy.csv')
+    else:
+        success = False
+
+    if outside_occupancy is not None:
+        success &= save_to_csv(outside_occupancy, 'outside_pool_occupancy.csv')
+    else:
+        success = False
+
+    return success
 
 if __name__ == "__main__":
     main()
