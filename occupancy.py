@@ -8,10 +8,6 @@ from zoneinfo import ZoneInfo
 from bs4 import BeautifulSoup
 import os
 
-WEEKEND_OPENING_HOUR = 8
-WEEKEND_CLOSING_HOUR = 21
-
-
 def load_pool_config():
     """Load pool configuration from JSON file."""
     try:
@@ -35,6 +31,25 @@ def fetch_html(url):
         print(f"Error fetching HTML from {url}: {e}")
         return None
 
+def is_pool_open(pool_type_config):
+    def get_opening_hours(hours):
+        opening_hour = int(hours.split("-")[0].strip())
+        closing_hour = int(hours.split("-")[1].strip())
+        return opening_hour, closing_hour
+
+    now = datetime.now(ZoneInfo("Europe/Prague"))
+    is_weekend = now.strftime('%A') in ['Saturday', 'Sunday']
+    hour = int(now.strftime('%H'))
+
+    if is_weekend:
+        hours = pool_type_config['weekendOpeningHours']
+    else:
+        hours = pool_type_config['weekdaysOpeningHours']
+
+    opening_hour, closing_hour = get_opening_hours(hours)
+
+    # Check if the current hour is within the opening hours
+    return opening_hour <= hour < closing_hour
 
 def fetch_occupancy(url, pattern):
     """Fetch occupancy data from a URL using the given regex pattern."""
@@ -49,20 +64,13 @@ def fetch_occupancy(url, pattern):
 
 def save_to_csv(occupancy, file_name, pool_name):
     """Save occupancy data to CSV file."""
-    # Get current UTC time
-    now = datetime.now(timezone.utc)
-    prague_time = now.astimezone(ZoneInfo("Europe/Prague"))
-    
-    # Do not record occupancy outside weekend operating hours
-    is_weekend = prague_time.strftime('%A') in ['Saturday', 'Sunday']
-    hour = int(prague_time.strftime('%H'))
-    if is_weekend and (hour < WEEKEND_OPENING_HOUR or hour >= WEEKEND_CLOSING_HOUR) and occupancy > 0:
-        occupancy = 0
+    # Get current Prague time
+    now = datetime.now(ZoneInfo("Europe/Prague"))
     
     # Format the time in Prague timezone
-    date_str = prague_time.strftime('%d.%m.%Y')
+    date_str = now.strftime('%d.%m.%Y')
     day_of_week = now.strftime('%A')
-    time_str = prague_time.strftime('%H:%M')
+    time_str = now.strftime('%H:%M')
     
     # Ensure we're using the correct path in GitHub Actions
     csv_path = f'data/{file_name}'
@@ -94,6 +102,10 @@ def process_pool_type(pool_config, pool_type_key, pool_name):
     # Check if we should collect stats for this pool
     if not pool_type_config.get('collectStats', False):
         print(f"Skipping {pool_name} {pool_type_key} - collectStats is false")
+        return True
+    
+    if not is_pool_open(pool_type_config):
+        print(f"{pool_name} {pool_type_key} is closed, skipping occupancy check")
         return True
     
     url = pool_type_config['url']

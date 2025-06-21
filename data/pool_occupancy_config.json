@@ -7,6 +7,8 @@
             "csvFile": "kravi_hora_inside_pool_occupancy.csv",
             "maximumCapacity": 135,
             "totalLanes": 6,
+            "weekdaysOpeningHours": "6-22",
+            "weekendOpeningHours": "8-21",
             "collectStats": true,
             "viewStats": true
         },
@@ -15,6 +17,8 @@
             "pattern": "obsazenost:\\s*(\\d+)",
             "csvFile": "kravi_hora_outside_pool_occupancy.csv",
             "maximumCapacity": 2000,
+            "weekdaysOpeningHours": "7-21",
+            "weekendOpeningHours": "9-21",
             "collectStats": true,
             "viewStats": true
         }
@@ -26,6 +30,8 @@
             "pattern": "(\\d+)\\s*počet\\s*návštěvníků",
             "csvFile": "koupaliste_dobrak_occupancy.csv",
             "maximumCapacity": 400,
+            "weekdaysOpeningHours": "9-20",
+            "weekendOpeningHours": "9-20",
             "collectStats": true,
             "viewStats": true
         }
@@ -37,6 +43,8 @@
             "pattern": "návštěvnost\\s*(\\d+)\\s*/",
             "csvFile": "koupaliste_riviera_occupancy.csv",
             "maximumCapacity": 7850,
+            "weekdaysOpeningHours": "9-20",
+            "weekendOpeningHours": "9-20",
             "collectStats": true,
             "viewStats": true
         }
@@ -48,6 +56,8 @@
             "pattern": "návštěvnost\\s*(\\d+)\\s*/",
             "csvFile": "koupaliste_zabrdovice_occupancy.csv",
             "maximumCapacity": 3775,
+            "weekdaysOpeningHours": "9-20",
+            "weekendOpeningHours": "9-20",
             "collectStats": true,
             "viewStats": true
         }
@@ -55,24 +65,26 @@
     {
         "name": "Aquapark Kohoutovice",
         "outsidePool": {
-            "customName": "Bazény a posilovna",
             "url": "https://aquapark.starez.cz/",
             "pattern": "bazény a posilovna\\s*(\\d+)\\s*/",
             "csvFile": "aquapark_kohoutovice_occupancy.csv",
             "maximumCapacity": 220,
+            "weekdaysOpeningHours": "6-22",
+            "weekendOpeningHours": "8-22",
             "collectStats": true,
             "viewStats": true
         }
     },
     {
         "name": "Bazény Lužánky",
-        "outsidePool": {
-            "customName": "Vnitřní bazény",
+        "insidePool": {
             "url": "https://bazenyluzanky.starez.cz/",
             "pattern": "bazény\\s*(\\d+)\\s*/",
             "csvFile": "bazeny_luzanky_occupancy.csv",
             "maximumCapacity": 634,
             "totalLanes": 16,
+            "weekdaysOpeningHours": "6-22",
+            "weekendOpeningHours": "8-22",
             "collectStats": true,
             "viewStats": true
         }
