@@ -66,6 +66,7 @@
     {
         "name": "Aquapark Kohoutovice",
         "outsidePool": {
+            "customName": "Bazény a posilovna",
             "url": "https://aquapark.starez.cz/",
             "pattern": "bazény a posilovna\\s*(\\d+)\\s*/",
             "csvFile": "aquapark_kohoutovice_occupancy.csv",
@@ -78,7 +79,8 @@
     },
     {
         "name": "Bazény Lužánky",
-        "insidePool": {
+        "outsidePool": {
+            "customName": "Vnitřní bazény",
             "url": "https://bazenyluzanky.starez.cz/",
             "pattern": "bazény\\s*(\\d+)\\s*/",
             "csvFile": "bazeny_luzanky_occupancy.csv",
