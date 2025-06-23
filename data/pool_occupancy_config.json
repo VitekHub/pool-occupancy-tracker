@@ -30,8 +30,8 @@
             "url": "https://www.koupalistebrno.cz/",
             "pattern": "(\\d+)\\s*počet\\s*návštěvníků",
             "csvFile": "koupaliste_dobrak_occupancy.csv",
-            "maximumCapacity": 400,
-            "weekdaysOpeningHours": "9-20",
+            "maximumCapacity": 800,
+            "weekdaysOpeningHours": "9-21",
             "weekendOpeningHours": "9-20",
             "collectStats": true,
             "viewStats": true
