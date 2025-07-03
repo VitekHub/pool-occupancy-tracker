@@ -2,8 +2,8 @@ import urllib.request
 import re
 import csv
 import json
+import math
 from datetime import datetime
-from datetime import timezone
 from zoneinfo import ZoneInfo
 from bs4 import BeautifulSoup
 import os
@@ -17,6 +17,17 @@ def load_pool_config():
         print(f"Error loading pool configuration: {e}")
         return []
 
+def save_pool_config(pool_configs):
+    """Save pool configuration back to JSON file."""
+    try:
+        with open('data/pool_occupancy_config.json', 'w', encoding='utf-8') as f:
+            json.dump(pool_configs, f, ensure_ascii=False, indent=2)
+            f.write('\n') 
+        print("Pool configuration saved successfully.")
+        return True
+    except Exception as e:
+        print(f"Error saving pool configuration: {e}")
+        return False
 
 def fetch_html(url):
     """Fetch HTML content from a given URL."""
@@ -92,6 +103,17 @@ def save_to_csv(occupancy, file_name, pool_name):
         print(f"Error saving to CSV for {pool_name}: {e}")
         return False
 
+def update_maximum_capacity(pool_type_config, occupancy, pool_name):
+    """Update maximum capacity in config of a specific pool type (insidePool or outsidePool) for a given pool."""
+    if not pool_type_config:
+        return False  # Skip if this pool type doesn't exist for this pool
+    if occupancy > pool_type_config['maximumCapacity']:
+        # new max capacity is increased to 110% of current occupancy rounding up to the nearest hundred
+        newMaxCapacity = int(math.ceil(occupancy * 1.1 / 100.0) * 100)
+        pool_type_config['maximumCapacity'] = newMaxCapacity
+        print(f"Updated maximumCapacity for '{pool_name}': {newMaxCapacity}")
+        return True
+    return False
 
 def process_pool_type(pool_config, pool_type_key, pool_name):
     """Process a specific pool type (insidePool or outsidePool) for a given pool."""
@@ -116,6 +138,7 @@ def process_pool_type(pool_config, pool_type_key, pool_name):
     
     if occupancy is not None:
         pool_type_name = f"{pool_name} ({'Inside' if pool_type_key == 'insidePool' else 'Outside'} Pool)"
+        update_maximum_capacity(pool_type_config, occupancy, pool_type_name)
         return save_to_csv(occupancy, csv_file, pool_type_name)
     else:
         print(f"Failed to get occupancy data for {pool_name} {pool_type_key}")
@@ -142,6 +165,8 @@ def main():
         success_outside = process_pool_type(pool_config, 'outsidePool', pool_name)
         overall_success &= success_outside
     
+    # Save new pool config if maximum capacity of some pool changed
+    save_pool_config(pool_configs)
     return overall_success
 
 

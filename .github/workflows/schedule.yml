@@ -35,6 +35,7 @@ jobs:
         if [[ -n $(git status -s) ]]; then
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
           git add data/*.csv
+          git add data/pool_occupancy_config.json
           git commit -m "Update pool occupancy data"
           git push
         fi
