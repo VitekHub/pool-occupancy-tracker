@@ -60,7 +60,19 @@ def is_pool_open(pool_type_config):
     opening_hour, closing_hour = get_opening_hours(hours)
 
     # Check if the current hour is within the opening hours
-    return opening_hour <= hour < closing_hour
+    is_open = opening_hour <= hour < closing_hour
+    is_temporarily_closed = is_pool_temporarily_closed(pool_type_config)
+    return is_open and not is_temporarily_closed
+
+def is_pool_temporarily_closed(pool_type_config):
+    temporarily_closed = pool_type_config.get('temporarilyClosed', False)
+    if temporarily_closed:
+        start_str, end_str = temporarily_closed.split('-')
+        start_date = datetime.strptime(start_str.strip(), "%d.%m.%Y").date()
+        end_date = datetime.strptime(end_str.strip(), "%d.%m.%Y").date()
+        today = datetime.now(ZoneInfo("Europe/Prague")).date()
+        return start_date <= today <= end_date
+    return False
 
 def fetch_occupancy(url, pattern):
     """Fetch occupancy data from a URL using the given regex pattern."""
