@@ -108,10 +108,8 @@ def update_maximum_capacity(pool_type_config, occupancy, pool_name):
     if not pool_type_config:
         return False  # Skip if this pool type doesn't exist for this pool
     if occupancy > pool_type_config['maximumCapacity']:
-        # new max capacity is increased to 110% of current occupancy rounding up to the nearest hundred
-        newMaxCapacity = int(math.ceil(occupancy * 1.1 / 100.0) * 100)
-        pool_type_config['maximumCapacity'] = newMaxCapacity
-        print(f"Updated maximumCapacity for '{pool_name}': {newMaxCapacity}")
+        pool_type_config['maximumCapacity'] = occupancy
+        print(f"Updated maximumCapacity for '{pool_name}': {pool_type_config['maximumCapacity']}")
         return True
     return False
 
