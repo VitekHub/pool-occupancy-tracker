@@ -2,7 +2,6 @@ import urllib.request
 import re
 import csv
 import json
-import math
 from datetime import datetime
 from zoneinfo import ZoneInfo
 from bs4 import BeautifulSoup
@@ -74,16 +73,28 @@ def is_pool_temporarily_closed(pool_type_config):
         return start_date <= today <= end_date
     return False
 
-def fetch_occupancy(url, pattern):
-    """Fetch occupancy data from a URL using the given regex pattern."""
-    html_content = fetch_html(url)
+def find_match(html_content, pattern):
+    """Find match of pattern in content."""
     if html_content:
         text_content = BeautifulSoup(html_content, 'html.parser').get_text()
         match = re.search(pattern, text_content, re.IGNORECASE)
-        if match:
-            return int(match.group(1))
+        return match
     return None
 
+def find_occupancy(html_content, pattern):
+    """Find occupancy data in content."""
+    match = find_match(html_content, pattern)
+    if match:
+        return int(match.group(1))
+    return None
+
+def find_today_closed_status(html_content):
+    """Find closed for today data in content."""
+    pattern = r'(\d{1,2}\.\d{1,2}\.)\s*(zavřeno)'
+    match = find_match(html_content, pattern)
+    if match:
+        return True
+    return False
 
 def save_to_csv(occupancy, file_name, pool_name):
     """Save occupancy data to CSV file."""
@@ -125,6 +136,11 @@ def update_maximum_capacity(pool_type_config, occupancy, pool_name):
         return True
     return False
 
+def update_today_closed(pool_type_config, is_today_closed, pool_name):
+    """Update todayClosed in config of a specific pool type (insidePool or outsidePool) for a given pool."""
+    pool_type_config['todayClosed'] = is_today_closed
+    print(f"Updated todayClosed for '{pool_name}': {pool_type_config['todayClosed']}")
+
 def process_pool_type(pool_config, pool_type_key, pool_name):
     """Process a specific pool type (insidePool or outsidePool) for a given pool."""
     pool_type_config = pool_config.get(pool_type_key)
@@ -144,7 +160,14 @@ def process_pool_type(pool_config, pool_type_key, pool_name):
     pattern = pool_type_config['pattern']
     csv_file = pool_type_config['csvFile']
     
-    occupancy = fetch_occupancy(url, pattern)
+    html_content = fetch_html(url)
+    occupancy = find_occupancy(html_content, pattern)
+    is_today_closed = find_today_closed_status(html_content)
+    update_today_closed(pool_type_config, is_today_closed, pool_name)
+    
+    if is_today_closed:
+        print(f"{pool_name} {pool_type_key} is closed today, skipping occupancy check")
+        return True
     
     if occupancy is not None:
         pool_type_name = f"{pool_name} ({'Inside' if pool_type_key == 'insidePool' else 'Outside'} Pool)"
