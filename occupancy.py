@@ -88,10 +88,11 @@ def find_occupancy(html_content, pattern):
         return int(match.group(1))
     return None
 
-def find_today_closed_status(html_content):
+def find_today_closed_status(html_content, today_closed_pattern):
     """Find closed for today data in content."""
-    pattern = r'(\d{1,2}\.\d{1,2}\.)\s*(zavřeno)'
-    match = find_match(html_content, pattern)
+    if not today_closed_pattern:
+        return False
+    match = find_match(html_content, today_closed_pattern)
     if match:
         return True
     return False
@@ -162,7 +163,8 @@ def process_pool_type(pool_config, pool_type_key, pool_name):
     
     html_content = fetch_html(url)
     occupancy = find_occupancy(html_content, pattern)
-    is_today_closed = find_today_closed_status(html_content)
+    today_closed_pattern = pool_type_config.get('todayClosedPattern', False)
+    is_today_closed = find_today_closed_status(html_content, today_closed_pattern)
     update_today_closed(pool_type_config, is_today_closed, pool_name)
     
     if is_today_closed:
