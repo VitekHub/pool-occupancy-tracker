@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  pool-tracker:
+    build: .
+    container_name: pool-occupancy-tracker
+    volumes:
+      - ./data:/app/data
+    environment:
+      - TZ=Europe/Prague
+    restart: unless-stopped
+    # Run occupancy tracker every 10 minutes during operating hours
+    command: >
+      sh -c "
+      while true; do
+        echo 'Running occupancy tracker at $(date)'
+        python occupancy.py
+        echo 'Sleeping for 10 minutes...'
+        sleep 600
+      done
+      "
+
+  pool-capacity:
+    build: .
+    container_name: pool-capacity-tracker
+    volumes:
+      - ./data:/app/data
+    environment:
+      - TZ=Europe/Prague
+    restart: unless-stopped
+    # Run capacity tracker once daily at 4:00 AM Prague time
+    command: >
+      sh -c "
+      while true; do
+        current_hour=$(date +%H)
+        if [ \$current_hour -eq 4 ]; then
+          echo 'Running capacity tracker at $(date)'
+          python capacity.py
+          echo 'Capacity tracker completed, sleeping for 23 hours...'
+          sleep 82800
+        else
+          echo 'Waiting for 4:00 AM Prague time. Current hour: \$current_hour'
+          sleep 3600
+        fi
+      done
+      "

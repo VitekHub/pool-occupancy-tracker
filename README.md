@@ -72,6 +72,10 @@ The system now tracks occupancy data from **6 different aquatic facilities** in 
 ├── occupancy.py                        # Real-time occupancy tracking script
 ├── capacity.py                         # Capacity analysis script (Kraví Hora specific)
 ├── requirements.txt                    # Python dependencies
+├── Dockerfile                         # Docker image configuration
+├── docker-compose.yml                 # Docker services configuration
+├── run-docker.sh                      # Docker management script
+├── .dockerignore                      # Docker build exclusions
 └── README.md                          # This file
 ```
 
@@ -130,6 +134,29 @@ Each pool is configured in `data/pool_occupancy_config.json` with the following 
 - **tzdata**: Timezone support for accurate Prague time handling
 
 ## Setup
+
+### Docker Setup (Recommended)
+
+The project includes a complete Docker configuration with automated scheduling.
+
+#### Quick Start
+```bash
+# Make the script executable
+chmod +x run-docker.sh
+
+# Run the setup script and choose option 1
+./run-docker.sh
+```
+
+#### Available Options in run-docker.sh
+1. **Start services** - Builds images and starts automated tracking
+2. **Stop services** - Stops and removes all containers
+3. **Run occupancy tracker once** - Single execution for testing
+4. **Run capacity tracker once** - Single execution for testing
+5. **Interactive shell** - Access container for debugging
+6. **View logs** - Monitor service output
+
+The Docker setup automatically handles timezone (Prague), data persistence, and service restarts.
 
 ### GitHub Actions Configuration
 1. Ensure GitHub Actions has write permissions:
