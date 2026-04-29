@@ -166,6 +166,47 @@ def test_separate_weeks_separate_entries():
     assert "2024-07-22" in wmap
 
 
+# --- maxDayValues and maxWeekValues ---
+
+def test_max_day_values_single_hour():
+    records = [_rec("15.7.2024", "Monday", 14, 90)]
+    wmap = build_weekly_map(records, CFG_NO_HOURLY)
+    assert wmap["2024-07-15"]["days"]["Monday"]["maxDayValues"]["utilizationRate"] == 67
+
+
+def test_max_day_values_multi_hour_picks_max():
+    # hour 14: 90/135*100 = 67, hour 15: 135/135*100 = 100
+    records = [_rec("15.7.2024", "Monday", 14, 90), _rec("15.7.2024", "Monday", 15, 135)]
+    wmap = build_weekly_map(records, CFG_NO_HOURLY)
+    assert wmap["2024-07-15"]["days"]["Monday"]["maxDayValues"]["utilizationRate"] == 100
+
+
+def test_max_week_values_single_day():
+    records = [_rec("15.7.2024", "Monday", 14, 90)]
+    wmap = build_weekly_map(records, CFG_NO_HOURLY)
+    assert wmap["2024-07-15"]["maxWeekValues"]["utilizationRate"] == 67
+
+
+def test_max_week_values_multi_day_picks_max():
+    # Monday hour 14: 90/135*100=67; Tuesday hour 9: 135/135*100=100
+    records = [
+        _rec("15.7.2024", "Monday", 14, 90),
+        _rec("16.7.2024", "Tuesday", 9, 135),
+    ]
+    wmap = build_weekly_map(records, CFG_NO_HOURLY)
+    assert wmap["2024-07-15"]["maxWeekValues"]["utilizationRate"] == 100
+
+
+def test_max_week_values_separate_weeks_independent():
+    records = [
+        _rec("15.7.2024", "Monday", 14, 90),   # week 1: util=67
+        _rec("22.7.2024", "Monday", 14, 135),  # week 2: util=100
+    ]
+    wmap = build_weekly_map(records, CFG_NO_HOURLY)
+    assert wmap["2024-07-15"]["maxWeekValues"]["utilizationRate"] == 67
+    assert wmap["2024-07-22"]["maxWeekValues"]["utilizationRate"] == 100
+
+
 # --- capacity resolution via hourly CSV ---
 
 def test_hourly_capacity_resolution(monkeypatch, tmp_path):

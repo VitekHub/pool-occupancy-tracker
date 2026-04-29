@@ -61,17 +61,19 @@ def build_weekly_map(
             "remainingCapacity": max_cap - avg_occ,
         }
 
-    # Convert nested defaultdicts to plain dicts
-    return {
-        wid: {
-            "maxWeekValues": {"utilizationRate": 0},
-            "days": {
-                day: {
-                    "maxDayValues": {"utilizationRate": 0},
-                    "hours": hours,
-                }
-                for day, hours in days.items()
-            },
+    result = {}
+    for wid, days in weekly.items():
+        built_days = {}
+        week_max_util = 0
+        for day, hours in days.items():
+            day_max_util = max(h["utilizationRate"] for h in hours.values())
+            week_max_util = max(week_max_util, day_max_util)
+            built_days[day] = {
+                "maxDayValues": {"utilizationRate": day_max_util},
+                "hours": hours,
+            }
+        result[wid] = {
+            "maxWeekValues": {"utilizationRate": week_max_util},
+            "days": built_days,
         }
-        for wid, days in weekly.items()
-    }
+    return result
