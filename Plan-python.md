@@ -5,7 +5,7 @@ and appends rows to per-pool CSV files in `data/`. Each CSV row has the format:
 
 ```
 <header line>
-15.7.2024,Monday,14:15,42,14
+15.07.2024,Monday,14:15,42,14
 ```
 
 Columns: `date (d.M.yyyy, Europe/Prague), day (English weekday name),
