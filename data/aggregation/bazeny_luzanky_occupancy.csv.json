@@ -47,12 +47,21 @@
     "2026-04-20",
     "2026-04-27"
   ],
-  "currentOccupancy": null,
+  "currentOccupancy": {
+    "averageUtilizationRate": 28,
+    "currentUtilizationRate": 14,
+    "maximumCapacity": 634,
+    "occupancy": 86,
+    "openLanes": 16,
+    "time": "11:39",
+    "timestamp": "2026-04-29T11:39:00+02:00",
+    "totalLanes": 16
+  },
   "dataRange": {
     "firstRecordAt": "2025-06-17T17:00:00+02:00",
     "lastRecordAt": "2026-04-29T11:00:00+02:00"
   },
-  "generatedAt": "2026-04-29T16:09:24.790733+02:00",
+  "generatedAt": "2026-04-29T16:22:59.863522+02:00",
   "overallOccupancyMap": {
     "days": {
       "Friday": {
