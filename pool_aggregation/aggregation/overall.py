@@ -4,6 +4,7 @@ from collections import defaultdict
 from pool_aggregation.utils.rounding import weighted_average, median_round, py_round
 
 _METRICS = ("averageUtilizationRate", "weightedAverageUtilizationRate", "medianUtilizationRate")
+_DAY_ORDER = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
 
 def build_overall_map(weekly_map: dict) -> dict:
@@ -30,7 +31,8 @@ def build_overall_map(weekly_map: dict) -> dict:
     overall_max: dict[str, int] = {m: 0 for m in _METRICS}
     result_days: dict[str, dict] = {}
 
-    for day, hours in days_map.items():
+    for day in [d for d in _DAY_ORDER if d in days_map]:
+        hours = days_map[day]
         day_max: dict[str, int] = {m: 0 for m in _METRICS}
         for hour_stats in hours.values():
             for m in _METRICS:
