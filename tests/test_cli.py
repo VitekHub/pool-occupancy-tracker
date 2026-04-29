@@ -59,9 +59,9 @@ def test_produces_three_json_files(data_dir, output_dir):
     _run(data_dir, output_dir)
     files = {f.name for f in output_dir.iterdir()}
     assert files == {
-        "alpha_inside.csv.json",
-        "alpha_outside.csv.json",
-        "beta_outside.csv.json",
+        "alpha_inside.json",
+        "alpha_outside.json",
+        "beta_outside.json",
     }
 
 
@@ -69,17 +69,17 @@ def test_produces_three_json_files(data_dir, output_dir):
 
 def test_alpha_inside_snapshot(data_dir, output_dir):
     _run(data_dir, output_dir)
-    produced = json.loads((output_dir / "alpha_inside.csv.json").read_text(encoding="utf-8"))
-    expected = json.loads((_FIXTURES / "expected_alpha_inside.csv.json").read_text(encoding="utf-8"))
+    produced = json.loads((output_dir / "alpha_inside.json").read_text(encoding="utf-8"))
+    expected = json.loads((_FIXTURES / "expected_alpha_inside.json").read_text(encoding="utf-8"))
     assert produced == expected
 
 
 # --- structural checks shared across all outputs ---
 
 @pytest.mark.parametrize("fname", [
-    "alpha_inside.csv.json",
-    "alpha_outside.csv.json",
-    "beta_outside.csv.json",
+    "alpha_inside.json",
+    "alpha_outside.json",
+    "beta_outside.json",
 ])
 def test_top_level_keys_present(data_dir, output_dir, fname):
     _run(data_dir, output_dir)
@@ -93,9 +93,9 @@ def test_top_level_keys_present(data_dir, output_dir, fname):
 
 
 @pytest.mark.parametrize("fname", [
-    "alpha_inside.csv.json",
-    "alpha_outside.csv.json",
-    "beta_outside.csv.json",
+    "alpha_inside.json",
+    "alpha_outside.json",
+    "beta_outside.json",
 ])
 def test_generated_at_matches_pinned_clock(data_dir, output_dir, fname):
     _run(data_dir, output_dir)
@@ -104,9 +104,9 @@ def test_generated_at_matches_pinned_clock(data_dir, output_dir, fname):
 
 
 @pytest.mark.parametrize("fname", [
-    "alpha_inside.csv.json",
-    "alpha_outside.csv.json",
-    "beta_outside.csv.json",
+    "alpha_inside.json",
+    "alpha_outside.json",
+    "beta_outside.json",
 ])
 def test_current_occupancy_populated(data_dir, output_dir, fname):
     _run(data_dir, output_dir)
@@ -116,7 +116,7 @@ def test_current_occupancy_populated(data_dir, output_dir, fname):
 
 def test_outside_pool_lanes_null(data_dir, output_dir):
     _run(data_dir, output_dir)
-    data = json.loads((output_dir / "alpha_outside.csv.json").read_text(encoding="utf-8"))
+    data = json.loads((output_dir / "alpha_outside.json").read_text(encoding="utf-8"))
     # config has totalLanes: 8 but poolType=outside → must be null everywhere
     assert data["pool"]["totalLanes"] is None
     assert data["currentOccupancy"]["totalLanes"] is None
@@ -130,14 +130,14 @@ def test_outside_pool_lanes_null(data_dir, output_dir):
 
 def test_inside_pool_lanes_not_null(data_dir, output_dir):
     _run(data_dir, output_dir)
-    data = json.loads((output_dir / "alpha_inside.csv.json").read_text(encoding="utf-8"))
+    data = json.loads((output_dir / "alpha_inside.json").read_text(encoding="utf-8"))
     assert data["currentOccupancy"]["totalLanes"] == 4
     assert data["currentOccupancy"]["openLanes"] is not None
 
 
 def test_available_week_ids_ascending(data_dir, output_dir):
     _run(data_dir, output_dir)
-    data = json.loads((output_dir / "alpha_inside.csv.json").read_text(encoding="utf-8"))
+    data = json.loads((output_dir / "alpha_inside.json").read_text(encoding="utf-8"))
     ids = data["availableWeekIds"]
     assert ids == sorted(ids)
     assert "2024-07-15" in ids
