@@ -5,6 +5,7 @@
       "url": "https://www.kravihora-brno.cz/kryta-plavecka-hala",
       "pattern": "obsazenost:\\s*(\\d+)\\s*/",
       "csvFile": "kravi_hora_inside_pool_occupancy.csv",
+      "hourlyMaxCapacity": "capacity.csv",
       "maximumCapacity": 135,
       "totalLanes": 6,
       "weekdaysOpeningHours": "6-22",
