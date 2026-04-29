@@ -8,12 +8,26 @@ from pool_aggregation.utils.rounding import py_round
 from pool_aggregation.utils.timezones import hour_start, to_iso8601
 
 
+def compute_open_lanes(
+    resolved_max_cap: int,
+    total_lanes: int | None,
+    static_max_cap: int,
+) -> int | None:
+    """round((resolved_max_cap * total_lanes) / static_max_cap); null when not applicable."""
+    if total_lanes is None or static_max_cap == 0:
+        return None
+    return py_round(resolved_max_cap * total_lanes / static_max_cap)
+
+
 def build_weekly_map(
     records: list[OccupancyRecord],
     pool_type_cfg: dict,
 ) -> dict:
-    """Return weeklyOccupancyMap with hour buckets (totalLanes/openLanes null)."""
+    """Return weeklyOccupancyMap with hour buckets including totalLanes/openLanes."""
     buckets = bucket_records(records)
+
+    static_max_cap: int = pool_type_cfg.get("maximumCapacity", 0)
+    total_lanes: int | None = pool_type_cfg.get("totalLanes")
 
     # week -> day -> hour -> bucket dict
     weekly: dict[str, dict[str, dict[str, dict]]] = defaultdict(
@@ -26,12 +40,12 @@ def build_weekly_map(
         min_occ = min(occupancies)
         max_occ = max(occupancies)
 
-        # Use any record's date_str for capacity resolution; all share the same
-        # (weekId, day, hour) so use the first record's date.
+        # Use first record's date for capacity resolution (all share weekId/day/hour).
         date_str = recs[0].date_str
         max_cap = resolve_max_capacity(pool_type_cfg, date_str, hour)
 
         util = py_round(avg_occ / max_cap * 100) if max_cap else 0
+        open_lanes = compute_open_lanes(max_cap, total_lanes, static_max_cap)
 
         weekly[wid][day][str(hour)] = {
             "day": day,
@@ -41,8 +55,8 @@ def build_weekly_map(
             "maxOccupancy": max_occ,
             "averageOccupancy": avg_occ,
             "maximumCapacity": max_cap,
-            "totalLanes": None,
-            "openLanes": None,
+            "totalLanes": total_lanes,
+            "openLanes": open_lanes,
             "utilizationRate": util,
             "remainingCapacity": max_cap - avg_occ,
         }
