@@ -2,6 +2,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from pool_aggregation.aggregation.bucketing import available_week_ids
+from pool_aggregation.aggregation.current import build_current_occupancy
 from pool_aggregation.aggregation.pool_block import build_data_range, build_pool_block
 from pool_aggregation.aggregation.overall import build_overall_map
 from pool_aggregation.aggregation.weekly import build_weekly_map
@@ -43,6 +44,9 @@ def main(clock=None) -> int:
         payload["availableWeekIds"] = available_week_ids(records, clock=lambda: now)
         payload["weeklyOccupancyMap"] = build_weekly_map(records, pool_type_cfg)
         payload["overallOccupancyMap"] = build_overall_map(payload["weeklyOccupancyMap"])
+        payload["currentOccupancy"] = build_current_occupancy(
+            records, pool_type_cfg, payload["overallOccupancyMap"], now
+        )
         out_path = _OUTPUT_DIR / f"{csv_file}.json"
         write_json(out_path, payload)
         print(f"Wrote {out_path.name}")
