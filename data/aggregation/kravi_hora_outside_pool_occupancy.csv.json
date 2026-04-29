@@ -1,10 +1,22 @@
 {
   "availableWeekIds": [],
   "currentOccupancy": null,
-  "dataRange": null,
-  "generatedAt": "2026-04-29T15:51:54.673902+02:00",
+  "dataRange": {
+    "firstRecordAt": "2025-06-16T08:00:00+02:00",
+    "lastRecordAt": "2025-09-22T20:00:00+02:00"
+  },
+  "generatedAt": "2026-04-29T15:53:07.713861+02:00",
   "overallOccupancyMap": {},
-  "pool": {},
+  "pool": {
+    "maximumCapacity": 2000,
+    "name": "Kraví Hora",
+    "poolType": "outside",
+    "temporarilyClosed": "23.9.2025 - 31.5.2026",
+    "todayClosed": false,
+    "totalLanes": null,
+    "weekdaysOpeningHours": "7-21",
+    "weekendOpeningHours": "9-21"
+  },
   "schemaVersion": 1,
   "timezone": "Europe/Prague",
   "weeklyOccupancyMap": {}
