@@ -414,8 +414,6 @@ Step 15 — GitHub Actions integration.
     `python -m pool_aggregation`.
   - Extend the `git add` line in the commit step to include
     `data/aggregation/` so the generated JSON is committed with the CSVs.
-  - In the `daily-capacity` job, add the same aggregation step after
-    `capacity.py` and include `data/aggregation/` in its `git add`.
 - Do not alter the scraper's or capacity script's own code paths.
 - Done when: the workflow file parses (YAML lint) and the new steps are
   present in both jobs. Verify locally that the command still runs clean
