@@ -117,8 +117,15 @@ def test_current_occupancy_populated(data_dir, output_dir, fname):
 def test_outside_pool_lanes_null(data_dir, output_dir):
     _run(data_dir, output_dir)
     data = json.loads((output_dir / "alpha_outside.csv.json").read_text(encoding="utf-8"))
+    # config has totalLanes: 8 but poolType=outside → must be null everywhere
+    assert data["pool"]["totalLanes"] is None
     assert data["currentOccupancy"]["totalLanes"] is None
     assert data["currentOccupancy"]["openLanes"] is None
+    week = next(iter(data["weeklyOccupancyMap"].values()))
+    day = next(iter(week["days"].values()))
+    hour = next(iter(day["hours"].values()))
+    assert hour["totalLanes"] is None
+    assert hour["openLanes"] is None
 
 
 def test_inside_pool_lanes_not_null(data_dir, output_dir):

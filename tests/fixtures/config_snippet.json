@@ -15,6 +15,7 @@
     "outsidePool": {
       "csvFile": "alpha_outside.csv",
       "maximumCapacity": 500,
+      "totalLanes": 8,
       "weekdaysOpeningHours": "7-21",
       "weekendOpeningHours": "9-21",
       "todayClosed": false,

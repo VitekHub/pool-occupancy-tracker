@@ -35,6 +35,8 @@ def main(clock=None, data_dir: Path = _DATA_DIR, output_dir: Path = _OUTPUT_DIR)
     generated_at = to_iso8601(now)
     cfg = load_pool_config(data_dir / "pool_occupancy_config.json")
     for pool_name, pool_type_key, pool_type_cfg in iter_pool_types(cfg):
+        if pool_type_key == "outsidePool":
+            pool_type_cfg = {**pool_type_cfg, "totalLanes": None}
         csv_file = pool_type_cfg.get("csvFile", "")
         csv_path = data_dir / csv_file
         records = read_records(csv_path)
