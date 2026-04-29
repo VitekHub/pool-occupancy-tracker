@@ -3,6 +3,7 @@ from pathlib import Path
 
 from pool_aggregation.aggregation.bucketing import available_week_ids
 from pool_aggregation.aggregation.pool_block import build_data_range, build_pool_block
+from pool_aggregation.aggregation.weekly import build_weekly_map
 from pool_aggregation.config import load_pool_config
 from pool_aggregation.io.csv_reader import read_records
 from pool_aggregation.io.json_writer import write_json
@@ -39,6 +40,7 @@ def main(clock=None) -> int:
         payload["pool"] = build_pool_block(pool_name, pool_type_key, pool_type_cfg)
         payload["dataRange"] = build_data_range(records)
         payload["availableWeekIds"] = available_week_ids(records, clock=lambda: now)
+        payload["weeklyOccupancyMap"] = build_weekly_map(records, pool_type_cfg)
         out_path = _OUTPUT_DIR / f"{csv_file}.json"
         write_json(out_path, payload)
         print(f"Wrote {out_path.name}")
