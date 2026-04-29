@@ -30,13 +30,13 @@ def _stub_payload(generated_at: str) -> dict:
     }
 
 
-def main(clock=None) -> int:
+def main(clock=None, data_dir: Path = _DATA_DIR, output_dir: Path = _OUTPUT_DIR) -> int:
     now = now_prague(clock)
     generated_at = to_iso8601(now)
-    cfg = load_pool_config()
+    cfg = load_pool_config(data_dir / "pool_occupancy_config.json")
     for pool_name, pool_type_key, pool_type_cfg in iter_pool_types(cfg):
         csv_file = pool_type_cfg.get("csvFile", "")
-        csv_path = _DATA_DIR / csv_file
+        csv_path = data_dir / csv_file
         records = read_records(csv_path)
         payload = _stub_payload(generated_at)
         payload["pool"] = build_pool_block(pool_name, pool_type_key, pool_type_cfg)
@@ -47,7 +47,7 @@ def main(clock=None) -> int:
         payload["currentOccupancy"] = build_current_occupancy(
             records, pool_type_cfg, payload["overallOccupancyMap"], now
         )
-        out_path = _OUTPUT_DIR / f"{csv_file}.json"
+        out_path = output_dir / f"{csv_file}.json"
         write_json(out_path, payload)
         print(f"Wrote {out_path.name}")
     return 0

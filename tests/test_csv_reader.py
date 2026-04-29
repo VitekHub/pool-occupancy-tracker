@@ -13,7 +13,7 @@ def test_reads_valid_rows():
 def test_first_record_fields():
     records = read_records(FIXTURE)
     r = records[0]
-    assert r.date_str == "15.7.2024"
+    assert r.date_str == "15.07.2024"
     assert r.day == "Monday"
     assert r.time_str == "14:15"
     assert r.occupancy == 42
