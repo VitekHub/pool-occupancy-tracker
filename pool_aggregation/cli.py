@@ -1,6 +1,7 @@
 from __future__ import annotations
 from pathlib import Path
 
+from pool_aggregation.aggregation.bucketing import available_week_ids
 from pool_aggregation.aggregation.pool_block import build_data_range, build_pool_block
 from pool_aggregation.config import load_pool_config
 from pool_aggregation.io.csv_reader import read_records
@@ -26,8 +27,9 @@ def _stub_payload(generated_at: str) -> dict:
     }
 
 
-def main() -> int:
-    generated_at = to_iso8601(now_prague())
+def main(clock=None) -> int:
+    now = now_prague(clock)
+    generated_at = to_iso8601(now)
     cfg = load_pool_config()
     for pool_name, pool_type_key, pool_type_cfg in iter_pool_types(cfg):
         csv_file = pool_type_cfg.get("csvFile", "")
@@ -36,6 +38,7 @@ def main() -> int:
         payload = _stub_payload(generated_at)
         payload["pool"] = build_pool_block(pool_name, pool_type_key, pool_type_cfg)
         payload["dataRange"] = build_data_range(records)
+        payload["availableWeekIds"] = available_week_ids(records, clock=lambda: now)
         out_path = _OUTPUT_DIR / f"{csv_file}.json"
         write_json(out_path, payload)
         print(f"Wrote {out_path.name}")
