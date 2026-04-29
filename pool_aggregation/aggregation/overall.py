@@ -3,10 +3,11 @@ from collections import defaultdict
 
 from pool_aggregation.utils.rounding import weighted_average, median_round, py_round
 
+_METRICS = ("averageUtilizationRate", "weightedAverageUtilizationRate", "medianUtilizationRate")
+
 
 def build_overall_map(weekly_map: dict) -> dict:
     """Build overallOccupancyMap from an already-computed weeklyOccupancyMap."""
-    # Collect utilizationRate values per (day, hour) across all weeks.
     slot_rates: dict[tuple[str, str], list[int]] = defaultdict(list)
 
     for week in weekly_map.values():
@@ -17,7 +18,6 @@ def build_overall_map(weekly_map: dict) -> dict:
     if not slot_rates:
         return {}
 
-    # Build per-(day, hour) stats.
     days_map: dict[str, dict[str, dict]] = defaultdict(dict)
     for (day, hour_key), rates in slot_rates.items():
         float_rates = [float(r) for r in rates]
@@ -27,8 +27,24 @@ def build_overall_map(weekly_map: dict) -> dict:
             "medianUtilizationRate": median_round(float_rates),
         }
 
-    result: dict[str, dict] = {}
-    for day, hours in days_map.items():
-        result[day] = hours
+    overall_max: dict[str, int] = {m: 0 for m in _METRICS}
+    result_days: dict[str, dict] = {}
 
-    return {"days": result}
+    for day, hours in days_map.items():
+        day_max: dict[str, int] = {m: 0 for m in _METRICS}
+        for hour_stats in hours.values():
+            for m in _METRICS:
+                if hour_stats[m] > day_max[m]:
+                    day_max[m] = hour_stats[m]
+        for m in _METRICS:
+            if day_max[m] > overall_max[m]:
+                overall_max[m] = day_max[m]
+        result_days[day] = {
+            "maxDayValues": day_max,
+            "hours": hours,
+        }
+
+    return {
+        "maxOverallValues": overall_max,
+        "days": result_days,
+    }
