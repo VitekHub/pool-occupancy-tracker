@@ -7,6 +7,8 @@ from pool_aggregation.models.records import OccupancyRecord
 from pool_aggregation.utils.rounding import py_round
 from pool_aggregation.utils.timezones import hour_start, to_iso8601
 
+_DAY_ORDER = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+
 
 def compute_open_lanes(
     resolved_max_cap: int,
@@ -65,7 +67,8 @@ def build_weekly_map(
     for wid, days in weekly.items():
         built_days = {}
         week_max_util = 0
-        for day, hours in days.items():
+        for day in [d for d in _DAY_ORDER if d in days]:
+            hours = days[day]
             day_max_util = max(h["utilizationRate"] for h in hours.values())
             week_max_util = max(week_max_util, day_max_util)
             built_days[day] = {

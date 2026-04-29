@@ -17,7 +17,7 @@ def test_deterministic_key_order(tmp_path):
     write_json(out, payload)
     text = out.read_text(encoding="utf-8")
     keys = [line.strip().split(":")[0].strip('"') for line in text.splitlines() if ":" in line]
-    assert keys == sorted(keys)
+    assert keys == list(payload.keys())
 
 
 def test_utf8_non_ascii(tmp_path):
