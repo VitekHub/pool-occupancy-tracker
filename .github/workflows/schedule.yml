@@ -9,33 +9,37 @@ jobs:
   track-occupancy:
     runs-on: ubuntu-latest
     if: github.event.schedule == '*/10 2-19 * * *'
-    
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-    
+
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.x'
-    
+
     - name: Install dependencies
       run: pip install -r requirements.txt
-    
+
     - name: Configure Git
       run: |
         git config --global user.name 'GitHub Actions Bot'
         git config --global user.email 'actions@github.com'
-    
+
     - name: Run pool tracker
       run: python occupancy.py
-    
+
+    - name: Run aggregation
+      run: python -m pool_aggregation
+
     - name: Commit and push if changed
       run: |
         if [[ -n $(git status -s) ]]; then
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
           git add data/*.csv
           git add data/pool_occupancy_config.json
+          git add data/aggregation/
           git commit -m "Update pool occupancy data"
           git push
         fi
@@ -45,27 +49,27 @@ jobs:
   daily-capacity:
     runs-on: ubuntu-latest
     if: github.event.schedule == '0 2 * * *'
-    
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-    
+
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.x'
-        
+
     - name: Install dependencies
       run: pip install -r requirements.txt
-    
+
     - name: Run capacity script
       run: python capacity.py
-      
+
     - name: Configure Git
       run: |
         git config --global user.name 'GitHub Actions Bot'
         git config --global user.email 'actions@github.com'
-    
+
     - name: Commit and push if changed
       run: |
         if [[ -n $(git status -s) ]]; then
