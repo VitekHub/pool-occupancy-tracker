@@ -235,43 +235,195 @@ project/
   requirements-dev.txt          # add pytest (and freeze any new test deps)
 ```
 
-Deliver:
-- A new `pool_aggregation` package that, given a pool config and its CSV path,
-  returns the JSON structure above and writes it to
-  `data/aggregation/<csvFile>.json`.
-- A CLI entry (`python -m pool_aggregation`) that loops every pool in
-  `data/pool_occupancy_config.json` and regenerates the JSON for each, reading
-  only the original CSVs in `data/`.
-- Keep `occupancy.py` and `capacity.py` unchanged. Re-implement any shared
-  logic (config loading, Prague tz handling, hourly capacity CSV parsing, etc.)
-  inside `pool_aggregation/` — do not try to import from the legacy scripts.
-- Update `.github/workflows/schedule.yml`: add a step after the existing
-  "Run pool tracker" step (and before "Commit and push if changed") that runs
-  `python -m pool_aggregation`. Extend the `git add` line in the commit step
-  to also include `data/aggregation/` so the generated JSON is committed
-  alongside the CSVs. The `daily-capacity` job should similarly run the new
-  CLI after `capacity.py` so JSON reflects any capacity refresh on the same
-  day. Do not alter the scraper's own code path.
-- Unit tests covering:
-  - weekly bucketing across DST transitions
-  - median of even and odd length lists
-  - the four weighted-average weight tiers, including the all-zero case
-  - `availableWeekIds` padding for empty weeks
-  - `currentOccupancy = null` when today has no records
-  - `maximumCapacity` resolution: hourly CSV hit, hourly CSV miss (falls back
-    to pool's static `maximumCapacity`), and pool without `hourlyMaxCapacity`
-    configured (always uses the static value)
-  - `totalLanes` propagation: present for inside pools, `null` for outside
-    pools, in both `weeklyOccupancyMap` hour buckets and `currentOccupancy`
-  - `openLanes` rounding formula, plus null propagation when `totalLanes` is
-    missing
-  - end-to-end CLI test: given a tiny fixture CSV + config, the generated
-    JSON on disk matches an expected snapshot
-- Run tests with `pytest`. Keep tests hermetic — no network, no real clock;
-  pass the "now" timestamp in as a parameter / fixture where needed.
+Incremental implementation steps
 
-Do not change the CSV format or the existing scraping cadence. Match field
-names and types exactly as specified — the dashboard consumes this JSON
-directly with no renaming layer.
+Ground rules for every step below:
+- After each step, the project MUST still run end-to-end without errors.
+  Specifically: `python occupancy.py` and `python capacity.py` keep working
+  unchanged, and `python -m pool_aggregation` (once the CLI exists from
+  step 3 onward) must exit with code 0 even if the output JSON is partial or
+  stubbed.
+- Do NOT modify `occupancy.py` or `capacity.py` in any step.
+- Write tests in the SAME step that introduces the behavior they cover.
+  Running `pytest` at the end of any step must be green. Do not batch tests
+  into a final "testing" step.
+- Keep diffs small: one step = one small, coherent slice of the schema
+  or pipeline.
+- "Stubbed" fields / sections are allowed in early steps (empty dict, `null`,
+  `0`, etc.) as long as the JSON is still valid and the CLI runs. Each
+  subsequent step fleshes out one more area.
+
+Step 1 — Package skeleton + dev deps.
+- Create the `pool_aggregation/` package with `__init__.py`, `__main__.py`,
+  and an empty `cli.py` exposing `main()` that just prints "pool_aggregation:
+  noop" and returns 0. Wire `__main__.py` to call `cli.main()`.
+- Create `data/aggregation/` as an empty directory (add a `.gitkeep`).
+- Create `tests/` with `__init__.py` and `conftest.py` (empty for now).
+- Add `requirements-dev.txt` with `pytest`.
+- Test: `tests/test_smoke.py` that imports `pool_aggregation` and asserts
+  `cli.main()` returns 0.
+- Done when: `python -m pool_aggregation` prints the noop line and exits 0;
+  `pytest` passes.
+
+Step 2 — Config loader.
+- Add `pool_aggregation/config.py` with `load_pool_config(path=...)` that
+  reads `data/pool_occupancy_config.json` and returns the parsed dict.
+- Add `pool_aggregation/models/pool.py` with `PoolConfig` / `PoolTypeConfig`
+  dataclasses and a helper `iter_pool_types(cfg)` yielding `(pool_name,
+  pool_type_name, pool_type_config)` tuples.
+- Wire the CLI to load the config and iterate pool types, logging each one.
+  No JSON output yet.
+- Tests: `test_config.py` using a tiny fixture config under
+  `tests/fixtures/config_snippet.json`, asserting iteration order and types.
+- Done when: CLI prints one line per pool-type and exits 0.
+
+Step 3 — CSV reader + empty JSON writer.
+- Add `pool_aggregation/io/csv_reader.py` with `read_records(path)` returning
+  `list[OccupancyRecord]` (dataclass in `models/records.py`). Each record has
+  `date_str`, `day`, `time_str`, `occupancy`, `hour`.
+- Add `pool_aggregation/io/json_writer.py` with `write_json(path, payload)`
+  that writes deterministic UTF-8 JSON (sorted keys where order doesn't
+  matter, `indent=2`, `ensure_ascii=False`).
+- CLI: for each pool-type, read its CSV and write a JSON file to
+  `data/aggregation/<csvFile>.json` containing only `schemaVersion`,
+  `generatedAt`, `timezone`, and stub empties for the rest
+  (`pool: {}`, `dataRange: null`, `currentOccupancy: null`,
+  `availableWeekIds: []`, `weeklyOccupancyMap: {}`, `overallOccupancyMap: {}`).
+- Tests: `test_csv_reader.py` (valid row, bad row skipped) and
+  `test_json_writer.py` (roundtrip + deterministic ordering).
+- Done when: running the CLI produces one valid (but near-empty) JSON file
+  per pool-type on disk.
+
+Step 4 — Prague timezone + rounding utilities.
+- Add `pool_aggregation/utils/timezones.py`: `PRAGUE = ZoneInfo("Europe/Prague")`,
+  `now_prague(clock=None)`, `hour_start(date_str, hour, tz=PRAGUE)` returning
+  an aware datetime, `to_iso8601(dt)`.
+- Add `pool_aggregation/utils/rounding.py`: `py_round(x)` matching Python's
+  built-in `round`, and `weighted_average(values)` applying the four weight
+  tiers from rule 4 (returns `0` when `sum(w_i) == 0`).
+- CLI now fills `generatedAt` with a real Prague-offset ISO8601 timestamp.
+- Tests: `test_timezones.py` (DST boundary both directions), `test_rounding.py`
+  (each weight tier + all-zero + mixed list).
+- Done when: JSON still valid, `generatedAt` is timezone-aware ISO8601.
+
+Step 5 — Static `pool` block + `dataRange`.
+- Populate the `pool` object from config: `name`, `poolType`, static
+  `maximumCapacity`, `totalLanes` (null for outside pools),
+  `weekdaysOpeningHours`, `weekendOpeningHours`, `todayClosed`,
+  `temporarilyClosed`.
+- Compute `dataRange` from the CSV (min/max record timestamps as ISO8601 in
+  Prague tz). Null when the CSV is empty.
+- Tests: `test_pool_block.py` (inside vs outside pool, `totalLanes` null path),
+  `test_data_range.py` (empty CSV → null, populated CSV → correct bounds).
+- Done when: JSON has correct static metadata for every pool-type.
+
+Step 6 — Bucketing helpers + `availableWeekIds`.
+- Add `pool_aggregation/aggregation/bucketing.py` with `week_id(date)`
+  returning the ISO Monday for a given record's date (`yyyy-MM-dd`), and
+  `bucket_records(records)` returning a `{(weekId, day, hour): [records]}`
+  map.
+- Compute `availableWeekIds`: ascending Mondays from the earliest observed
+  week through the current Prague week, INCLUDING empty weeks. Pass the
+  clock in so tests can pin "now".
+- Tests: `test_bucketing.py` (week boundary Sunday→Monday, DST weeks),
+  `test_available_week_ids.py` (padding empty weeks, current week forced in).
+- Done when: `availableWeekIds` is populated and monotonically ascending.
+
+Step 7 — `maximumCapacity` resolution.
+- Add `pool_aggregation/io/capacity_reader.py` with a cached
+  `load_hourly_capacity(filename)` returning `{(date_str, hour_str): int}`.
+- Add `pool_aggregation/aggregation/capacity.py` with
+  `resolve_max_capacity(pool_type_config, date_str, hour_str)` mirroring
+  `get_max_allowed` from `occupancy.py` (hourly CSV hit, else fallback to
+  static `maximumCapacity`).
+- No schema change yet — subsequent steps consume this helper.
+- Tests: `test_capacity_reader.py` (parses "HH:00:00" and "HH:00"),
+  `test_capacity_resolution.py` (hit, miss-falls-back, no `hourlyMaxCapacity`
+  configured).
+- Done when: helper is importable and covered by tests. CLI output unchanged.
+
+Step 8 — `weeklyOccupancyMap` hour buckets (core fields).
+- Build `weeklyOccupancyMap[weekId].days[day].hours[hour]` with:
+  `day`, `hour`, `date`, `minOccupancy`, `maxOccupancy`, `averageOccupancy`,
+  `maximumCapacity` (from step 7), `utilizationRate`, `remainingCapacity`.
+  Leave `totalLanes` and `openLanes` unset for now (or hardcoded `null`).
+- Only emit hours/days/weeks that actually have data.
+- Tests: `test_weekly.py` covering averaging rounding, remainingCapacity,
+  utilizationRate, and the "only emit populated" rule.
+- Done when: a fixture CSV produces the expected week/day/hour tree.
+
+Step 9 — `totalLanes` + `openLanes` on hour buckets.
+- Add `totalLanes` to each hour bucket (pool's `totalLanes` from config,
+  `null` for outside pools).
+- Add `openLanes`: `round((resolved maximumCapacity * totalLanes) /
+  pool's static maximumCapacity)`; `null` when `totalLanes` is `null` or the
+  static `maximumCapacity` is 0.
+- Tests extend `test_weekly.py` and add `test_open_lanes.py` covering the
+  rounding formula, outside-pool null propagation, and divide-by-zero guard.
+- Done when: hour buckets include both fields with correct values.
+
+Step 10 — `maxDayValues` and `maxWeekValues`.
+- Populate `maxDayValues.utilizationRate` per day (max over that day's hours)
+  and `maxWeekValues.utilizationRate` per week (max over the week's
+  `maxDayValues`).
+- Tests in `test_weekly.py` cover single-hour day, multi-hour day, and
+  multi-day week.
+- Done when: every emitted day/week has its max block.
+
+Step 11 — `overallOccupancyMap` per `(day, hour)` stats.
+- For each `(day, hour)`, gather the list of weekly `utilizationRate` values
+  from step 8 and compute `averageUtilizationRate`,
+  `medianUtilizationRate`, `weightedAverageUtilizationRate` using the
+  helpers from step 4.
+- Emit only `(day, hour)` slots that have at least one week of data.
+- Tests: `test_overall.py` (odd/even medians, weight tier matrix, empty
+  slot skipped).
+- Done when: `overallOccupancyMap.days[day].hours[hour]` is populated.
+
+Step 12 — `overallOccupancyMap` max rollups.
+- Add `maxDayValues` per day (max per metric across the day's hours) and
+  `maxOverallValues` (max per metric across all `(day, hour)`).
+- Tests extend `test_overall.py`.
+- Done when: both max blocks are present and consistent with the hourly data.
+
+Step 13 — `currentOccupancy`.
+- Build the `currentOccupancy` block: `null` if no records for Prague's
+  current date; otherwise latest record today with `occupancy`, `time`,
+  `timestamp`, resolved `maximumCapacity`, `totalLanes`, `openLanes`,
+  `currentUtilizationRate`, and `averageUtilizationRate` sourced from
+  `overallOccupancyMap.days[<today's weekday>].hours[<current hour>]`
+  (fallback `0` if missing).
+- Inject the clock via CLI/tests so "today" is deterministic.
+- Tests: `test_current.py` covering null-today, populated-today, fallback
+  `averageUtilizationRate`, and outside-pool `totalLanes`/`openLanes` null.
+- Done when: the JSON's `currentOccupancy` reflects the latest CSV row for
+  today.
+
+Step 14 — End-to-end CLI snapshot test.
+- Add `tests/test_cli.py` that runs the CLI against a tiny fixture
+  (`tests/fixtures/sample_occupancy.csv`, `sample_hourly_capacity.csv`,
+  `config_snippet.json`) into a `tmp_path` output dir with a pinned clock,
+  and asserts the produced JSON equals an expected snapshot committed under
+  `tests/fixtures/expected_<pool>.json`.
+- Done when: the full pipeline is covered by a single deterministic test.
+
+Step 15 — GitHub Actions integration.
+- Update `.github/workflows/schedule.yml`:
+  - In the `track-occupancy` job, add a step "Run aggregation" after
+    "Run pool tracker" and before "Commit and push if changed" that runs
+    `python -m pool_aggregation`.
+  - Extend the `git add` line in the commit step to include
+    `data/aggregation/` so the generated JSON is committed with the CSVs.
+  - In the `daily-capacity` job, add the same aggregation step after
+    `capacity.py` and include `data/aggregation/` in its `git add`.
+- Do not alter the scraper's or capacity script's own code paths.
+- Done when: the workflow file parses (YAML lint) and the new steps are
+  present in both jobs. Verify locally that the command still runs clean
+  (`python -m pool_aggregation` exits 0 on the real repo data).
+
+Across all steps: tests must stay hermetic (no network, injected clock,
+tmp_path for I/O), and the JSON field names/types must match the schema
+above exactly — the downstream dashboard consumes this JSON with no
+renaming layer.
 
 ### END PROMPT
