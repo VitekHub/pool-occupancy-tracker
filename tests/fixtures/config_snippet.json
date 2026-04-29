@@ -1,0 +1,39 @@
+[
+  {
+    "name": "Pool Alpha",
+    "insidePool": {
+      "csvFile": "alpha_inside.csv",
+      "maximumCapacity": 100,
+      "totalLanes": 4,
+      "weekdaysOpeningHours": "6-22",
+      "weekendOpeningHours": "8-21",
+      "todayClosed": false,
+      "temporarilyClosed": null,
+      "collectStats": true,
+      "viewStats": true
+    },
+    "outsidePool": {
+      "csvFile": "alpha_outside.csv",
+      "maximumCapacity": 500,
+      "weekdaysOpeningHours": "7-21",
+      "weekendOpeningHours": "9-21",
+      "todayClosed": false,
+      "temporarilyClosed": null,
+      "collectStats": true,
+      "viewStats": true
+    }
+  },
+  {
+    "name": "Pool Beta",
+    "outsidePool": {
+      "csvFile": "beta_outside.csv",
+      "maximumCapacity": 2000,
+      "weekdaysOpeningHours": "9-20",
+      "weekendOpeningHours": "9-20",
+      "todayClosed": false,
+      "temporarilyClosed": null,
+      "collectStats": true,
+      "viewStats": true
+    }
+  }
+]
