@@ -26,7 +26,7 @@ _RECORDS_TODAY = [
 ]
 
 _RECORDS_OTHER_DAY = [
-    OccupancyRecord(date_str="16.7.2024", day="Tuesday", time_str="10:00", occupancy=30, hour=10),
+    OccupancyRecord(date_str="16.07.2024", day="Tuesday", time_str="10:00", occupancy=30, hour=10),
 ]
 
 

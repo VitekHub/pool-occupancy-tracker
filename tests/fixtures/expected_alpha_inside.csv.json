@@ -1,0 +1,136 @@
+{
+  "availableWeekIds": [
+    "2024-07-15"
+  ],
+  "currentOccupancy": {
+    "averageUtilizationRate": 42,
+    "currentUtilizationRate": 55,
+    "maximumCapacity": 100,
+    "occupancy": 55,
+    "openLanes": 4,
+    "time": "15:00",
+    "timestamp": "2024-07-15T15:00:00+02:00",
+    "totalLanes": 4
+  },
+  "dataRange": {
+    "firstRecordAt": "2024-07-15T14:00:00+02:00",
+    "lastRecordAt": "2024-07-16T09:00:00+02:00"
+  },
+  "generatedAt": "2024-07-15T14:30:00+02:00",
+  "overallOccupancyMap": {
+    "days": {
+      "Monday": {
+        "hours": {
+          "14": {
+            "averageUtilizationRate": 42,
+            "medianUtilizationRate": 42,
+            "weightedAverageUtilizationRate": 42
+          },
+          "15": {
+            "averageUtilizationRate": 55,
+            "medianUtilizationRate": 55,
+            "weightedAverageUtilizationRate": 55
+          }
+        },
+        "maxDayValues": {
+          "averageUtilizationRate": 55,
+          "medianUtilizationRate": 55,
+          "weightedAverageUtilizationRate": 55
+        }
+      },
+      "Tuesday": {
+        "hours": {
+          "9": {
+            "averageUtilizationRate": 10,
+            "medianUtilizationRate": 10,
+            "weightedAverageUtilizationRate": 10
+          }
+        },
+        "maxDayValues": {
+          "averageUtilizationRate": 10,
+          "medianUtilizationRate": 10,
+          "weightedAverageUtilizationRate": 10
+        }
+      }
+    },
+    "maxOverallValues": {
+      "averageUtilizationRate": 55,
+      "medianUtilizationRate": 55,
+      "weightedAverageUtilizationRate": 55
+    }
+  },
+  "pool": {
+    "maximumCapacity": 100,
+    "name": "Pool Alpha",
+    "poolType": "inside",
+    "temporarilyClosed": null,
+    "todayClosed": false,
+    "totalLanes": 4,
+    "weekdaysOpeningHours": "6-22",
+    "weekendOpeningHours": "8-21"
+  },
+  "schemaVersion": 1,
+  "timezone": "Europe/Prague",
+  "weeklyOccupancyMap": {
+    "2024-07-15": {
+      "days": {
+        "Monday": {
+          "hours": {
+            "14": {
+              "averageOccupancy": 42,
+              "date": "2024-07-15T14:00:00+02:00",
+              "day": "Monday",
+              "hour": 14,
+              "maxOccupancy": 42,
+              "maximumCapacity": 100,
+              "minOccupancy": 42,
+              "openLanes": 4,
+              "remainingCapacity": 58,
+              "totalLanes": 4,
+              "utilizationRate": 42
+            },
+            "15": {
+              "averageOccupancy": 55,
+              "date": "2024-07-15T15:00:00+02:00",
+              "day": "Monday",
+              "hour": 15,
+              "maxOccupancy": 55,
+              "maximumCapacity": 100,
+              "minOccupancy": 55,
+              "openLanes": 4,
+              "remainingCapacity": 45,
+              "totalLanes": 4,
+              "utilizationRate": 55
+            }
+          },
+          "maxDayValues": {
+            "utilizationRate": 55
+          }
+        },
+        "Tuesday": {
+          "hours": {
+            "9": {
+              "averageOccupancy": 10,
+              "date": "2024-07-16T09:00:00+02:00",
+              "day": "Tuesday",
+              "hour": 9,
+              "maxOccupancy": 10,
+              "maximumCapacity": 100,
+              "minOccupancy": 10,
+              "openLanes": 4,
+              "remainingCapacity": 90,
+              "totalLanes": 4,
+              "utilizationRate": 10
+            }
+          },
+          "maxDayValues": {
+            "utilizationRate": 10
+          }
+        }
+      },
+      "maxWeekValues": {
+        "utilizationRate": 55
+      }
+    }
+  }
+}
