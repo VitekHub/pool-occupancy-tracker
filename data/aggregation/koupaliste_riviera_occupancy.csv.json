@@ -52,408 +52,462 @@
     "firstRecordAt": "2025-06-17T17:00:00+02:00",
     "lastRecordAt": "2025-08-31T19:00:00+02:00"
   },
-  "generatedAt": "2026-04-29T16:05:02.074956+02:00",
+  "generatedAt": "2026-04-29T16:09:24.790733+02:00",
   "overallOccupancyMap": {
     "days": {
       "Friday": {
-        "10": {
-          "averageUtilizationRate": 6,
-          "medianUtilizationRate": 0,
-          "weightedAverageUtilizationRate": 16
+        "hours": {
+          "10": {
+            "averageUtilizationRate": 6,
+            "medianUtilizationRate": 0,
+            "weightedAverageUtilizationRate": 16
+          },
+          "11": {
+            "averageUtilizationRate": 7,
+            "medianUtilizationRate": 1,
+            "weightedAverageUtilizationRate": 14
+          },
+          "12": {
+            "averageUtilizationRate": 7,
+            "medianUtilizationRate": 1,
+            "weightedAverageUtilizationRate": 15
+          },
+          "13": {
+            "averageUtilizationRate": 8,
+            "medianUtilizationRate": 1,
+            "weightedAverageUtilizationRate": 15
+          },
+          "14": {
+            "averageUtilizationRate": 8,
+            "medianUtilizationRate": 2,
+            "weightedAverageUtilizationRate": 17
+          },
+          "15": {
+            "averageUtilizationRate": 10,
+            "medianUtilizationRate": 3,
+            "weightedAverageUtilizationRate": 19
+          },
+          "16": {
+            "averageUtilizationRate": 12,
+            "medianUtilizationRate": 3,
+            "weightedAverageUtilizationRate": 22
+          },
+          "17": {
+            "averageUtilizationRate": 13,
+            "medianUtilizationRate": 3,
+            "weightedAverageUtilizationRate": 24
+          },
+          "18": {
+            "averageUtilizationRate": 13,
+            "medianUtilizationRate": 3,
+            "weightedAverageUtilizationRate": 24
+          },
+          "19": {
+            "averageUtilizationRate": 12,
+            "medianUtilizationRate": 3,
+            "weightedAverageUtilizationRate": 24
+          },
+          "9": {
+            "averageUtilizationRate": 6,
+            "medianUtilizationRate": 0,
+            "weightedAverageUtilizationRate": 15
+          }
         },
-        "11": {
-          "averageUtilizationRate": 7,
-          "medianUtilizationRate": 1,
-          "weightedAverageUtilizationRate": 14
-        },
-        "12": {
-          "averageUtilizationRate": 7,
-          "medianUtilizationRate": 1,
-          "weightedAverageUtilizationRate": 15
-        },
-        "13": {
-          "averageUtilizationRate": 8,
-          "medianUtilizationRate": 1,
-          "weightedAverageUtilizationRate": 15
-        },
-        "14": {
-          "averageUtilizationRate": 8,
-          "medianUtilizationRate": 2,
-          "weightedAverageUtilizationRate": 17
-        },
-        "15": {
-          "averageUtilizationRate": 10,
-          "medianUtilizationRate": 3,
-          "weightedAverageUtilizationRate": 19
-        },
-        "16": {
-          "averageUtilizationRate": 12,
-          "medianUtilizationRate": 3,
-          "weightedAverageUtilizationRate": 22
-        },
-        "17": {
+        "maxDayValues": {
           "averageUtilizationRate": 13,
           "medianUtilizationRate": 3,
           "weightedAverageUtilizationRate": 24
-        },
-        "18": {
-          "averageUtilizationRate": 13,
-          "medianUtilizationRate": 3,
-          "weightedAverageUtilizationRate": 24
-        },
-        "19": {
-          "averageUtilizationRate": 12,
-          "medianUtilizationRate": 3,
-          "weightedAverageUtilizationRate": 24
-        },
-        "9": {
-          "averageUtilizationRate": 6,
-          "medianUtilizationRate": 0,
-          "weightedAverageUtilizationRate": 15
         }
       },
       "Monday": {
-        "10": {
-          "averageUtilizationRate": 4,
-          "medianUtilizationRate": 2,
-          "weightedAverageUtilizationRate": 8
+        "hours": {
+          "10": {
+            "averageUtilizationRate": 4,
+            "medianUtilizationRate": 2,
+            "weightedAverageUtilizationRate": 8
+          },
+          "11": {
+            "averageUtilizationRate": 5,
+            "medianUtilizationRate": 3,
+            "weightedAverageUtilizationRate": 10
+          },
+          "12": {
+            "averageUtilizationRate": 5,
+            "medianUtilizationRate": 4,
+            "weightedAverageUtilizationRate": 10
+          },
+          "13": {
+            "averageUtilizationRate": 5,
+            "medianUtilizationRate": 4,
+            "weightedAverageUtilizationRate": 10
+          },
+          "14": {
+            "averageUtilizationRate": 6,
+            "medianUtilizationRate": 4,
+            "weightedAverageUtilizationRate": 10
+          },
+          "15": {
+            "averageUtilizationRate": 7,
+            "medianUtilizationRate": 6,
+            "weightedAverageUtilizationRate": 13
+          },
+          "16": {
+            "averageUtilizationRate": 9,
+            "medianUtilizationRate": 8,
+            "weightedAverageUtilizationRate": 16
+          },
+          "17": {
+            "averageUtilizationRate": 10,
+            "medianUtilizationRate": 8,
+            "weightedAverageUtilizationRate": 14
+          },
+          "18": {
+            "averageUtilizationRate": 10,
+            "medianUtilizationRate": 8,
+            "weightedAverageUtilizationRate": 15
+          },
+          "19": {
+            "averageUtilizationRate": 9,
+            "medianUtilizationRate": 8,
+            "weightedAverageUtilizationRate": 15
+          },
+          "9": {
+            "averageUtilizationRate": 2,
+            "medianUtilizationRate": 0,
+            "weightedAverageUtilizationRate": 4
+          }
         },
-        "11": {
-          "averageUtilizationRate": 5,
-          "medianUtilizationRate": 3,
-          "weightedAverageUtilizationRate": 10
-        },
-        "12": {
-          "averageUtilizationRate": 5,
-          "medianUtilizationRate": 4,
-          "weightedAverageUtilizationRate": 10
-        },
-        "13": {
-          "averageUtilizationRate": 5,
-          "medianUtilizationRate": 4,
-          "weightedAverageUtilizationRate": 10
-        },
-        "14": {
-          "averageUtilizationRate": 6,
-          "medianUtilizationRate": 4,
-          "weightedAverageUtilizationRate": 10
-        },
-        "15": {
-          "averageUtilizationRate": 7,
-          "medianUtilizationRate": 6,
-          "weightedAverageUtilizationRate": 13
-        },
-        "16": {
-          "averageUtilizationRate": 9,
+        "maxDayValues": {
+          "averageUtilizationRate": 10,
           "medianUtilizationRate": 8,
           "weightedAverageUtilizationRate": 16
-        },
-        "17": {
-          "averageUtilizationRate": 10,
-          "medianUtilizationRate": 8,
-          "weightedAverageUtilizationRate": 14
-        },
-        "18": {
-          "averageUtilizationRate": 10,
-          "medianUtilizationRate": 8,
-          "weightedAverageUtilizationRate": 15
-        },
-        "19": {
-          "averageUtilizationRate": 9,
-          "medianUtilizationRate": 8,
-          "weightedAverageUtilizationRate": 15
-        },
-        "9": {
-          "averageUtilizationRate": 2,
-          "medianUtilizationRate": 0,
-          "weightedAverageUtilizationRate": 4
         }
       },
       "Saturday": {
-        "10": {
-          "averageUtilizationRate": 3,
-          "medianUtilizationRate": 1,
-          "weightedAverageUtilizationRate": 6
+        "hours": {
+          "10": {
+            "averageUtilizationRate": 3,
+            "medianUtilizationRate": 1,
+            "weightedAverageUtilizationRate": 6
+          },
+          "11": {
+            "averageUtilizationRate": 4,
+            "medianUtilizationRate": 1,
+            "weightedAverageUtilizationRate": 8
+          },
+          "12": {
+            "averageUtilizationRate": 5,
+            "medianUtilizationRate": 1,
+            "weightedAverageUtilizationRate": 9
+          },
+          "13": {
+            "averageUtilizationRate": 6,
+            "medianUtilizationRate": 2,
+            "weightedAverageUtilizationRate": 11
+          },
+          "14": {
+            "averageUtilizationRate": 7,
+            "medianUtilizationRate": 3,
+            "weightedAverageUtilizationRate": 12
+          },
+          "15": {
+            "averageUtilizationRate": 10,
+            "medianUtilizationRate": 7,
+            "weightedAverageUtilizationRate": 17
+          },
+          "16": {
+            "averageUtilizationRate": 11,
+            "medianUtilizationRate": 8,
+            "weightedAverageUtilizationRate": 19
+          },
+          "17": {
+            "averageUtilizationRate": 12,
+            "medianUtilizationRate": 9,
+            "weightedAverageUtilizationRate": 20
+          },
+          "18": {
+            "averageUtilizationRate": 12,
+            "medianUtilizationRate": 9,
+            "weightedAverageUtilizationRate": 19
+          },
+          "19": {
+            "averageUtilizationRate": 12,
+            "medianUtilizationRate": 9,
+            "weightedAverageUtilizationRate": 19
+          },
+          "9": {
+            "averageUtilizationRate": 1,
+            "medianUtilizationRate": 0,
+            "weightedAverageUtilizationRate": 3
+          }
         },
-        "11": {
-          "averageUtilizationRate": 4,
-          "medianUtilizationRate": 1,
-          "weightedAverageUtilizationRate": 8
-        },
-        "12": {
-          "averageUtilizationRate": 5,
-          "medianUtilizationRate": 1,
-          "weightedAverageUtilizationRate": 9
-        },
-        "13": {
-          "averageUtilizationRate": 6,
-          "medianUtilizationRate": 2,
-          "weightedAverageUtilizationRate": 11
-        },
-        "14": {
-          "averageUtilizationRate": 7,
-          "medianUtilizationRate": 3,
-          "weightedAverageUtilizationRate": 12
-        },
-        "15": {
-          "averageUtilizationRate": 10,
-          "medianUtilizationRate": 7,
-          "weightedAverageUtilizationRate": 17
-        },
-        "16": {
-          "averageUtilizationRate": 11,
-          "medianUtilizationRate": 8,
-          "weightedAverageUtilizationRate": 19
-        },
-        "17": {
+        "maxDayValues": {
           "averageUtilizationRate": 12,
           "medianUtilizationRate": 9,
           "weightedAverageUtilizationRate": 20
-        },
-        "18": {
-          "averageUtilizationRate": 12,
-          "medianUtilizationRate": 9,
-          "weightedAverageUtilizationRate": 19
-        },
-        "19": {
-          "averageUtilizationRate": 12,
-          "medianUtilizationRate": 9,
-          "weightedAverageUtilizationRate": 19
-        },
-        "9": {
-          "averageUtilizationRate": 1,
-          "medianUtilizationRate": 0,
-          "weightedAverageUtilizationRate": 3
         }
       },
       "Sunday": {
-        "10": {
-          "averageUtilizationRate": 4,
-          "medianUtilizationRate": 3,
-          "weightedAverageUtilizationRate": 8
+        "hours": {
+          "10": {
+            "averageUtilizationRate": 4,
+            "medianUtilizationRate": 3,
+            "weightedAverageUtilizationRate": 8
+          },
+          "11": {
+            "averageUtilizationRate": 7,
+            "medianUtilizationRate": 4,
+            "weightedAverageUtilizationRate": 12
+          },
+          "12": {
+            "averageUtilizationRate": 8,
+            "medianUtilizationRate": 6,
+            "weightedAverageUtilizationRate": 13
+          },
+          "13": {
+            "averageUtilizationRate": 9,
+            "medianUtilizationRate": 7,
+            "weightedAverageUtilizationRate": 15
+          },
+          "14": {
+            "averageUtilizationRate": 11,
+            "medianUtilizationRate": 8,
+            "weightedAverageUtilizationRate": 18
+          },
+          "15": {
+            "averageUtilizationRate": 16,
+            "medianUtilizationRate": 11,
+            "weightedAverageUtilizationRate": 22
+          },
+          "16": {
+            "averageUtilizationRate": 19,
+            "medianUtilizationRate": 12,
+            "weightedAverageUtilizationRate": 27
+          },
+          "17": {
+            "averageUtilizationRate": 20,
+            "medianUtilizationRate": 13,
+            "weightedAverageUtilizationRate": 28
+          },
+          "18": {
+            "averageUtilizationRate": 20,
+            "medianUtilizationRate": 13,
+            "weightedAverageUtilizationRate": 28
+          },
+          "19": {
+            "averageUtilizationRate": 19,
+            "medianUtilizationRate": 13,
+            "weightedAverageUtilizationRate": 29
+          },
+          "9": {
+            "averageUtilizationRate": 2,
+            "medianUtilizationRate": 1,
+            "weightedAverageUtilizationRate": 3
+          }
         },
-        "11": {
-          "averageUtilizationRate": 7,
-          "medianUtilizationRate": 4,
-          "weightedAverageUtilizationRate": 12
-        },
-        "12": {
-          "averageUtilizationRate": 8,
-          "medianUtilizationRate": 6,
-          "weightedAverageUtilizationRate": 13
-        },
-        "13": {
-          "averageUtilizationRate": 9,
-          "medianUtilizationRate": 7,
-          "weightedAverageUtilizationRate": 15
-        },
-        "14": {
-          "averageUtilizationRate": 11,
-          "medianUtilizationRate": 8,
-          "weightedAverageUtilizationRate": 18
-        },
-        "15": {
-          "averageUtilizationRate": 16,
-          "medianUtilizationRate": 11,
-          "weightedAverageUtilizationRate": 22
-        },
-        "16": {
-          "averageUtilizationRate": 19,
-          "medianUtilizationRate": 12,
-          "weightedAverageUtilizationRate": 27
-        },
-        "17": {
+        "maxDayValues": {
           "averageUtilizationRate": 20,
-          "medianUtilizationRate": 13,
-          "weightedAverageUtilizationRate": 28
-        },
-        "18": {
-          "averageUtilizationRate": 20,
-          "medianUtilizationRate": 13,
-          "weightedAverageUtilizationRate": 28
-        },
-        "19": {
-          "averageUtilizationRate": 19,
           "medianUtilizationRate": 13,
           "weightedAverageUtilizationRate": 29
-        },
-        "9": {
-          "averageUtilizationRate": 2,
-          "medianUtilizationRate": 1,
-          "weightedAverageUtilizationRate": 3
         }
       },
       "Thursday": {
-        "10": {
-          "averageUtilizationRate": 6,
-          "medianUtilizationRate": 2,
-          "weightedAverageUtilizationRate": 12
+        "hours": {
+          "10": {
+            "averageUtilizationRate": 6,
+            "medianUtilizationRate": 2,
+            "weightedAverageUtilizationRate": 12
+          },
+          "11": {
+            "averageUtilizationRate": 7,
+            "medianUtilizationRate": 2,
+            "weightedAverageUtilizationRate": 15
+          },
+          "12": {
+            "averageUtilizationRate": 7,
+            "medianUtilizationRate": 2,
+            "weightedAverageUtilizationRate": 15
+          },
+          "13": {
+            "averageUtilizationRate": 8,
+            "medianUtilizationRate": 2,
+            "weightedAverageUtilizationRate": 16
+          },
+          "14": {
+            "averageUtilizationRate": 10,
+            "medianUtilizationRate": 4,
+            "weightedAverageUtilizationRate": 18
+          },
+          "15": {
+            "averageUtilizationRate": 12,
+            "medianUtilizationRate": 4,
+            "weightedAverageUtilizationRate": 22
+          },
+          "16": {
+            "averageUtilizationRate": 14,
+            "medianUtilizationRate": 5,
+            "weightedAverageUtilizationRate": 24
+          },
+          "17": {
+            "averageUtilizationRate": 15,
+            "medianUtilizationRate": 6,
+            "weightedAverageUtilizationRate": 21
+          },
+          "18": {
+            "averageUtilizationRate": 15,
+            "medianUtilizationRate": 6,
+            "weightedAverageUtilizationRate": 21
+          },
+          "19": {
+            "averageUtilizationRate": 15,
+            "medianUtilizationRate": 6,
+            "weightedAverageUtilizationRate": 23
+          },
+          "9": {
+            "averageUtilizationRate": 3,
+            "medianUtilizationRate": 0,
+            "weightedAverageUtilizationRate": 8
+          }
         },
-        "11": {
-          "averageUtilizationRate": 7,
-          "medianUtilizationRate": 2,
-          "weightedAverageUtilizationRate": 15
-        },
-        "12": {
-          "averageUtilizationRate": 7,
-          "medianUtilizationRate": 2,
-          "weightedAverageUtilizationRate": 15
-        },
-        "13": {
-          "averageUtilizationRate": 8,
-          "medianUtilizationRate": 2,
-          "weightedAverageUtilizationRate": 16
-        },
-        "14": {
-          "averageUtilizationRate": 10,
-          "medianUtilizationRate": 4,
-          "weightedAverageUtilizationRate": 18
-        },
-        "15": {
-          "averageUtilizationRate": 12,
-          "medianUtilizationRate": 4,
-          "weightedAverageUtilizationRate": 22
-        },
-        "16": {
-          "averageUtilizationRate": 14,
-          "medianUtilizationRate": 5,
+        "maxDayValues": {
+          "averageUtilizationRate": 15,
+          "medianUtilizationRate": 6,
           "weightedAverageUtilizationRate": 24
-        },
-        "17": {
-          "averageUtilizationRate": 15,
-          "medianUtilizationRate": 6,
-          "weightedAverageUtilizationRate": 21
-        },
-        "18": {
-          "averageUtilizationRate": 15,
-          "medianUtilizationRate": 6,
-          "weightedAverageUtilizationRate": 21
-        },
-        "19": {
-          "averageUtilizationRate": 15,
-          "medianUtilizationRate": 6,
-          "weightedAverageUtilizationRate": 23
-        },
-        "9": {
-          "averageUtilizationRate": 3,
-          "medianUtilizationRate": 0,
-          "weightedAverageUtilizationRate": 8
         }
       },
       "Tuesday": {
-        "10": {
-          "averageUtilizationRate": 6,
-          "medianUtilizationRate": 4,
-          "weightedAverageUtilizationRate": 13
+        "hours": {
+          "10": {
+            "averageUtilizationRate": 6,
+            "medianUtilizationRate": 4,
+            "weightedAverageUtilizationRate": 13
+          },
+          "11": {
+            "averageUtilizationRate": 8,
+            "medianUtilizationRate": 5,
+            "weightedAverageUtilizationRate": 14
+          },
+          "12": {
+            "averageUtilizationRate": 8,
+            "medianUtilizationRate": 6,
+            "weightedAverageUtilizationRate": 15
+          },
+          "13": {
+            "averageUtilizationRate": 8,
+            "medianUtilizationRate": 7,
+            "weightedAverageUtilizationRate": 14
+          },
+          "14": {
+            "averageUtilizationRate": 7,
+            "medianUtilizationRate": 7,
+            "weightedAverageUtilizationRate": 11
+          },
+          "15": {
+            "averageUtilizationRate": 11,
+            "medianUtilizationRate": 10,
+            "weightedAverageUtilizationRate": 15
+          },
+          "16": {
+            "averageUtilizationRate": 13,
+            "medianUtilizationRate": 13,
+            "weightedAverageUtilizationRate": 16
+          },
+          "17": {
+            "averageUtilizationRate": 13,
+            "medianUtilizationRate": 13,
+            "weightedAverageUtilizationRate": 17
+          },
+          "18": {
+            "averageUtilizationRate": 13,
+            "medianUtilizationRate": 13,
+            "weightedAverageUtilizationRate": 17
+          },
+          "19": {
+            "averageUtilizationRate": 12,
+            "medianUtilizationRate": 12,
+            "weightedAverageUtilizationRate": 17
+          },
+          "9": {
+            "averageUtilizationRate": 5,
+            "medianUtilizationRate": 2,
+            "weightedAverageUtilizationRate": 10
+          }
         },
-        "11": {
-          "averageUtilizationRate": 8,
-          "medianUtilizationRate": 5,
-          "weightedAverageUtilizationRate": 14
-        },
-        "12": {
-          "averageUtilizationRate": 8,
-          "medianUtilizationRate": 6,
-          "weightedAverageUtilizationRate": 15
-        },
-        "13": {
-          "averageUtilizationRate": 8,
-          "medianUtilizationRate": 7,
-          "weightedAverageUtilizationRate": 14
-        },
-        "14": {
-          "averageUtilizationRate": 7,
-          "medianUtilizationRate": 7,
-          "weightedAverageUtilizationRate": 11
-        },
-        "15": {
-          "averageUtilizationRate": 11,
-          "medianUtilizationRate": 10,
-          "weightedAverageUtilizationRate": 15
-        },
-        "16": {
-          "averageUtilizationRate": 13,
-          "medianUtilizationRate": 13,
-          "weightedAverageUtilizationRate": 16
-        },
-        "17": {
+        "maxDayValues": {
           "averageUtilizationRate": 13,
           "medianUtilizationRate": 13,
           "weightedAverageUtilizationRate": 17
-        },
-        "18": {
-          "averageUtilizationRate": 13,
-          "medianUtilizationRate": 13,
-          "weightedAverageUtilizationRate": 17
-        },
-        "19": {
-          "averageUtilizationRate": 12,
-          "medianUtilizationRate": 12,
-          "weightedAverageUtilizationRate": 17
-        },
-        "9": {
-          "averageUtilizationRate": 5,
-          "medianUtilizationRate": 2,
-          "weightedAverageUtilizationRate": 10
         }
       },
       "Wednesday": {
-        "10": {
-          "averageUtilizationRate": 8,
-          "medianUtilizationRate": 3,
-          "weightedAverageUtilizationRate": 16
+        "hours": {
+          "10": {
+            "averageUtilizationRate": 8,
+            "medianUtilizationRate": 3,
+            "weightedAverageUtilizationRate": 16
+          },
+          "11": {
+            "averageUtilizationRate": 10,
+            "medianUtilizationRate": 4,
+            "weightedAverageUtilizationRate": 15
+          },
+          "12": {
+            "averageUtilizationRate": 11,
+            "medianUtilizationRate": 4,
+            "weightedAverageUtilizationRate": 15
+          },
+          "13": {
+            "averageUtilizationRate": 11,
+            "medianUtilizationRate": 3,
+            "weightedAverageUtilizationRate": 16
+          },
+          "14": {
+            "averageUtilizationRate": 12,
+            "medianUtilizationRate": 3,
+            "weightedAverageUtilizationRate": 19
+          },
+          "15": {
+            "averageUtilizationRate": 15,
+            "medianUtilizationRate": 5,
+            "weightedAverageUtilizationRate": 22
+          },
+          "16": {
+            "averageUtilizationRate": 18,
+            "medianUtilizationRate": 6,
+            "weightedAverageUtilizationRate": 25
+          },
+          "17": {
+            "averageUtilizationRate": 20,
+            "medianUtilizationRate": 7,
+            "weightedAverageUtilizationRate": 28
+          },
+          "18": {
+            "averageUtilizationRate": 20,
+            "medianUtilizationRate": 7,
+            "weightedAverageUtilizationRate": 28
+          },
+          "19": {
+            "averageUtilizationRate": 19,
+            "medianUtilizationRate": 7,
+            "weightedAverageUtilizationRate": 27
+          },
+          "9": {
+            "averageUtilizationRate": 5,
+            "medianUtilizationRate": 2,
+            "weightedAverageUtilizationRate": 12
+          }
         },
-        "11": {
-          "averageUtilizationRate": 10,
-          "medianUtilizationRate": 4,
-          "weightedAverageUtilizationRate": 15
-        },
-        "12": {
-          "averageUtilizationRate": 11,
-          "medianUtilizationRate": 4,
-          "weightedAverageUtilizationRate": 15
-        },
-        "13": {
-          "averageUtilizationRate": 11,
-          "medianUtilizationRate": 3,
-          "weightedAverageUtilizationRate": 16
-        },
-        "14": {
-          "averageUtilizationRate": 12,
-          "medianUtilizationRate": 3,
-          "weightedAverageUtilizationRate": 19
-        },
-        "15": {
-          "averageUtilizationRate": 15,
-          "medianUtilizationRate": 5,
-          "weightedAverageUtilizationRate": 22
-        },
-        "16": {
-          "averageUtilizationRate": 18,
-          "medianUtilizationRate": 6,
-          "weightedAverageUtilizationRate": 25
-        },
-        "17": {
+        "maxDayValues": {
           "averageUtilizationRate": 20,
           "medianUtilizationRate": 7,
           "weightedAverageUtilizationRate": 28
-        },
-        "18": {
-          "averageUtilizationRate": 20,
-          "medianUtilizationRate": 7,
-          "weightedAverageUtilizationRate": 28
-        },
-        "19": {
-          "averageUtilizationRate": 19,
-          "medianUtilizationRate": 7,
-          "weightedAverageUtilizationRate": 27
-        },
-        "9": {
-          "averageUtilizationRate": 5,
-          "medianUtilizationRate": 2,
-          "weightedAverageUtilizationRate": 12
         }
       }
+    },
+    "maxOverallValues": {
+      "averageUtilizationRate": 20,
+      "medianUtilizationRate": 13,
+      "weightedAverageUtilizationRate": 29
     }
   },
   "pool": {
