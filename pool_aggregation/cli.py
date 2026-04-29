@@ -49,7 +49,7 @@ def main(clock=None, data_dir: Path = _DATA_DIR, output_dir: Path = _OUTPUT_DIR)
         payload["currentOccupancy"] = build_current_occupancy(
             records, pool_type_cfg, payload["overallOccupancyMap"], now
         )
-        out_path = output_dir / f"{csv_file}.json"
+        out_path = output_dir / csv_file.replace(".csv", ".json")
         write_json(out_path, payload)
         print(f"Wrote {out_path.name}")
     return 0
