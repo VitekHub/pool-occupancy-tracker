@@ -89,16 +89,28 @@ Each pool is configured in `data/pool_occupancy_config.json` with the following 
     "insidePool": {  // or "outsidePool"
         "url": "https://pool-website.com",
         "pattern": "regex_pattern_for_occupancy",
-        "csvFile": "output_filename.csv",
         "maximumCapacity": 135,
         "totalLanes": 6,  // for pools with lanes
         "weekdaysOpeningHours": "6-22",
         "weekendOpeningHours": "8-21",
         "collectStats": true,
-        "viewStats": true
+        "viewStats": true,
+        "data": {
+            "occupancy": {
+                "raw": "output_filename.csv",
+                "overall": "overall/output_filename.json",
+                "weekly": "weekly/output_filename.json"
+            },
+            "capacity": {
+                "raw": "capacity.csv",
+                "forecast": "week_capacity.csv"
+            }
+        }
     }
 }
 ```
+
+> **Note**: The `capacity` section is only required for pools that have hourly capacity data (e.g., Kraví Hora indoor pool).
 
 ## Schedule
 

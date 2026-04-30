@@ -16,7 +16,7 @@ def reset_cache():
 def _cfg(max_cap, hourly_file=None):
     cfg = {"maximumCapacity": max_cap}
     if hourly_file:
-        cfg["hourlyMaxCapacity"] = hourly_file
+        cfg["data"] = {"capacity": {"raw": hourly_file}}
     return cfg
 
 

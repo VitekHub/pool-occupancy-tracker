@@ -159,7 +159,7 @@ def process_pool_type(pool_config, pool_type_key, pool_name):
     
     url = pool_type_config['url']
     pattern = pool_type_config['pattern']
-    csv_file = pool_type_config['csvFile']
+    csv_file = pool_type_config.get("data", {}).get("occupancy", {}).get("raw", "")
     
     html_content = fetch_html(url)
     if html_content is None:

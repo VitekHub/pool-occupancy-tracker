@@ -55,89 +55,112 @@ def test_cli_exits_zero(data_dir, output_dir):
 
 # --- output files created ---
 
-def test_produces_three_json_files(data_dir, output_dir):
+def test_produces_six_json_files(data_dir, output_dir):
     _run(data_dir, output_dir)
-    files = {f.name for f in output_dir.iterdir()}
-    assert files == {
-        "alpha_inside.json",
-        "alpha_outside.json",
-        "beta_outside.json",
-    }
-
+    # Check both overall and weekly subdirectories
+    overall_dir = output_dir / "overall"
+    weekly_dir = output_dir / "weekly"
+    overall_files = {f.name for f in overall_dir.iterdir()} if overall_dir.exists() else set()
+    weekly_files = {f.name for f in weekly_dir.iterdir()} if weekly_dir.exists() else set()
+    assert overall_files == {"alpha_inside_occupancy.json", "alpha_outside_occupancy.json", "beta_outside_occupancy.json"}
+    assert weekly_files == {"alpha_inside_occupancy.json", "alpha_outside_occupancy.json", "beta_outside_occupancy.json"}
 
 # --- snapshot: alpha inside pool ---
-
-def test_alpha_inside_snapshot(data_dir, output_dir):
+def test_alpha_inside_overall_snapshot(data_dir, output_dir):
     _run(data_dir, output_dir)
-    produced = json.loads((output_dir / "alpha_inside.json").read_text(encoding="utf-8"))
-    expected = json.loads((_FIXTURES / "expected_alpha_inside.json").read_text(encoding="utf-8"))
+    produced = json.loads((output_dir / "overall/alpha_inside_occupancy.json").read_text(encoding="utf-8"))
+    expected = json.loads((_FIXTURES / "expected_alpha_inside_overall_occupancy.json").read_text(encoding="utf-8"))
     assert produced == expected
 
-
-# --- structural checks shared across all outputs ---
-
-@pytest.mark.parametrize("fname", [
-    "alpha_inside.json",
-    "alpha_outside.json",
-    "beta_outside.json",
-])
-def test_top_level_keys_present(data_dir, output_dir, fname):
+def test_alpha_inside_weekly_snapshot(data_dir, output_dir):
     _run(data_dir, output_dir)
-    data = json.loads((output_dir / fname).read_text(encoding="utf-8"))
+    produced = json.loads((output_dir / "weekly/alpha_inside_occupancy.json").read_text(encoding="utf-8"))
+    expected = json.loads((_FIXTURES / "expected_alpha_inside_weekly_occupancy.json").read_text(encoding="utf-8"))
+    assert produced == expected
+
+# --- structural checks for overall files ---
+@pytest.mark.parametrize("fname", [
+    "alpha_inside_occupancy.json",
+    "alpha_outside_occupancy.json",
+    "beta_outside_occupancy.json",
+])
+def test_overall_top_level_keys_present(data_dir, output_dir, fname):
+    _run(data_dir, output_dir)
+    data = json.loads((output_dir / "overall" / fname).read_text(encoding="utf-8"))
     for key in (
         "schemaVersion", "generatedAt", "timezone", "pool",
-        "dataRange", "currentOccupancy", "availableWeekIds",
-        "weeklyOccupancyMap", "overallOccupancyMap",
+        "dataRange", "currentOccupancy", "overallOccupancyMap",
+    ):
+        assert key in data, f"missing key '{key}' in {fname}"
+
+
+# --- structural checks for weekly files ---
+
+@pytest.mark.parametrize("fname", [
+    "alpha_inside_occupancy.json",
+    "alpha_outside_occupancy.json",
+    "beta_outside_occupancy.json",
+])
+def test_weekly_top_level_keys_present(data_dir, output_dir, fname):
+    _run(data_dir, output_dir)
+    data = json.loads((output_dir / "weekly" / fname).read_text(encoding="utf-8"))
+    for key in (
+        "schemaVersion", "generatedAt", "timezone", "pool",
+        "dataRange", "availableWeekIds", "weeklyOccupancyMap",
     ):
         assert key in data, f"missing key '{key}' in {fname}"
 
 
 @pytest.mark.parametrize("fname", [
-    "alpha_inside.json",
-    "alpha_outside.json",
-    "beta_outside.json",
+    "alpha_inside_occupancy.json",
+    "alpha_outside_occupancy.json",
+    "beta_outside_occupancy.json",
 ])
 def test_generated_at_matches_pinned_clock(data_dir, output_dir, fname):
     _run(data_dir, output_dir)
-    data = json.loads((output_dir / fname).read_text(encoding="utf-8"))
-    assert data["generatedAt"] == "2024-07-15T14:30:00+02:00"
+    overall_data = json.loads((output_dir / "overall" / fname).read_text(encoding="utf-8"))
+    weekly_data = json.loads((output_dir / "weekly" / fname).read_text(encoding="utf-8"))
+    assert overall_data["generatedAt"] == "2024-07-15T14:30:00+02:00"
+    assert weekly_data["generatedAt"] == "2024-07-15T14:30:00+02:00"
 
 
 @pytest.mark.parametrize("fname", [
-    "alpha_inside.json",
-    "alpha_outside.json",
-    "beta_outside.json",
+    "alpha_inside_occupancy.json",
+    "alpha_outside_occupancy.json",
+    "beta_outside_occupancy.json",
 ])
 def test_current_occupancy_populated(data_dir, output_dir, fname):
     _run(data_dir, output_dir)
-    data = json.loads((output_dir / fname).read_text(encoding="utf-8"))
+    data = json.loads((output_dir / "overall" / fname).read_text(encoding="utf-8"))
     assert data["currentOccupancy"] is not None
 
 
-def test_outside_pool_lanes_null(data_dir, output_dir):
+def test_pool_block_only_has_name_and_pooltype(data_dir, output_dir):
     _run(data_dir, output_dir)
-    data = json.loads((output_dir / "alpha_outside.json").read_text(encoding="utf-8"))
-    # config has totalLanes: 8 but poolType=outside → must be null everywhere
-    assert data["pool"]["totalLanes"] is None
+    data = json.loads((output_dir / "overall" / "alpha_inside_occupancy.json").read_text(encoding="utf-8"))
+    assert set(data["pool"].keys()) == {"name", "poolType"}
+
+
+def test_outside_pool_lanes_in_current_not_pool(data_dir, output_dir):
+    _run(data_dir, output_dir)
+    data = json.loads((output_dir / "overall" / "alpha_outside_occupancy.json").read_text(encoding="utf-8"))
+    # pool block should only have name and poolType
+    assert "totalLanes" not in data["pool"]
+    # currentOccupancy should have totalLanes
     assert data["currentOccupancy"]["totalLanes"] is None
     assert data["currentOccupancy"]["openLanes"] is None
-    week = next(iter(data["weeklyOccupancyMap"].values()))
-    day = next(iter(week["days"].values()))
-    hour = next(iter(day["hours"].values()))
-    assert hour["totalLanes"] is None
-    assert hour["openLanes"] is None
 
 
 def test_inside_pool_lanes_not_null(data_dir, output_dir):
     _run(data_dir, output_dir)
-    data = json.loads((output_dir / "alpha_inside.json").read_text(encoding="utf-8"))
+    data = json.loads((output_dir / "overall" / "alpha_inside_occupancy.json").read_text(encoding="utf-8"))
     assert data["currentOccupancy"]["totalLanes"] == 4
     assert data["currentOccupancy"]["openLanes"] is not None
 
 
 def test_available_week_ids_ascending(data_dir, output_dir):
     _run(data_dir, output_dir)
-    data = json.loads((output_dir / "alpha_inside.json").read_text(encoding="utf-8"))
+    data = json.loads((output_dir / "weekly" / "alpha_inside_occupancy.json").read_text(encoding="utf-8"))
     ids = data["availableWeekIds"]
     assert ids == sorted(ids)
     assert "2024-07-15" in ids

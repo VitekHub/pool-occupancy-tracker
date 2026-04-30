@@ -18,12 +18,6 @@ def build_pool_block(pool_name: str, pool_type_key: str, cfg: dict) -> PoolBlock
     return PoolBlock(
         name=display_name,
         poolType=pool_type,
-        maximumCapacity=cfg["maximumCapacity"],
-        totalLanes=cfg.get("totalLanes"),
-        weekdaysOpeningHours=cfg["weekdaysOpeningHours"],
-        weekendOpeningHours=cfg["weekendOpeningHours"],
-        todayClosed=cfg.get("todayClosed", False),
-        temporarilyClosed=cfg.get("temporarilyClosed") or None,
     )
 
 

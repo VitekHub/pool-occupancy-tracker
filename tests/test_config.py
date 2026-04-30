@@ -30,4 +30,6 @@ def test_iter_pool_types_yields_raw_dict():
         assert isinstance(pool_name, str)
         assert pool_type_key in ("insidePool", "outsidePool")
         assert isinstance(raw, dict)
-        assert "csvFile" in raw
+        assert "data" in raw
+        assert "occupancy" in raw["data"]
+        assert "raw" in raw["data"]["occupancy"]

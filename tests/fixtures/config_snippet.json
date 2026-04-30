@@ -2,7 +2,6 @@
   {
     "name": "Pool Alpha",
     "insidePool": {
-      "csvFile": "alpha_inside.csv",
       "maximumCapacity": 100,
       "totalLanes": 4,
       "weekdaysOpeningHours": "6-22",
@@ -10,10 +9,16 @@
       "todayClosed": false,
       "temporarilyClosed": null,
       "collectStats": true,
-      "viewStats": true
+      "viewStats": true,
+      "data": {
+        "occupancy": {
+          "raw": "alpha_inside.csv",
+          "overall": "overall/alpha_inside_occupancy.json",
+          "weekly": "weekly/alpha_inside_occupancy.json"
+        }
+      }
     },
     "outsidePool": {
-      "csvFile": "alpha_outside.csv",
       "maximumCapacity": 500,
       "totalLanes": 8,
       "weekdaysOpeningHours": "7-21",
@@ -21,20 +26,33 @@
       "todayClosed": false,
       "temporarilyClosed": null,
       "collectStats": true,
-      "viewStats": true
+      "viewStats": true,
+      "data": {
+        "occupancy": {
+          "raw": "alpha_outside.csv",
+          "overall": "overall/alpha_outside_occupancy.json",
+          "weekly": "weekly/alpha_outside_occupancy.json"
+        }
+      }
     }
   },
   {
     "name": "Pool Beta",
     "outsidePool": {
-      "csvFile": "beta_outside.csv",
       "maximumCapacity": 2000,
       "weekdaysOpeningHours": "9-20",
       "weekendOpeningHours": "9-20",
       "todayClosed": false,
       "temporarilyClosed": null,
       "collectStats": true,
-      "viewStats": true
+      "viewStats": true,
+      "data": {
+        "occupancy": {
+          "raw": "beta_outside.csv",
+          "overall": "overall/beta_outside_occupancy.json",
+          "weekly": "weekly/beta_outside_occupancy.json"
+        }
+      }
     }
   }
 ]

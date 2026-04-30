@@ -216,7 +216,7 @@ def test_hourly_capacity_resolution(monkeypatch, tmp_path):
     import pool_aggregation.aggregation.capacity as cap_mod
     monkeypatch.setattr(cap_mod, "_DATA_DIR", tmp_path)
 
-    cfg = {"maximumCapacity": 135, "hourlyMaxCapacity": "cap.csv"}
+    cfg = {"maximumCapacity": 135, "data": {"capacity": {"raw": "cap.csv"}}}
     records = [_rec("15.7.2024", "Monday", 14, 45)]
     hour = build_weekly_map(records, cfg)["2024-07-15"]["days"]["Monday"]["hours"]["14"]
     assert hour["maximumCapacity"] == 90

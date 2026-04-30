@@ -1,5 +1,6 @@
 from __future__ import annotations
 from pathlib import Path
+from typing import Optional
 
 from pool_aggregation.aggregation.bucketing import available_week_ids
 from pool_aggregation.aggregation.current import build_current_occupancy
@@ -13,43 +14,76 @@ from pool_aggregation.models.pool import iter_pool_types
 from pool_aggregation.utils.timezones import now_prague, to_iso8601
 
 _DATA_DIR = Path(__file__).parent.parent / "data"
-_OUTPUT_DIR = _DATA_DIR / "aggregation"
 
 
-def _stub_payload(generated_at: str) -> dict:
+def _build_payload(generated_at: str) -> dict:
     return {
         "schemaVersion": 1,
         "generatedAt": generated_at,
         "timezone": "Europe/Prague",
         "pool": {},
         "dataRange": None,
-        "currentOccupancy": None,
-        "availableWeekIds": [],
-        "weeklyOccupancyMap": {},
-        "overallOccupancyMap": {},
     }
 
+def build_and_write_payload(path: Path, payload: dict) -> None:
+    write_json(path, payload)
+    print(f"Wrote {path.relative_to(path.parents[1]) if len(path.parents) > 1 else path.name}")
 
-def main(clock=None, data_dir: Path = _DATA_DIR, output_dir: Path = _OUTPUT_DIR) -> int:
+def process_pool(pool_name: str, pool_type_key: str, pool_type_cfg: dict, data_dir: Path, output_dir: Path, generated_at: str, now) -> None:
+    if pool_type_key == "outsidePool":
+        pool_type_cfg = {**pool_type_cfg, "totalLanes": None}
+
+    csv_file = pool_type_cfg.get("data", {}).get("occupancy", {}).get("raw", "")
+    if not csv_file:
+        print(f"Skipping {pool_name} {pool_type_key}: no occupancy data configured")
+        return
+
+    csv_path = data_dir / csv_file
+    records = read_records(csv_path)
+
+    pool_block = build_pool_block(pool_name, pool_type_key, pool_type_cfg)
+    data_range = build_data_range(records)
+    available_weeks = available_week_ids(records, clock=lambda: now)
+    weekly_map = build_weekly_map(records, pool_type_cfg)
+    overall_map = build_overall_map(weekly_map)
+    current_occ = build_current_occupancy(records, pool_type_cfg, overall_map, now)
+
+    # overall
+    overall_file = pool_type_cfg.get("data", {}).get("occupancy", {}).get("overall", "")
+    if not overall_file:
+        print(f"Skipping {pool_name} {pool_type_key}: no occupancy overall file defined")
+    else:
+        overall_payload = _build_payload(generated_at)
+        overall_payload.update({
+            "pool": pool_block,
+            "dataRange": data_range,
+            "currentOccupancy": current_occ,
+            "overallOccupancyMap": overall_map,
+        })
+        overall_path = output_dir / overall_file
+        build_and_write_payload(overall_path, overall_payload)
+
+    # weekly
+    weekly_file = pool_type_cfg.get("data", {}).get("occupancy", {}).get("weekly", "")
+    if not weekly_file:
+        print(f"Skipping {pool_name} {pool_type_key}: no occupancy weekly file defined")
+    else:
+        weekly_payload = _build_payload(generated_at)
+        weekly_payload.update({
+            "pool": pool_block,
+            "dataRange": data_range,
+            "availableWeekIds": available_weeks,
+            "weeklyOccupancyMap": weekly_map,
+        })
+        weekly_path = output_dir / weekly_file
+        build_and_write_payload(weekly_path, weekly_payload)
+
+def main(clock=None, data_dir: Path = _DATA_DIR, output_dir: Path = _DATA_DIR) -> int:
     now = now_prague(clock)
     generated_at = to_iso8601(now)
     cfg = load_pool_config(data_dir / "pool_occupancy_config.json")
+
     for pool_name, pool_type_key, pool_type_cfg in iter_pool_types(cfg):
-        if pool_type_key == "outsidePool":
-            pool_type_cfg = {**pool_type_cfg, "totalLanes": None}
-        csv_file = pool_type_cfg.get("csvFile", "")
-        csv_path = data_dir / csv_file
-        records = read_records(csv_path)
-        payload = _stub_payload(generated_at)
-        payload["pool"] = build_pool_block(pool_name, pool_type_key, pool_type_cfg)
-        payload["dataRange"] = build_data_range(records)
-        payload["availableWeekIds"] = available_week_ids(records, clock=lambda: now)
-        payload["weeklyOccupancyMap"] = build_weekly_map(records, pool_type_cfg)
-        payload["overallOccupancyMap"] = build_overall_map(payload["weeklyOccupancyMap"])
-        payload["currentOccupancy"] = build_current_occupancy(
-            records, pool_type_cfg, payload["overallOccupancyMap"], now
-        )
-        out_path = output_dir / csv_file.replace(".csv", ".json")
-        write_json(out_path, payload)
-        print(f"Wrote {out_path.name}")
+        process_pool(pool_name, pool_type_key, pool_type_cfg, data_dir, output_dir, generated_at, now)
+
     return 0
