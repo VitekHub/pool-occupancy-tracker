@@ -43,7 +43,7 @@ def process_pool(pool_name: str, pool_type_key: str, pool_type_cfg: dict, data_d
 
     pool_block = build_pool_block(pool_name, pool_type_key, pool_type_cfg)
     data_range = build_data_range(records)
-    available_weeks = available_week_ids(records, clock=lambda: now)
+    available_weeks = available_week_ids(records)
     weekly_map = build_weekly_map(records, pool_type_cfg)
     overall_map = build_overall_map(weekly_map)
     current_occ = build_current_occupancy(records, pool_type_cfg, overall_map, now)

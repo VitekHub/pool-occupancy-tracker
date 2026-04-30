@@ -29,28 +29,14 @@ def bucket_records(
     return dict(buckets)
 
 
-def available_week_ids(
-    records: list[OccupancyRecord],
-    clock: object = None,
-) -> list[str]:
-    """Ascending Monday ISO dates from earliest observed week through current Prague week.
+def available_week_ids(records: list[OccupancyRecord]) -> list[str]:
+    """Ascending Monday ISO dates for weeks that actually have records.
 
-    Weeks with no data are included. The current week is always present even if
-    the CSV is empty.
+    If records is empty, returns only the current Prague week.
     """
-    now: datetime = clock() if callable(clock) else datetime.now(tz=PRAGUE)
-    today = now.date()
-    current_monday = today - timedelta(days=today.weekday())
-
     if not records:
+        today = datetime.now(tz=PRAGUE).date()
+        current_monday = today - timedelta(days=today.weekday())
         return [current_monday.isoformat()]
 
-    earliest_monday_str = min(week_id(r.date_str) for r in records)
-    earliest_monday = date.fromisoformat(earliest_monday_str)
-
-    weeks: list[str] = []
-    cursor = earliest_monday
-    while cursor <= current_monday:
-        weeks.append(cursor.isoformat())
-        cursor += timedelta(weeks=1)
-    return weeks
+    return sorted({week_id(r.date_str) for r in records})
