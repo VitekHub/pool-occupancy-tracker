@@ -2,8 +2,17 @@
 
 set BRANCH=main
 
-:: Pull from a specific branch (e.g., test-branch)
-git pull origin %BRANCH%
+:: Reset any local changes
+git fetch origin
+git reset --hard origin/%BRANCH%
+
+:: Pull with rebase instead of merge
+git pull --rebase origin %BRANCH%
+if %errorlevel% neq 0 (
+    echo Conflict detected. Cleaning up...
+    git rebase --abort
+    exit /b 1
+)
 
 :: Run your Python script
 python occupancy.py
