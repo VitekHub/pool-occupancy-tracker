@@ -162,6 +162,10 @@ def process_pool_type(pool_config, pool_type_key, pool_name):
     csv_file = pool_type_config['csvFile']
     
     html_content = fetch_html(url)
+    if html_content is None:
+        print(f"Failed to get occupancy data for {pool_name} {pool_type_key}")
+        return False
+
     occupancy = find_occupancy(html_content, pattern)
     today_closed_pattern = pool_type_config.get('todayClosedPattern', False)
     is_today_closed = find_today_closed_status(html_content, today_closed_pattern)
