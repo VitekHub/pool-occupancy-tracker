@@ -49,8 +49,8 @@ def test_zero_resolved_cap():
 
 
 def test_single_lane_pool():
-    # 50 * 1 / 100 = 0.5 → banker's round → 0
-    assert compute_open_lanes(50, 1, 100) == 0
+    # 50 * 1 / 100 = 0.5 -> round half up -> 1
+    assert compute_open_lanes(50, 1, 100) == 1
 
 
 def test_single_lane_full():

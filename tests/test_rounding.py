@@ -3,9 +3,9 @@ from pool_aggregation.utils.rounding import py_round, weighted_average, median_r
 
 # py_round — banker's rounding via Python built-in
 def test_py_round_half_even():
-    assert py_round(0.5) == 0   # rounds to even
-    assert py_round(1.5) == 2   # rounds to even
-    assert py_round(2.5) == 2   # rounds to even
+    assert py_round(0.5) == 1   # rounds half up
+    assert py_round(1.5) == 2   # rounds half up
+    assert py_round(2.5) == 3   # rounds half up
 
 
 def test_py_round_normal():
@@ -21,7 +21,7 @@ def test_weight_tier_zero():
 
 def test_weight_tier_fraction():
     # values in (0,1) get weight 0.1; only two such values -> mean of them
-    assert weighted_average([0.5, 0.5]) == round(0.5)
+    assert weighted_average([0.5, 0.5]) == 1
 
 
 def test_weight_tier_low():

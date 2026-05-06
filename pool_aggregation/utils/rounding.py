@@ -1,10 +1,11 @@
 from __future__ import annotations
+import math
 from statistics import median
 
 
 def py_round(x: float) -> int:
-    """Round to nearest int using Python's built-in banker's rounding."""
-    return round(x)
+    """Round to nearest int using standard 'round half up' logic."""
+    return math.floor(x + 0.5)
 
 
 def _weight(r: float) -> float:
@@ -22,9 +23,9 @@ def weighted_average(values: list[float]) -> int:
     total_w = sum(_weight(r) for r in values)
     if total_w == 0:
         return 0
-    return round(sum(_weight(r) * r for r in values) / total_w)
+    return py_round(sum(_weight(r) * r for r in values) / total_w)
 
 
 def median_round(values: list[float]) -> int:
     """Median of values, rounded (even-length: mean of two middles then round)."""
-    return round(median(values))
+    return py_round(median(values))

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-06T13:40:54.096494+02:00",
+  "generatedAt": "2026-05-06T14:32:09.181927+02:00",
   "timezone": "Europe/Prague",
   "pool": {
     "name": "Vnitřní bazény",
@@ -8,14 +8,14 @@
   },
   "dataRange": {
     "firstRecordAt": "2025-06-23T06:00:00+02:00",
-    "lastRecordAt": "2026-05-06T13:00:00+02:00"
+    "lastRecordAt": "2026-05-06T14:00:00+02:00"
   },
   "currentOccupancy": {
-    "occupancy": 86,
-    "time": "13:40",
-    "timestamp": "2026-05-06T13:40:00+02:00",
-    "currentUtilizationRate": 14,
-    "averageUtilizationRate": 12,
+    "occupancy": 82,
+    "time": "14:30",
+    "timestamp": "2026-05-06T14:30:00+02:00",
+    "currentUtilizationRate": 13,
+    "averageUtilizationRate": 16,
     "maximumCapacity": 634,
     "totalLanes": null,
     "openLanes": null
@@ -72,7 +72,7 @@
           "13": {
             "averageUtilizationRate": 11,
             "weightedAverageUtilizationRate": 12,
-            "medianUtilizationRate": 11
+            "medianUtilizationRate": 12
           },
           "14": {
             "averageUtilizationRate": 15,
@@ -290,7 +290,7 @@
           "21": {
             "averageUtilizationRate": 5,
             "weightedAverageUtilizationRate": 6,
-            "medianUtilizationRate": 4
+            "medianUtilizationRate": 5
           }
         }
       },
@@ -314,7 +314,7 @@
           "8": {
             "averageUtilizationRate": 11,
             "weightedAverageUtilizationRate": 12,
-            "medianUtilizationRate": 10
+            "medianUtilizationRate": 11
           },
           "9": {
             "averageUtilizationRate": 13,
@@ -324,7 +324,7 @@
           "10": {
             "averageUtilizationRate": 14,
             "weightedAverageUtilizationRate": 15,
-            "medianUtilizationRate": 14
+            "medianUtilizationRate": 15
           },
           "11": {
             "averageUtilizationRate": 13,
@@ -547,7 +547,7 @@
           "21": {
             "averageUtilizationRate": 2,
             "weightedAverageUtilizationRate": 2,
-            "medianUtilizationRate": 2
+            "medianUtilizationRate": 3
           }
         }
       },
@@ -591,7 +591,7 @@
           "14": {
             "averageUtilizationRate": 13,
             "weightedAverageUtilizationRate": 14,
-            "medianUtilizationRate": 12
+            "medianUtilizationRate": 13
           },
           "15": {
             "averageUtilizationRate": 15,

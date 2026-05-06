@@ -53,10 +53,10 @@ def test_single_record_avg_equals_occupancy():
 
 
 def test_average_rounding():
-    # (42 + 43) / 2 = 42.5 → banker's round → 42
+    # (42 + 43) / 2 = 42.5 -> round half up -> 43
     records = [_rec("15.7.2024", "Monday", 14, 42), _rec("15.7.2024", "Monday", 14, 43)]
     hour = build_weekly_map(records, CFG_NO_HOURLY)["2024-07-15"]["days"]["Monday"]["hours"]["14"]
-    assert hour["averageOccupancy"] == 42
+    assert hour["averageOccupancy"] == 43
 
 
 def test_average_rounding_up():

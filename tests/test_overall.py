@@ -93,9 +93,9 @@ def test_median_even_count():
 
 
 def test_median_even_half_rounds():
-    # median of [10, 11] = 10.5 → banker's round → 10
+    # median of [10, 11] = 10.5 -> round half up -> 11
     hour = build_overall_map(_two_week_map(10, 11))["days"]["Monday"]["hours"]["14"]
-    assert hour["medianUtilizationRate"] == 10
+    assert hour["medianUtilizationRate"] == 11
 
 
 # --- weighted average weight tiers ---
