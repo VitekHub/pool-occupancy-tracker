@@ -14,8 +14,9 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
-:: Run your Python script
+:: Run Python scripts
 python occupancy.py
+python -m pool_aggregation
 
 :: Check for changes
 git status --porcelain | findstr . >nul
