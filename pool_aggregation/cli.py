@@ -1,6 +1,5 @@
 from __future__ import annotations
 from pathlib import Path
-from typing import Optional
 
 from pool_aggregation.aggregation.bucketing import available_week_ids
 from pool_aggregation.aggregation.current import build_current_occupancy
