@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-30T19:27:53.937085+02:00",
+  "generatedAt": "2026-05-06T13:40:54.096494+02:00",
   "timezone": "Europe/Prague",
   "pool": {
     "name": "Bazény a posilovna",
@@ -8,7 +8,7 @@
   },
   "dataRange": {
     "firstRecordAt": "2025-06-23T06:00:00+02:00",
-    "lastRecordAt": "2026-04-30T18:00:00+02:00"
+    "lastRecordAt": "2026-05-06T13:00:00+02:00"
   },
   "availableWeekIds": [
     "2025-06-23",
@@ -55,7 +55,8 @@
     "2026-04-06",
     "2026-04-13",
     "2026-04-20",
-    "2026-04-27"
+    "2026-04-27",
+    "2026-05-04"
   ],
   "weeklyOccupancyMap": {
     "2025-06-23": {
@@ -59970,7 +59971,7 @@
     },
     "2026-04-27": {
       "maxWeekValues": {
-        "utilizationRate": 53
+        "utilizationRate": 55
       },
       "days": {
         "Monday": {
@@ -60388,6 +60389,978 @@
               "openLanes": null,
               "utilizationRate": 30,
               "remainingCapacity": 188
+            },
+            "20": {
+              "day": "Thursday",
+              "hour": 20,
+              "date": "2026-04-30T20:00:00+02:00",
+              "minOccupancy": 66,
+              "maxOccupancy": 66,
+              "averageOccupancy": 66,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 25,
+              "remainingCapacity": 201
+            },
+            "21": {
+              "day": "Thursday",
+              "hour": 21,
+              "date": "2026-04-30T21:00:00+02:00",
+              "minOccupancy": 1,
+              "maxOccupancy": 1,
+              "averageOccupancy": 1,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 0,
+              "remainingCapacity": 266
+            }
+          }
+        },
+        "Friday": {
+          "maxDayValues": {
+            "utilizationRate": 39
+          },
+          "hours": {
+            "7": {
+              "day": "Friday",
+              "hour": 7,
+              "date": "2026-05-01T07:00:00+02:00",
+              "minOccupancy": 0,
+              "maxOccupancy": 0,
+              "averageOccupancy": 0,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 0,
+              "remainingCapacity": 267
+            },
+            "9": {
+              "day": "Friday",
+              "hour": 9,
+              "date": "2026-05-01T09:00:00+02:00",
+              "minOccupancy": 48,
+              "maxOccupancy": 48,
+              "averageOccupancy": 48,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 18,
+              "remainingCapacity": 219
+            },
+            "11": {
+              "day": "Friday",
+              "hour": 11,
+              "date": "2026-05-01T11:00:00+02:00",
+              "minOccupancy": 103,
+              "maxOccupancy": 103,
+              "averageOccupancy": 103,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 39,
+              "remainingCapacity": 164
+            },
+            "12": {
+              "day": "Friday",
+              "hour": 12,
+              "date": "2026-05-01T12:00:00+02:00",
+              "minOccupancy": 70,
+              "maxOccupancy": 70,
+              "averageOccupancy": 70,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 26,
+              "remainingCapacity": 197
+            },
+            "14": {
+              "day": "Friday",
+              "hour": 14,
+              "date": "2026-05-01T14:00:00+02:00",
+              "minOccupancy": 57,
+              "maxOccupancy": 57,
+              "averageOccupancy": 57,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 21,
+              "remainingCapacity": 210
+            },
+            "15": {
+              "day": "Friday",
+              "hour": 15,
+              "date": "2026-05-01T15:00:00+02:00",
+              "minOccupancy": 80,
+              "maxOccupancy": 80,
+              "averageOccupancy": 80,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 30,
+              "remainingCapacity": 187
+            },
+            "16": {
+              "day": "Friday",
+              "hour": 16,
+              "date": "2026-05-01T16:00:00+02:00",
+              "minOccupancy": 62,
+              "maxOccupancy": 62,
+              "averageOccupancy": 62,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 23,
+              "remainingCapacity": 205
+            },
+            "17": {
+              "day": "Friday",
+              "hour": 17,
+              "date": "2026-05-01T17:00:00+02:00",
+              "minOccupancy": 68,
+              "maxOccupancy": 68,
+              "averageOccupancy": 68,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 25,
+              "remainingCapacity": 199
+            },
+            "18": {
+              "day": "Friday",
+              "hour": 18,
+              "date": "2026-05-01T18:00:00+02:00",
+              "minOccupancy": 55,
+              "maxOccupancy": 55,
+              "averageOccupancy": 55,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 21,
+              "remainingCapacity": 212
+            },
+            "19": {
+              "day": "Friday",
+              "hour": 19,
+              "date": "2026-05-01T19:00:00+02:00",
+              "minOccupancy": 61,
+              "maxOccupancy": 61,
+              "averageOccupancy": 61,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 23,
+              "remainingCapacity": 206
+            },
+            "21": {
+              "day": "Friday",
+              "hour": 21,
+              "date": "2026-05-01T21:00:00+02:00",
+              "minOccupancy": 49,
+              "maxOccupancy": 49,
+              "averageOccupancy": 49,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 18,
+              "remainingCapacity": 218
+            }
+          }
+        },
+        "Saturday": {
+          "maxDayValues": {
+            "utilizationRate": 47
+          },
+          "hours": {
+            "9": {
+              "day": "Saturday",
+              "hour": 9,
+              "date": "2026-05-02T09:00:00+02:00",
+              "minOccupancy": 38,
+              "maxOccupancy": 38,
+              "averageOccupancy": 38,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 14,
+              "remainingCapacity": 229
+            },
+            "10": {
+              "day": "Saturday",
+              "hour": 10,
+              "date": "2026-05-02T10:00:00+02:00",
+              "minOccupancy": 107,
+              "maxOccupancy": 107,
+              "averageOccupancy": 107,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 40,
+              "remainingCapacity": 160
+            },
+            "11": {
+              "day": "Saturday",
+              "hour": 11,
+              "date": "2026-05-02T11:00:00+02:00",
+              "minOccupancy": 91,
+              "maxOccupancy": 91,
+              "averageOccupancy": 91,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 34,
+              "remainingCapacity": 176
+            },
+            "12": {
+              "day": "Saturday",
+              "hour": 12,
+              "date": "2026-05-02T12:00:00+02:00",
+              "minOccupancy": 117,
+              "maxOccupancy": 117,
+              "averageOccupancy": 117,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 44,
+              "remainingCapacity": 150
+            },
+            "13": {
+              "day": "Saturday",
+              "hour": 13,
+              "date": "2026-05-02T13:00:00+02:00",
+              "minOccupancy": 95,
+              "maxOccupancy": 95,
+              "averageOccupancy": 95,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 36,
+              "remainingCapacity": 172
+            },
+            "14": {
+              "day": "Saturday",
+              "hour": 14,
+              "date": "2026-05-02T14:00:00+02:00",
+              "minOccupancy": 75,
+              "maxOccupancy": 75,
+              "averageOccupancy": 75,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 28,
+              "remainingCapacity": 192
+            },
+            "15": {
+              "day": "Saturday",
+              "hour": 15,
+              "date": "2026-05-02T15:00:00+02:00",
+              "minOccupancy": 100,
+              "maxOccupancy": 100,
+              "averageOccupancy": 100,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 37,
+              "remainingCapacity": 167
+            },
+            "16": {
+              "day": "Saturday",
+              "hour": 16,
+              "date": "2026-05-02T16:00:00+02:00",
+              "minOccupancy": 118,
+              "maxOccupancy": 118,
+              "averageOccupancy": 118,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 44,
+              "remainingCapacity": 149
+            },
+            "17": {
+              "day": "Saturday",
+              "hour": 17,
+              "date": "2026-05-02T17:00:00+02:00",
+              "minOccupancy": 124,
+              "maxOccupancy": 124,
+              "averageOccupancy": 124,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 46,
+              "remainingCapacity": 143
+            },
+            "18": {
+              "day": "Saturday",
+              "hour": 18,
+              "date": "2026-05-02T18:00:00+02:00",
+              "minOccupancy": 125,
+              "maxOccupancy": 125,
+              "averageOccupancy": 125,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 47,
+              "remainingCapacity": 142
+            },
+            "19": {
+              "day": "Saturday",
+              "hour": 19,
+              "date": "2026-05-02T19:00:00+02:00",
+              "minOccupancy": 80,
+              "maxOccupancy": 80,
+              "averageOccupancy": 80,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 30,
+              "remainingCapacity": 187
+            },
+            "20": {
+              "day": "Saturday",
+              "hour": 20,
+              "date": "2026-05-02T20:00:00+02:00",
+              "minOccupancy": 74,
+              "maxOccupancy": 74,
+              "averageOccupancy": 74,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 28,
+              "remainingCapacity": 193
+            },
+            "21": {
+              "day": "Saturday",
+              "hour": 21,
+              "date": "2026-05-02T21:00:00+02:00",
+              "minOccupancy": 55,
+              "maxOccupancy": 55,
+              "averageOccupancy": 55,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 21,
+              "remainingCapacity": 212
+            }
+          }
+        },
+        "Sunday": {
+          "maxDayValues": {
+            "utilizationRate": 55
+          },
+          "hours": {
+            "9": {
+              "day": "Sunday",
+              "hour": 9,
+              "date": "2026-05-03T09:00:00+02:00",
+              "minOccupancy": 64,
+              "maxOccupancy": 64,
+              "averageOccupancy": 64,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 24,
+              "remainingCapacity": 203
+            },
+            "11": {
+              "day": "Sunday",
+              "hour": 11,
+              "date": "2026-05-03T11:00:00+02:00",
+              "minOccupancy": 122,
+              "maxOccupancy": 122,
+              "averageOccupancy": 122,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 46,
+              "remainingCapacity": 145
+            },
+            "12": {
+              "day": "Sunday",
+              "hour": 12,
+              "date": "2026-05-03T12:00:00+02:00",
+              "minOccupancy": 107,
+              "maxOccupancy": 107,
+              "averageOccupancy": 107,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 40,
+              "remainingCapacity": 160
+            },
+            "13": {
+              "day": "Sunday",
+              "hour": 13,
+              "date": "2026-05-03T13:00:00+02:00",
+              "minOccupancy": 91,
+              "maxOccupancy": 98,
+              "averageOccupancy": 94,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 35,
+              "remainingCapacity": 173
+            },
+            "15": {
+              "day": "Sunday",
+              "hour": 15,
+              "date": "2026-05-03T15:00:00+02:00",
+              "minOccupancy": 148,
+              "maxOccupancy": 148,
+              "averageOccupancy": 148,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 55,
+              "remainingCapacity": 119
+            },
+            "16": {
+              "day": "Sunday",
+              "hour": 16,
+              "date": "2026-05-03T16:00:00+02:00",
+              "minOccupancy": 137,
+              "maxOccupancy": 137,
+              "averageOccupancy": 137,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 51,
+              "remainingCapacity": 130
+            },
+            "17": {
+              "day": "Sunday",
+              "hour": 17,
+              "date": "2026-05-03T17:00:00+02:00",
+              "minOccupancy": 117,
+              "maxOccupancy": 117,
+              "averageOccupancy": 117,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 44,
+              "remainingCapacity": 150
+            },
+            "18": {
+              "day": "Sunday",
+              "hour": 18,
+              "date": "2026-05-03T18:00:00+02:00",
+              "minOccupancy": 77,
+              "maxOccupancy": 77,
+              "averageOccupancy": 77,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 29,
+              "remainingCapacity": 190
+            },
+            "19": {
+              "day": "Sunday",
+              "hour": 19,
+              "date": "2026-05-03T19:00:00+02:00",
+              "minOccupancy": 65,
+              "maxOccupancy": 71,
+              "averageOccupancy": 68,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 25,
+              "remainingCapacity": 199
+            },
+            "21": {
+              "day": "Sunday",
+              "hour": 21,
+              "date": "2026-05-03T21:00:00+02:00",
+              "minOccupancy": 4,
+              "maxOccupancy": 51,
+              "averageOccupancy": 28,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 10,
+              "remainingCapacity": 239
+            }
+          }
+        }
+      }
+    },
+    "2026-05-04": {
+      "maxWeekValues": {
+        "utilizationRate": 57
+      },
+      "days": {
+        "Monday": {
+          "maxDayValues": {
+            "utilizationRate": 57
+          },
+          "hours": {
+            "7": {
+              "day": "Monday",
+              "hour": 7,
+              "date": "2026-05-04T07:00:00+02:00",
+              "minOccupancy": 35,
+              "maxOccupancy": 35,
+              "averageOccupancy": 35,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 13,
+              "remainingCapacity": 232
+            },
+            "10": {
+              "day": "Monday",
+              "hour": 10,
+              "date": "2026-05-04T10:00:00+02:00",
+              "minOccupancy": 30,
+              "maxOccupancy": 30,
+              "averageOccupancy": 30,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 11,
+              "remainingCapacity": 237
+            },
+            "12": {
+              "day": "Monday",
+              "hour": 12,
+              "date": "2026-05-04T12:00:00+02:00",
+              "minOccupancy": 52,
+              "maxOccupancy": 52,
+              "averageOccupancy": 52,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 19,
+              "remainingCapacity": 215
+            },
+            "14": {
+              "day": "Monday",
+              "hour": 14,
+              "date": "2026-05-04T14:00:00+02:00",
+              "minOccupancy": 35,
+              "maxOccupancy": 35,
+              "averageOccupancy": 35,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 13,
+              "remainingCapacity": 232
+            },
+            "15": {
+              "day": "Monday",
+              "hour": 15,
+              "date": "2026-05-04T15:00:00+02:00",
+              "minOccupancy": 126,
+              "maxOccupancy": 126,
+              "averageOccupancy": 126,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 47,
+              "remainingCapacity": 141
+            },
+            "16": {
+              "day": "Monday",
+              "hour": 16,
+              "date": "2026-05-04T16:00:00+02:00",
+              "minOccupancy": 107,
+              "maxOccupancy": 146,
+              "averageOccupancy": 122,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 46,
+              "remainingCapacity": 145
+            },
+            "17": {
+              "day": "Monday",
+              "hour": 17,
+              "date": "2026-05-04T17:00:00+02:00",
+              "minOccupancy": 116,
+              "maxOccupancy": 178,
+              "averageOccupancy": 138,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 52,
+              "remainingCapacity": 129
+            },
+            "18": {
+              "day": "Monday",
+              "hour": 18,
+              "date": "2026-05-04T18:00:00+02:00",
+              "minOccupancy": 138,
+              "maxOccupancy": 185,
+              "averageOccupancy": 151,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 57,
+              "remainingCapacity": 116
+            },
+            "19": {
+              "day": "Monday",
+              "hour": 19,
+              "date": "2026-05-04T19:00:00+02:00",
+              "minOccupancy": 120,
+              "maxOccupancy": 168,
+              "averageOccupancy": 134,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 50,
+              "remainingCapacity": 133
+            },
+            "20": {
+              "day": "Monday",
+              "hour": 20,
+              "date": "2026-05-04T20:00:00+02:00",
+              "minOccupancy": 102,
+              "maxOccupancy": 124,
+              "averageOccupancy": 114,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 43,
+              "remainingCapacity": 153
+            },
+            "21": {
+              "day": "Monday",
+              "hour": 21,
+              "date": "2026-05-04T21:00:00+02:00",
+              "minOccupancy": 54,
+              "maxOccupancy": 95,
+              "averageOccupancy": 79,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 30,
+              "remainingCapacity": 188
+            }
+          }
+        },
+        "Tuesday": {
+          "maxDayValues": {
+            "utilizationRate": 54
+          },
+          "hours": {
+            "6": {
+              "day": "Tuesday",
+              "hour": 6,
+              "date": "2026-05-05T06:00:00+02:00",
+              "minOccupancy": 0,
+              "maxOccupancy": 38,
+              "averageOccupancy": 26,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 10,
+              "remainingCapacity": 241
+            },
+            "7": {
+              "day": "Tuesday",
+              "hour": 7,
+              "date": "2026-05-05T07:00:00+02:00",
+              "minOccupancy": 39,
+              "maxOccupancy": 41,
+              "averageOccupancy": 40,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 15,
+              "remainingCapacity": 227
+            },
+            "8": {
+              "day": "Tuesday",
+              "hour": 8,
+              "date": "2026-05-05T08:00:00+02:00",
+              "minOccupancy": 38,
+              "maxOccupancy": 45,
+              "averageOccupancy": 42,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 16,
+              "remainingCapacity": 225
+            },
+            "9": {
+              "day": "Tuesday",
+              "hour": 9,
+              "date": "2026-05-05T09:00:00+02:00",
+              "minOccupancy": 28,
+              "maxOccupancy": 37,
+              "averageOccupancy": 34,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 13,
+              "remainingCapacity": 233
+            },
+            "10": {
+              "day": "Tuesday",
+              "hour": 10,
+              "date": "2026-05-05T10:00:00+02:00",
+              "minOccupancy": 25,
+              "maxOccupancy": 30,
+              "averageOccupancy": 28,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 10,
+              "remainingCapacity": 239
+            },
+            "11": {
+              "day": "Tuesday",
+              "hour": 11,
+              "date": "2026-05-05T11:00:00+02:00",
+              "minOccupancy": 24,
+              "maxOccupancy": 40,
+              "averageOccupancy": 31,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 12,
+              "remainingCapacity": 236
+            },
+            "12": {
+              "day": "Tuesday",
+              "hour": 12,
+              "date": "2026-05-05T12:00:00+02:00",
+              "minOccupancy": 39,
+              "maxOccupancy": 47,
+              "averageOccupancy": 43,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 16,
+              "remainingCapacity": 224
+            },
+            "13": {
+              "day": "Tuesday",
+              "hour": 13,
+              "date": "2026-05-05T13:00:00+02:00",
+              "minOccupancy": 42,
+              "maxOccupancy": 53,
+              "averageOccupancy": 48,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 18,
+              "remainingCapacity": 219
+            },
+            "14": {
+              "day": "Tuesday",
+              "hour": 14,
+              "date": "2026-05-05T14:00:00+02:00",
+              "minOccupancy": 46,
+              "maxOccupancy": 89,
+              "averageOccupancy": 55,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 21,
+              "remainingCapacity": 212
+            },
+            "15": {
+              "day": "Tuesday",
+              "hour": 15,
+              "date": "2026-05-05T15:00:00+02:00",
+              "minOccupancy": 85,
+              "maxOccupancy": 117,
+              "averageOccupancy": 95,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 36,
+              "remainingCapacity": 172
+            },
+            "16": {
+              "day": "Tuesday",
+              "hour": 16,
+              "date": "2026-05-05T16:00:00+02:00",
+              "minOccupancy": 99,
+              "maxOccupancy": 154,
+              "averageOccupancy": 116,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 43,
+              "remainingCapacity": 151
+            },
+            "17": {
+              "day": "Tuesday",
+              "hour": 17,
+              "date": "2026-05-05T17:00:00+02:00",
+              "minOccupancy": 105,
+              "maxOccupancy": 157,
+              "averageOccupancy": 124,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 46,
+              "remainingCapacity": 143
+            },
+            "18": {
+              "day": "Tuesday",
+              "hour": 18,
+              "date": "2026-05-05T18:00:00+02:00",
+              "minOccupancy": 126,
+              "maxOccupancy": 163,
+              "averageOccupancy": 143,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 54,
+              "remainingCapacity": 124
+            },
+            "19": {
+              "day": "Tuesday",
+              "hour": 19,
+              "date": "2026-05-05T19:00:00+02:00",
+              "minOccupancy": 84,
+              "maxOccupancy": 170,
+              "averageOccupancy": 118,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 44,
+              "remainingCapacity": 149
+            },
+            "20": {
+              "day": "Tuesday",
+              "hour": 20,
+              "date": "2026-05-05T20:00:00+02:00",
+              "minOccupancy": 54,
+              "maxOccupancy": 101,
+              "averageOccupancy": 72,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 27,
+              "remainingCapacity": 195
+            },
+            "21": {
+              "day": "Tuesday",
+              "hour": 21,
+              "date": "2026-05-05T21:00:00+02:00",
+              "minOccupancy": 2,
+              "maxOccupancy": 51,
+              "averageOccupancy": 31,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 12,
+              "remainingCapacity": 236
+            }
+          }
+        },
+        "Wednesday": {
+          "maxDayValues": {
+            "utilizationRate": 28
+          },
+          "hours": {
+            "6": {
+              "day": "Wednesday",
+              "hour": 6,
+              "date": "2026-05-06T06:00:00+02:00",
+              "minOccupancy": 1,
+              "maxOccupancy": 25,
+              "averageOccupancy": 16,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 6,
+              "remainingCapacity": 251
+            },
+            "7": {
+              "day": "Wednesday",
+              "hour": 7,
+              "date": "2026-05-06T07:00:00+02:00",
+              "minOccupancy": 29,
+              "maxOccupancy": 68,
+              "averageOccupancy": 37,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 14,
+              "remainingCapacity": 230
+            },
+            "8": {
+              "day": "Wednesday",
+              "hour": 8,
+              "date": "2026-05-06T08:00:00+02:00",
+              "minOccupancy": 72,
+              "maxOccupancy": 78,
+              "averageOccupancy": 74,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 28,
+              "remainingCapacity": 193
+            },
+            "9": {
+              "day": "Wednesday",
+              "hour": 9,
+              "date": "2026-05-06T09:00:00+02:00",
+              "minOccupancy": 31,
+              "maxOccupancy": 67,
+              "averageOccupancy": 41,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 15,
+              "remainingCapacity": 226
+            },
+            "10": {
+              "day": "Wednesday",
+              "hour": 10,
+              "date": "2026-05-06T10:00:00+02:00",
+              "minOccupancy": 35,
+              "maxOccupancy": 40,
+              "averageOccupancy": 38,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 14,
+              "remainingCapacity": 229
+            },
+            "11": {
+              "day": "Wednesday",
+              "hour": 11,
+              "date": "2026-05-06T11:00:00+02:00",
+              "minOccupancy": 36,
+              "maxOccupancy": 44,
+              "averageOccupancy": 40,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 15,
+              "remainingCapacity": 227
+            },
+            "12": {
+              "day": "Wednesday",
+              "hour": 12,
+              "date": "2026-05-06T12:00:00+02:00",
+              "minOccupancy": 33,
+              "maxOccupancy": 40,
+              "averageOccupancy": 36,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 13,
+              "remainingCapacity": 231
+            },
+            "13": {
+              "day": "Wednesday",
+              "hour": 13,
+              "date": "2026-05-06T13:00:00+02:00",
+              "minOccupancy": 38,
+              "maxOccupancy": 45,
+              "averageOccupancy": 42,
+              "maximumCapacity": 267,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 16,
+              "remainingCapacity": 225
             }
           }
         }
