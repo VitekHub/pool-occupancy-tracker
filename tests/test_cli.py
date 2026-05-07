@@ -88,7 +88,7 @@ def test_overall_top_level_keys_present(data_dir, output_dir, fname):
     _run(data_dir, output_dir)
     data = json.loads((output_dir / "overall" / fname).read_text(encoding="utf-8"))
     for key in (
-        "schemaVersion", "generatedAt", "timezone", "pool",
+        "schemaVersion", "generatedAt", "timezone", "poolName",
         "dataRange", "currentOccupancy", "overallOccupancyMap",
     ):
         assert key in data, f"missing key '{key}' in {fname}"
@@ -105,7 +105,7 @@ def test_weekly_top_level_keys_present(data_dir, output_dir, fname):
     _run(data_dir, output_dir)
     data = json.loads((output_dir / "weekly" / fname).read_text(encoding="utf-8"))
     for key in (
-        "schemaVersion", "generatedAt", "timezone", "pool",
+        "schemaVersion", "generatedAt", "timezone", "poolName",
         "dataRange", "availableWeekIds", "weeklyOccupancyMap",
     ):
         assert key in data, f"missing key '{key}' in {fname}"
@@ -135,17 +135,9 @@ def test_current_occupancy_populated(data_dir, output_dir, fname):
     assert data["currentOccupancy"] is not None
 
 
-def test_pool_block_only_has_name_and_pooltype(data_dir, output_dir):
-    _run(data_dir, output_dir)
-    data = json.loads((output_dir / "overall" / "alpha_inside_occupancy.json").read_text(encoding="utf-8"))
-    assert set(data["pool"].keys()) == {"name", "poolType"}
-
-
 def test_outside_pool_lanes_in_current_not_pool(data_dir, output_dir):
     _run(data_dir, output_dir)
     data = json.loads((output_dir / "overall" / "alpha_outside_occupancy.json").read_text(encoding="utf-8"))
-    # pool block should only have name and poolType
-    assert "totalLanes" not in data["pool"]
     # currentOccupancy should have totalLanes
     assert data["currentOccupancy"]["totalLanes"] is None
     assert data["currentOccupancy"]["openLanes"] is None

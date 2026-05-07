@@ -6,14 +6,14 @@ from pool_aggregation.io.capacity_reader import load_hourly_capacity
 _DATA_DIR = Path(__file__).parent.parent.parent / "data"
 
 
-def resolve_max_capacity(pool_type_cfg: dict, date_str: str, hour: int) -> int:
+def resolve_max_capacity(pool_cfg: dict, date_str: str, hour: int) -> int:
     """Return the resolved maximumCapacity for (date_str, hour).
 
     Looks up the data.capacity.raw CSV when configured; falls back to the
     pool's static maximumCapacity when the CSV is absent or the row is missing.
     """
-    fallback: int = pool_type_cfg.get("maximumCapacity", 0)
-    data_cfg = pool_type_cfg.get("data", {})
+    fallback: int = pool_cfg.get("maximumCapacity", 0)
+    data_cfg = pool_cfg.get("data", {})
     capacity_cfg = data_cfg.get("capacity", {})
     hourly_file = capacity_cfg.get("raw")
     if not hourly_file:

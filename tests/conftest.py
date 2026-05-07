@@ -29,6 +29,7 @@ def outside_pool_cfg():
         "weekdaysOpeningHours": "9-21",
         "weekendOpeningHours": "9-20",
         "maximumCapacity": 2000,
+        "totalLanes": None,
         "todayClosed": False,
         "temporarilyClosed": None,
     }

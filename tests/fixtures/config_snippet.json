@@ -1,57 +1,61 @@
 [
   {
-    "name": "Pool Alpha",
-    "insidePool": {
-      "maximumCapacity": 100,
-      "totalLanes": 4,
-      "weekdaysOpeningHours": "6-22",
-      "weekendOpeningHours": "8-21",
-      "todayClosed": false,
-      "temporarilyClosed": null,
-      "collectStats": true,
-      "viewStats": true,
-      "data": {
-        "occupancy": {
-          "raw": "alpha_inside.csv",
-          "overall": "overall/alpha_inside_occupancy.json",
-          "weekly": "weekly/alpha_inside_occupancy.json"
-        }
+    "name": "Pool Alpha (Inside)",
+    "url": "https://example.com/alpha",
+    "pattern": "(\\d+)",
+    "maximumCapacity": 100,
+    "totalLanes": 4,
+    "weekdaysOpeningHours": "6-22",
+    "weekendOpeningHours": "8-21",
+    "todayClosed": false,
+    "temporarilyClosed": null,
+    "collectStats": true,
+    "viewStats": true,
+    "data": {
+      "occupancy": {
+        "raw": "alpha_inside.csv",
+        "overall": "overall/alpha_inside_occupancy.json",
+        "weekly": "weekly/alpha_inside_occupancy.json"
       }
-    },
-    "outsidePool": {
-      "maximumCapacity": 500,
-      "totalLanes": 8,
-      "weekdaysOpeningHours": "7-21",
-      "weekendOpeningHours": "9-21",
-      "todayClosed": false,
-      "temporarilyClosed": null,
-      "collectStats": true,
-      "viewStats": true,
-      "data": {
-        "occupancy": {
-          "raw": "alpha_outside.csv",
-          "overall": "overall/alpha_outside_occupancy.json",
-          "weekly": "weekly/alpha_outside_occupancy.json"
-        }
+    }
+  },
+  {
+    "name": "Pool Alpha (Outside)",
+    "url": "https://example.com/alpha-outside",
+    "pattern": "(\\d+)",
+    "maximumCapacity": 500,
+    "totalLanes": null,
+    "weekdaysOpeningHours": "7-21",
+    "weekendOpeningHours": "9-21",
+    "todayClosed": false,
+    "temporarilyClosed": null,
+    "collectStats": true,
+    "viewStats": true,
+    "data": {
+      "occupancy": {
+        "raw": "alpha_outside.csv",
+        "overall": "overall/alpha_outside_occupancy.json",
+        "weekly": "weekly/alpha_outside_occupancy.json"
       }
     }
   },
   {
     "name": "Pool Beta",
-    "outsidePool": {
-      "maximumCapacity": 2000,
-      "weekdaysOpeningHours": "9-20",
-      "weekendOpeningHours": "9-20",
-      "todayClosed": false,
-      "temporarilyClosed": null,
-      "collectStats": true,
-      "viewStats": true,
-      "data": {
-        "occupancy": {
-          "raw": "beta_outside.csv",
-          "overall": "overall/beta_outside_occupancy.json",
-          "weekly": "weekly/beta_outside_occupancy.json"
-        }
+    "url": "https://example.com/beta",
+    "pattern": "(\\d+)",
+    "maximumCapacity": 2000,
+    "totalLanes": null,
+    "weekdaysOpeningHours": "9-20",
+    "weekendOpeningHours": "9-20",
+    "todayClosed": false,
+    "temporarilyClosed": null,
+    "collectStats": true,
+    "viewStats": true,
+    "data": {
+      "occupancy": {
+        "raw": "beta_outside.csv",
+        "overall": "overall/beta_outside_occupancy.json",
+        "weekly": "weekly/beta_outside_occupancy.json"
       }
     }
   }
