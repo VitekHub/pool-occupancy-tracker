@@ -9,17 +9,21 @@ _DATA_DIR = Path(__file__).parent.parent.parent / "data"
 def resolve_max_capacity(pool_cfg: dict, date_str: str, hour: int) -> int:
     """Return the resolved maximumCapacity for (date_str, hour).
 
-    Looks up the data.capacity.raw CSV when configured; falls back to the
-    pool's static maximumCapacity when the CSV is absent or the row is missing.
+    Looks up the data.capacity.raw first, then the data.capacity.forecast;
+    finally falls back to the pool's static maximumCapacity.
     """
     fallback: int = pool_cfg.get("maximumCapacity", 0)
-    data_cfg = pool_cfg.get("data", {})
-    capacity_cfg = data_cfg.get("capacity", {})
-    hourly_file = capacity_cfg.get("raw")
-    if not hourly_file:
-        return fallback
 
-    lookup = load_hourly_capacity(_DATA_DIR / hourly_file)
-    hour_key = f"{hour:02d}:00"
-    value = lookup.get((date_str, hour_key))
-    return value if value is not None else fallback
+    def lookup_in(file_key: str) -> int | None:
+        filename = pool_cfg.get("data", {}).get("capacity", {}).get(file_key)
+        if not filename:
+            return None
+        lookup = load_hourly_capacity(_DATA_DIR / filename)
+        return lookup.get((date_str, f"{hour:02d}:00"))
+
+    for file_key in ("raw", "forecast"):
+        val = lookup_in(file_key)
+        if val is not None:
+            return val
+
+    return fallback
