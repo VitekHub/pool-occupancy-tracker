@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-07T19:50:04.293922+02:00",
+  "generatedAt": "2026-05-07T20:00:04.979876+02:00",
   "timezone": "Europe/Prague",
   "pool": {
     "name": "Vnitřní bazény",
@@ -8,7 +8,7 @@
   },
   "dataRange": {
     "firstRecordAt": "2025-06-23T06:00:00+02:00",
-    "lastRecordAt": "2026-05-07T19:00:00+02:00"
+    "lastRecordAt": "2026-05-07T20:00:00+02:00"
   },
   "availableWeekIds": [
     "2025-06-23",
@@ -62227,6 +62227,19 @@
               "openLanes": null,
               "utilizationRate": 21,
               "remainingCapacity": 499
+            },
+            "20": {
+              "day": "Thursday",
+              "hour": 20,
+              "date": "2026-05-07T20:00:00+02:00",
+              "minOccupancy": 109,
+              "maxOccupancy": 109,
+              "averageOccupancy": 109,
+              "maximumCapacity": 634,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 17,
+              "remainingCapacity": 525
             }
           }
         }
