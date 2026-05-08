@@ -1,24 +1,7 @@
 from __future__ import annotations
 
-from pool_aggregation.models.output import PoolBlock
 from pool_aggregation.models.records import OccupancyRecord
 from pool_aggregation.utils.timezones import hour_start, to_iso8601
-
-
-_POOL_TYPE_MAP = {
-    "insidePool": "inside",
-    "outsidePool": "outside",
-}
-
-
-def build_pool_block(pool_name: str, pool_type_key: str, cfg: dict) -> PoolBlock:
-    pool_type = _POOL_TYPE_MAP[pool_type_key]
-    display_name = cfg.get("customName") or pool_name
-
-    return PoolBlock(
-        name=display_name,
-        poolType=pool_type,
-    )
 
 
 def build_data_range(records: list[OccupancyRecord]) -> dict | None:

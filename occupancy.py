@@ -127,60 +127,55 @@ def save_to_csv(occupancy, file_name, pool_name):
         print(f"Error saving to CSV for {pool_name}: {e}")
         return False
 
-def update_maximum_capacity(pool_type_config, occupancy, pool_name):
-    """Update maximum capacity in config of a specific pool type (insidePool or outsidePool) for a given pool."""
-    if not pool_type_config:
-        return False  # Skip if this pool type doesn't exist for this pool
-    if occupancy > pool_type_config['maximumCapacity']:
-        pool_type_config['maximumCapacity'] = occupancy
-        print(f"Updated maximumCapacity for '{pool_name}': {pool_type_config['maximumCapacity']}")
+def update_maximum_capacity(pool_cfg, occupancy, pool_name):
+    """Update maximum capacity in config for a given pool."""
+    if not pool_cfg:
+        return False
+    if occupancy > pool_cfg['maximumCapacity']:
+        pool_cfg['maximumCapacity'] = occupancy
+        print(f"Updated maximumCapacity for '{pool_name}': {pool_cfg['maximumCapacity']}")
         return True
     return False
 
-def update_today_closed(pool_type_config, is_today_closed, pool_name):
-    """Update todayClosed in config of a specific pool type (insidePool or outsidePool) for a given pool."""
-    pool_type_config['todayClosed'] = is_today_closed
-    print(f"Updated todayClosed for '{pool_name}': {pool_type_config['todayClosed']}")
+def update_today_closed(pool_cfg, is_today_closed, pool_name):
+    """Update todayClosed in config for a given pool."""
+    pool_cfg['todayClosed'] = is_today_closed
+    print(f"Updated todayClosed for '{pool_name}': {pool_cfg['todayClosed']}")
 
-def process_pool_type(pool_config, pool_type_key, pool_name):
-    """Process a specific pool type (insidePool or outsidePool) for a given pool."""
-    pool_type_config = pool_config.get(pool_type_key)
-    if not pool_type_config:
-        return True  # Skip if this pool type doesn't exist for this pool
-    
+def process_pool(pool_config, pool_name):
+    """Process a pool from the flattened config."""
     # Check if we should collect stats for this pool
-    if not pool_type_config.get('collectStats', False):
-        print(f"Skipping {pool_name} {pool_type_key} - collectStats is false")
+    if not pool_config.get('collectStats', False):
+        print(f"Skipping {pool_name} - collectStats is false")
         return True
     
-    if not is_pool_open(pool_type_config):
-        print(f"{pool_name} {pool_type_key} is closed, skipping occupancy check")
+    if not is_pool_open(pool_config):
+        print(f"{pool_name} is closed, skipping occupancy check")
         return True
     
-    url = pool_type_config['url']
-    pattern = pool_type_config['pattern']
-    csv_file = pool_type_config.get("data", {}).get("occupancy", {}).get("raw", "")
+    url = pool_config['url']
+    pattern = pool_config['pattern']
+    csv_file = pool_config.get("data", {}).get("occupancy", {}).get("raw", "")
     
     html_content = fetch_html(url)
     if html_content is None:
-        print(f"Failed to get occupancy data for {pool_name} {pool_type_key}")
+        print(f"Failed to get occupancy data for {pool_name}")
         return False
 
     occupancy = find_occupancy(html_content, pattern)
-    today_closed_pattern = pool_type_config.get('todayClosedPattern', False)
+    today_closed_pattern = pool_config.get('todayClosedPattern', False)
     is_today_closed = find_today_closed_status(html_content, today_closed_pattern)
-    update_today_closed(pool_type_config, is_today_closed, pool_name)
+    update_today_closed(pool_config, is_today_closed, pool_name)
     
     if is_today_closed:
-        print(f"{pool_name} {pool_type_key} is closed today, skipping occupancy check")
+        print(f"{pool_name} is closed today, skipping occupancy check")
         return True
     
     if occupancy is not None:
-        pool_type_name = f"{pool_name} ({'Inside' if pool_type_key == 'insidePool' else 'Outside'} Pool)"
-        update_maximum_capacity(pool_type_config, occupancy, pool_type_name)
-        return save_to_csv(occupancy, csv_file, pool_type_name)
+        update_maximum_capacity(pool_config, occupancy, pool_name)
+        return save_to_csv(occupancy, csv_file, pool_name)
     else:
-        print(f"Failed to get occupancy data for {pool_name} {pool_type_key}")
+        print(f"Failed to get occupancy data for {pool_name}")
         return False
 
 
@@ -195,14 +190,8 @@ def main():
     
     for pool_config in pool_configs:
         pool_name = pool_config['name']
-        
-        # Process inside pool if it exists
-        success_inside = process_pool_type(pool_config, 'insidePool', pool_name)
-        overall_success &= success_inside
-        
-        # Process outside pool if it exists
-        success_outside = process_pool_type(pool_config, 'outsidePool', pool_name)
-        overall_success &= success_outside
+        success = process_pool(pool_config, pool_name)
+        overall_success &= success
     
     # Save new pool config if maximum capacity of some pool changed
     save_pool_config(pool_configs)
