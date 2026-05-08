@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-08T10:15:05.439264+02:00",
+  "generatedAt": "2026-05-08T10:19:53.374723+02:00",
   "timezone": "Europe/Prague",
   "pool": {
     "name": "Bazény a posilovna",
@@ -61685,7 +61685,7 @@
         },
         "Friday": {
           "maxDayValues": {
-            "utilizationRate": 44
+            "utilizationRate": 45
           },
           "hours": {
             "6": {
@@ -61746,12 +61746,12 @@
               "date": "2026-05-08T10:00:00+02:00",
               "minOccupancy": 108,
               "maxOccupancy": 128,
-              "averageOccupancy": 118,
+              "averageOccupancy": 119,
               "maximumCapacity": 267,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 44,
-              "remainingCapacity": 149
+              "utilizationRate": 45,
+              "remainingCapacity": 148
             }
           }
         }
