@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-18T17:20:08.148977+02:00",
+  "generatedAt": "2026-05-18T17:30:12.620809+02:00",
   "timezone": "Europe/Prague",
   "dataRange": {
     "firstRecordAt": "2025-06-23T06:00:00+02:00",
@@ -8,11 +8,11 @@
   },
   "poolName": "Aquapark Kohoutovice",
   "currentOccupancy": {
-    "occupancy": 112,
-    "time": "17:20",
-    "timestamp": "2026-05-18T17:20:00+02:00",
-    "currentUtilizationRate": 41,
-    "averageUtilizationRate": 51,
+    "occupancy": 104,
+    "time": "17:30",
+    "timestamp": "2026-05-18T17:30:00+02:00",
+    "currentUtilizationRate": 38,
+    "averageUtilizationRate": 50,
     "maximumCapacity": 272,
     "totalLanes": null,
     "openLanes": null
@@ -26,7 +26,7 @@
     "days": {
       "Monday": {
         "maxDayValues": {
-          "averageUtilizationRate": 51,
+          "averageUtilizationRate": 50,
           "weightedAverageUtilizationRate": 52,
           "medianUtilizationRate": 52
         },
@@ -87,7 +87,7 @@
             "medianUtilizationRate": 41
           },
           "17": {
-            "averageUtilizationRate": 51,
+            "averageUtilizationRate": 50,
             "weightedAverageUtilizationRate": 52,
             "medianUtilizationRate": 51
           },
