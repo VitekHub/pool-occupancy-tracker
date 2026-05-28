@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-28T15:50:04.558426+02:00",
+  "generatedAt": "2026-05-28T16:00:05.800299+02:00",
   "timezone": "Europe/Prague",
   "dataRange": {
     "firstRecordAt": "2025-03-24T05:00:00+01:00",
-    "lastRecordAt": "2026-05-28T15:00:00+02:00"
+    "lastRecordAt": "2026-05-28T16:00:00+02:00"
   },
   "poolName": "Kraví Hora (vnitřní)",
   "availableWeekIds": [
@@ -61542,7 +61542,7 @@
         },
         "Thursday": {
           "maxDayValues": {
-            "utilizationRate": 36
+            "utilizationRate": 42
           },
           "hours": {
             "6": {
@@ -61674,6 +61674,19 @@
               "openLanes": 3,
               "utilizationRate": 22,
               "remainingCapacity": 52
+            },
+            "16": {
+              "day": "Thursday",
+              "hour": 16,
+              "date": "2026-05-28T16:00:00+02:00",
+              "minOccupancy": 19,
+              "maxOccupancy": 19,
+              "averageOccupancy": 19,
+              "maximumCapacity": 45,
+              "totalLanes": 6,
+              "openLanes": 2,
+              "utilizationRate": 42,
+              "remainingCapacity": 26
             }
           }
         }
