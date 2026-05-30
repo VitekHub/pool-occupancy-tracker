@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-30T15:40:07.458858+02:00",
+  "generatedAt": "2026-05-30T15:50:08.609626+02:00",
   "timezone": "Europe/Prague",
   "dataRange": {
     "firstRecordAt": "2025-06-23T09:00:00+02:00",
@@ -88,7 +88,7 @@
           },
           "20": {
             "averageUtilizationRate": 12,
-            "weightedAverageUtilizationRate": 24,
+            "weightedAverageUtilizationRate": 22,
             "medianUtilizationRate": 9
           }
         }
@@ -102,7 +102,7 @@
         "hours": {
           "9": {
             "averageUtilizationRate": 2,
-            "weightedAverageUtilizationRate": 3,
+            "weightedAverageUtilizationRate": 2,
             "medianUtilizationRate": 1
           },
           "10": {
@@ -122,7 +122,7 @@
           },
           "13": {
             "averageUtilizationRate": 8,
-            "weightedAverageUtilizationRate": 11,
+            "weightedAverageUtilizationRate": 10,
             "medianUtilizationRate": 10
           },
           "14": {
@@ -176,27 +176,27 @@
           },
           "10": {
             "averageUtilizationRate": 3,
-            "weightedAverageUtilizationRate": 7,
+            "weightedAverageUtilizationRate": 6,
             "medianUtilizationRate": 2
           },
           "11": {
             "averageUtilizationRate": 6,
-            "weightedAverageUtilizationRate": 11,
+            "weightedAverageUtilizationRate": 10,
             "medianUtilizationRate": 2
           },
           "12": {
             "averageUtilizationRate": 6,
-            "weightedAverageUtilizationRate": 13,
+            "weightedAverageUtilizationRate": 12,
             "medianUtilizationRate": 2
           },
           "13": {
             "averageUtilizationRate": 7,
-            "weightedAverageUtilizationRate": 13,
+            "weightedAverageUtilizationRate": 12,
             "medianUtilizationRate": 2
           },
           "14": {
             "averageUtilizationRate": 12,
-            "weightedAverageUtilizationRate": 19,
+            "weightedAverageUtilizationRate": 18,
             "medianUtilizationRate": 8
           },
           "15": {
@@ -240,13 +240,13 @@
         "hours": {
           "9": {
             "averageUtilizationRate": 1,
-            "weightedAverageUtilizationRate": 5,
+            "weightedAverageUtilizationRate": 4,
             "medianUtilizationRate": 0
           },
           "10": {
-            "averageUtilizationRate": 1,
-            "weightedAverageUtilizationRate": 5,
-            "medianUtilizationRate": 0
+            "averageUtilizationRate": 2,
+            "weightedAverageUtilizationRate": 4,
+            "medianUtilizationRate": 0.25
           },
           "11": {
             "averageUtilizationRate": 2,
@@ -303,14 +303,14 @@
       "Friday": {
         "maxDayValues": {
           "averageUtilizationRate": 17,
-          "weightedAverageUtilizationRate": 30,
+          "weightedAverageUtilizationRate": 29,
           "medianUtilizationRate": 1
         },
         "hours": {
           "9": {
-            "averageUtilizationRate": 0,
+            "averageUtilizationRate": 0.4,
             "weightedAverageUtilizationRate": 1,
-            "medianUtilizationRate": 0
+            "medianUtilizationRate": 0.2
           },
           "10": {
             "averageUtilizationRate": 2,
@@ -339,17 +339,17 @@
           },
           "15": {
             "averageUtilizationRate": 11,
-            "weightedAverageUtilizationRate": 21,
+            "weightedAverageUtilizationRate": 20,
             "medianUtilizationRate": 1
           },
           "16": {
             "averageUtilizationRate": 16,
-            "weightedAverageUtilizationRate": 30,
+            "weightedAverageUtilizationRate": 29,
             "medianUtilizationRate": 1
           },
           "17": {
             "averageUtilizationRate": 17,
-            "weightedAverageUtilizationRate": 28,
+            "weightedAverageUtilizationRate": 27,
             "medianUtilizationRate": 1
           },
           "18": {
@@ -447,7 +447,7 @@
           },
           "10": {
             "averageUtilizationRate": 4,
-            "weightedAverageUtilizationRate": 6,
+            "weightedAverageUtilizationRate": 5,
             "medianUtilizationRate": 5
           },
           "11": {

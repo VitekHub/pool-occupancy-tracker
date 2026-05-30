@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-30T15:40:07.458858+02:00",
+  "generatedAt": "2026-05-30T15:50:08.609626+02:00",
   "timezone": "Europe/Prague",
   "dataRange": {
     "firstRecordAt": "2025-06-23T06:00:00+02:00",
@@ -37220,7 +37220,7 @@
               "maximumCapacity": 273,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.37,
               "remainingCapacity": 272
             },
             "16": {
@@ -37513,7 +37513,7 @@
               "maximumCapacity": 273,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.37,
               "remainingCapacity": 272
             }
           }
@@ -38641,7 +38641,7 @@
               "maximumCapacity": 273,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.37,
               "remainingCapacity": 272
             },
             "16": {
@@ -38654,7 +38654,7 @@
               "maximumCapacity": 273,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.37,
               "remainingCapacity": 272
             },
             "17": {
@@ -38667,7 +38667,7 @@
               "maximumCapacity": 273,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.37,
               "remainingCapacity": 272
             },
             "18": {
@@ -38680,7 +38680,7 @@
               "maximumCapacity": 273,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.37,
               "remainingCapacity": 272
             },
             "19": {
@@ -38693,7 +38693,7 @@
               "maximumCapacity": 273,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.37,
               "remainingCapacity": 272
             },
             "20": {
@@ -38706,7 +38706,7 @@
               "maximumCapacity": 273,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.37,
               "remainingCapacity": 272
             },
             "21": {
@@ -38719,7 +38719,7 @@
               "maximumCapacity": 273,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.37,
               "remainingCapacity": 272
             }
           }
@@ -38921,7 +38921,7 @@
               "maximumCapacity": 273,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.37,
               "remainingCapacity": 272
             }
           }
@@ -59238,7 +59238,7 @@
               "maximumCapacity": 273,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.37,
               "remainingCapacity": 272
             }
           }
@@ -60413,7 +60413,7 @@
               "maximumCapacity": 273,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.37,
               "remainingCapacity": 272
             }
           }
@@ -66228,7 +66228,7 @@
         },
         "Saturday": {
           "maxDayValues": {
-            "utilizationRate": 53
+            "utilizationRate": 54
           },
           "hours": {
             "8": {
@@ -66327,13 +66327,13 @@
               "hour": 15,
               "date": "2026-05-30T15:00:00+02:00",
               "minOccupancy": 132,
-              "maxOccupancy": 151,
-              "averageOccupancy": 146,
+              "maxOccupancy": 154,
+              "averageOccupancy": 147,
               "maximumCapacity": 273,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 53,
-              "remainingCapacity": 127
+              "utilizationRate": 54,
+              "remainingCapacity": 126
             }
           }
         }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-30T15:40:07.458858+02:00",
+  "generatedAt": "2026-05-30T15:50:08.609626+02:00",
   "timezone": "Europe/Prague",
   "dataRange": {
     "firstRecordAt": "2025-06-23T09:00:00+02:00",
@@ -184,7 +184,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.25,
               "remainingCapacity": 1995
             }
           }
@@ -204,7 +204,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.15,
               "remainingCapacity": 1997
             },
             "10": {
@@ -217,7 +217,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.35,
               "remainingCapacity": 1993
             },
             "11": {
@@ -230,7 +230,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.35,
               "remainingCapacity": 1993
             },
             "12": {
@@ -243,7 +243,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.35,
               "remainingCapacity": 1993
             },
             "13": {
@@ -693,7 +693,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.25,
               "remainingCapacity": 1995
             },
             "10": {
@@ -856,7 +856,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.2,
               "remainingCapacity": 1996
             },
             "10": {
@@ -1906,7 +1906,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.35,
               "remainingCapacity": 1993
             },
             "17": {
@@ -2272,7 +2272,7 @@
       "days": {
         "Friday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.4
           },
           "hours": {
             "15": {
@@ -2285,7 +2285,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.4,
               "remainingCapacity": 1992
             },
             "16": {
@@ -2298,7 +2298,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.3,
               "remainingCapacity": 1994
             },
             "17": {
@@ -2311,7 +2311,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.15,
               "remainingCapacity": 1997
             }
           }
@@ -2344,7 +2344,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.25,
               "remainingCapacity": 1995
             },
             "11": {
@@ -2886,7 +2886,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.25,
               "remainingCapacity": 1995
             },
             "10": {
@@ -3630,7 +3630,7 @@
         },
         "Thursday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.25
           },
           "hours": {
             "9": {
@@ -3656,7 +3656,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.25,
               "remainingCapacity": 1995
             },
             "11": {
@@ -3669,7 +3669,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.1,
               "remainingCapacity": 1998
             },
             "12": {
@@ -3702,7 +3702,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.15,
               "remainingCapacity": 1997
             },
             "10": {
@@ -4172,7 +4172,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.15,
               "remainingCapacity": 1997
             },
             "13": {
@@ -4185,7 +4185,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.15,
               "remainingCapacity": 1997
             },
             "14": {
@@ -4198,7 +4198,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.15,
               "remainingCapacity": 1997
             },
             "15": {
@@ -4375,7 +4375,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 1999
             },
             "10": {
@@ -4388,7 +4388,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.3,
               "remainingCapacity": 1994
             },
             "11": {
@@ -4551,7 +4551,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.25,
               "remainingCapacity": 1995
             },
             "11": {
@@ -4564,7 +4564,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.25,
               "remainingCapacity": 1995
             },
             "12": {
@@ -4577,7 +4577,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.25,
               "remainingCapacity": 1995
             },
             "13": {
@@ -4590,7 +4590,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.25,
               "remainingCapacity": 1995
             },
             "14": {
@@ -4701,7 +4701,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 1999
             },
             "10": {
@@ -4714,7 +4714,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.25,
               "remainingCapacity": 1995
             },
             "11": {
@@ -6221,7 +6221,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.25,
               "remainingCapacity": 1995
             },
             "10": {
@@ -6430,7 +6430,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.35,
               "remainingCapacity": 1993
             },
             "15": {
@@ -6443,7 +6443,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.45,
               "remainingCapacity": 1991
             },
             "16": {
@@ -6822,7 +6822,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 1999
             },
             "10": {
@@ -6835,7 +6835,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.15,
               "remainingCapacity": 1997
             },
             "11": {
@@ -6848,7 +6848,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.15,
               "remainingCapacity": 1997
             },
             "12": {
@@ -6861,7 +6861,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.15,
               "remainingCapacity": 1997
             },
             "13": {
@@ -6874,7 +6874,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.35,
               "remainingCapacity": 1993
             },
             "14": {
@@ -6887,7 +6887,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.35,
               "remainingCapacity": 1993
             },
             "15": {
@@ -6998,7 +6998,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.25,
               "remainingCapacity": 1995
             },
             "11": {
@@ -7011,7 +7011,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.25,
               "remainingCapacity": 1995
             },
             "12": {
@@ -7024,7 +7024,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.25,
               "remainingCapacity": 1995
             },
             "13": {
@@ -7037,7 +7037,7 @@
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.25,
               "remainingCapacity": 1995
             },
             "14": {

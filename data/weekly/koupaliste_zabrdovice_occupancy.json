@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-30T15:40:07.458858+02:00",
+  "generatedAt": "2026-05-30T15:50:08.609626+02:00",
   "timezone": "Europe/Prague",
   "dataRange": {
     "firstRecordAt": "2025-06-23T09:00:00+02:00",
@@ -641,7 +641,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.21,
               "remainingCapacity": 3767
             },
             "10": {
@@ -804,7 +804,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.11,
               "remainingCapacity": 3771
             },
             "11": {
@@ -817,7 +817,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.32,
               "remainingCapacity": 3763
             },
             "12": {
@@ -2142,7 +2142,7 @@
       "days": {
         "Monday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.4
           },
           "hours": {
             "9": {
@@ -2168,7 +2168,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "11": {
@@ -2181,7 +2181,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "12": {
@@ -2194,7 +2194,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "13": {
@@ -2207,7 +2207,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "14": {
@@ -2233,7 +2233,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "16": {
@@ -2246,7 +2246,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.16,
               "remainingCapacity": 3769
             },
             "17": {
@@ -2259,7 +2259,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.24,
               "remainingCapacity": 3766
             },
             "18": {
@@ -2272,7 +2272,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.4,
               "remainingCapacity": 3760
             },
             "19": {
@@ -2285,14 +2285,14 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.4,
               "remainingCapacity": 3760
             }
           }
         },
         "Tuesday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.05
           },
           "hours": {
             "9": {
@@ -2331,7 +2331,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "12": {
@@ -2344,7 +2344,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "13": {
@@ -2353,11 +2353,11 @@
               "date": "2025-07-08T13:00:00+02:00",
               "minOccupancy": 0,
               "maxOccupancy": 1,
-              "averageOccupancy": 0,
+              "averageOccupancy": 0.33,
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.01,
               "remainingCapacity": 3775
             },
             "14": {
@@ -2422,7 +2422,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "19": {
@@ -2435,14 +2435,14 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             }
           }
         },
         "Wednesday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.16
           },
           "hours": {
             "9": {
@@ -2455,7 +2455,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "10": {
@@ -2468,7 +2468,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "11": {
@@ -2481,7 +2481,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "12": {
@@ -2494,7 +2494,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.08,
               "remainingCapacity": 3772
             },
             "13": {
@@ -2507,7 +2507,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.08,
               "remainingCapacity": 3772
             },
             "14": {
@@ -2520,7 +2520,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.08,
               "remainingCapacity": 3772
             },
             "15": {
@@ -2533,7 +2533,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.11,
               "remainingCapacity": 3771
             },
             "16": {
@@ -2546,7 +2546,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "17": {
@@ -2559,7 +2559,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "18": {
@@ -2572,7 +2572,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.16,
               "remainingCapacity": 3769
             },
             "19": {
@@ -2585,14 +2585,14 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.16,
               "remainingCapacity": 3769
             }
           }
         },
         "Thursday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.21
           },
           "hours": {
             "9": {
@@ -2683,7 +2683,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "16": {
@@ -2696,7 +2696,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "17": {
@@ -2709,7 +2709,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.08,
               "remainingCapacity": 3772
             },
             "18": {
@@ -2722,7 +2722,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.21,
               "remainingCapacity": 3767
             },
             "19": {
@@ -2735,7 +2735,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.08,
               "remainingCapacity": 3772
             }
           }
@@ -2755,7 +2755,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "10": {
@@ -2768,7 +2768,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.08,
               "remainingCapacity": 3772
             },
             "11": {
@@ -2781,7 +2781,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.08,
               "remainingCapacity": 3772
             },
             "12": {
@@ -2892,7 +2892,7 @@
         },
         "Saturday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.13
           },
           "hours": {
             "9": {
@@ -2918,7 +2918,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "11": {
@@ -2931,7 +2931,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.13,
               "remainingCapacity": 3770
             },
             "12": {
@@ -2944,7 +2944,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "13": {
@@ -2983,7 +2983,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "16": {
@@ -2996,7 +2996,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "17": {
@@ -3009,7 +3009,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "18": {
@@ -3022,7 +3022,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.08,
               "remainingCapacity": 3772
             },
             "19": {
@@ -3035,7 +3035,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.08,
               "remainingCapacity": 3772
             }
           }
@@ -3055,7 +3055,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.11,
               "remainingCapacity": 3771
             },
             "10": {
@@ -3068,7 +3068,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.24,
               "remainingCapacity": 3766
             },
             "11": {
@@ -3499,7 +3499,7 @@
         },
         "Wednesday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.32
           },
           "hours": {
             "9": {
@@ -3512,7 +3512,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.16,
               "remainingCapacity": 3769
             },
             "10": {
@@ -3525,7 +3525,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.19,
               "remainingCapacity": 3768
             },
             "11": {
@@ -3538,7 +3538,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.26,
               "remainingCapacity": 3765
             },
             "12": {
@@ -3551,7 +3551,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.19,
               "remainingCapacity": 3768
             },
             "13": {
@@ -3564,7 +3564,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "14": {
@@ -3577,7 +3577,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "15": {
@@ -3590,7 +3590,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.08,
               "remainingCapacity": 3772
             },
             "16": {
@@ -3603,7 +3603,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.16,
               "remainingCapacity": 3769
             },
             "17": {
@@ -3616,7 +3616,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.32,
               "remainingCapacity": 3763
             },
             "18": {
@@ -3629,7 +3629,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "19": {
@@ -3649,7 +3649,7 @@
         },
         "Thursday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.19
           },
           "hours": {
             "9": {
@@ -3753,7 +3753,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "17": {
@@ -3766,7 +3766,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.19,
               "remainingCapacity": 3768
             },
             "18": {
@@ -3779,7 +3779,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.16,
               "remainingCapacity": 3769
             },
             "19": {
@@ -3792,14 +3792,14 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.16,
               "remainingCapacity": 3769
             }
           }
         },
         "Friday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.05
           },
           "hours": {
             "9": {
@@ -3812,7 +3812,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "10": {
@@ -3825,7 +3825,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "11": {
@@ -3916,7 +3916,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "18": {
@@ -3929,7 +3929,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "19": {
@@ -3942,7 +3942,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             }
           }
@@ -4419,7 +4419,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.48,
               "remainingCapacity": 3757
             },
             "10": {
@@ -4693,7 +4693,7 @@
         },
         "Thursday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.32
           },
           "hours": {
             "9": {
@@ -4719,7 +4719,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.11,
               "remainingCapacity": 3771
             },
             "11": {
@@ -4732,7 +4732,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.08,
               "remainingCapacity": 3772
             },
             "12": {
@@ -4745,7 +4745,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.16,
               "remainingCapacity": 3769
             },
             "13": {
@@ -4758,7 +4758,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.16,
               "remainingCapacity": 3769
             },
             "15": {
@@ -4771,7 +4771,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.26,
               "remainingCapacity": 3765
             },
             "16": {
@@ -4784,7 +4784,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.32,
               "remainingCapacity": 3763
             },
             "17": {
@@ -4797,7 +4797,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.21,
               "remainingCapacity": 3767
             },
             "18": {
@@ -4810,7 +4810,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.24,
               "remainingCapacity": 3766
             },
             "19": {
@@ -4823,7 +4823,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.24,
               "remainingCapacity": 3766
             }
           }
@@ -4843,7 +4843,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.11,
               "remainingCapacity": 3771
             },
             "10": {
@@ -4856,7 +4856,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.21,
               "remainingCapacity": 3767
             },
             "11": {
@@ -4869,7 +4869,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.32,
               "remainingCapacity": 3763
             },
             "12": {
@@ -4882,7 +4882,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.45,
               "remainingCapacity": 3758
             },
             "13": {
@@ -4973,14 +4973,14 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.48,
               "remainingCapacity": 3757
             }
           }
         },
         "Saturday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.19
           },
           "hours": {
             "9": {
@@ -4993,7 +4993,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "10": {
@@ -5006,7 +5006,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "11": {
@@ -5019,7 +5019,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "12": {
@@ -5032,7 +5032,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "13": {
@@ -5045,7 +5045,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "14": {
@@ -5058,7 +5058,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "15": {
@@ -5071,7 +5071,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "16": {
@@ -5084,7 +5084,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.11,
               "remainingCapacity": 3771
             },
             "17": {
@@ -5097,7 +5097,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.16,
               "remainingCapacity": 3769
             },
             "18": {
@@ -5110,7 +5110,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.19,
               "remainingCapacity": 3768
             },
             "19": {
@@ -5123,14 +5123,14 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.13,
               "remainingCapacity": 3770
             }
           }
         },
         "Sunday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.13
           },
           "hours": {
             "9": {
@@ -5221,7 +5221,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "16": {
@@ -5234,7 +5234,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "17": {
@@ -5247,7 +5247,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "18": {
@@ -5260,7 +5260,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.13,
               "remainingCapacity": 3770
             },
             "19": {
@@ -5287,7 +5287,7 @@
       "days": {
         "Monday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.26
           },
           "hours": {
             "9": {
@@ -5313,7 +5313,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.08,
               "remainingCapacity": 3772
             },
             "11": {
@@ -5326,7 +5326,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "12": {
@@ -5339,7 +5339,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "13": {
@@ -5378,7 +5378,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.19,
               "remainingCapacity": 3768
             },
             "16": {
@@ -5391,7 +5391,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.21,
               "remainingCapacity": 3767
             },
             "17": {
@@ -5404,7 +5404,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.24,
               "remainingCapacity": 3766
             },
             "18": {
@@ -5417,7 +5417,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.26,
               "remainingCapacity": 3765
             },
             "19": {
@@ -5430,14 +5430,14 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.26,
               "remainingCapacity": 3765
             }
           }
         },
         "Tuesday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.4
           },
           "hours": {
             "9": {
@@ -5463,7 +5463,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "11": {
@@ -5476,7 +5476,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "12": {
@@ -5489,7 +5489,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "13": {
@@ -5502,7 +5502,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "15": {
@@ -5515,7 +5515,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.11,
               "remainingCapacity": 3771
             },
             "16": {
@@ -5528,7 +5528,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.11,
               "remainingCapacity": 3771
             },
             "17": {
@@ -5541,7 +5541,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.32,
               "remainingCapacity": 3763
             },
             "18": {
@@ -5554,7 +5554,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.4,
               "remainingCapacity": 3760
             },
             "19": {
@@ -5567,7 +5567,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.32,
               "remainingCapacity": 3763
             }
           }
@@ -5587,7 +5587,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.26,
               "remainingCapacity": 3765
             },
             "10": {
@@ -5600,7 +5600,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.45,
               "remainingCapacity": 3758
             },
             "11": {
@@ -5724,7 +5724,7 @@
         },
         "Thursday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.29
           },
           "hours": {
             "9": {
@@ -5737,7 +5737,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "10": {
@@ -5750,7 +5750,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.08,
               "remainingCapacity": 3772
             },
             "11": {
@@ -5763,7 +5763,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.08,
               "remainingCapacity": 3772
             },
             "12": {
@@ -5776,7 +5776,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.19,
               "remainingCapacity": 3768
             },
             "13": {
@@ -5789,7 +5789,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.24,
               "remainingCapacity": 3766
             },
             "15": {
@@ -5802,7 +5802,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.29,
               "remainingCapacity": 3764
             },
             "16": {
@@ -5815,7 +5815,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.29,
               "remainingCapacity": 3764
             },
             "17": {
@@ -5828,7 +5828,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.26,
               "remainingCapacity": 3765
             },
             "18": {
@@ -5841,7 +5841,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.26,
               "remainingCapacity": 3765
             },
             "19": {
@@ -5854,14 +5854,14 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.26,
               "remainingCapacity": 3765
             }
           }
         },
         "Friday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.32
           },
           "hours": {
             "9": {
@@ -5874,7 +5874,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.08,
               "remainingCapacity": 3772
             },
             "10": {
@@ -5887,7 +5887,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.08,
               "remainingCapacity": 3772
             },
             "11": {
@@ -5900,7 +5900,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "12": {
@@ -5913,7 +5913,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "13": {
@@ -5926,7 +5926,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "14": {
@@ -5939,7 +5939,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "15": {
@@ -5952,7 +5952,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.08,
               "remainingCapacity": 3772
             },
             "16": {
@@ -5965,7 +5965,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.08,
               "remainingCapacity": 3772
             },
             "17": {
@@ -5978,7 +5978,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.29,
               "remainingCapacity": 3764
             },
             "18": {
@@ -5991,7 +5991,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.32,
               "remainingCapacity": 3763
             },
             "19": {
@@ -6004,7 +6004,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.19,
               "remainingCapacity": 3768
             }
           }
@@ -6024,7 +6024,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.19,
               "remainingCapacity": 3768
             },
             "10": {
@@ -6161,7 +6161,7 @@
         },
         "Sunday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.03
           },
           "hours": {
             "9": {
@@ -6291,7 +6291,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "19": {
@@ -6304,7 +6304,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             }
           }
@@ -6318,7 +6318,7 @@
       "days": {
         "Monday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.05
           },
           "hours": {
             "9": {
@@ -6331,7 +6331,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "10": {
@@ -6344,7 +6344,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "11": {
@@ -6357,7 +6357,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "12": {
@@ -6370,7 +6370,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "13": {
@@ -6383,7 +6383,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "14": {
@@ -6422,7 +6422,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "17": {
@@ -6435,7 +6435,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "18": {
@@ -6448,7 +6448,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "19": {
@@ -6481,7 +6481,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "10": {
@@ -6494,7 +6494,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "11": {
@@ -6507,7 +6507,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.26,
               "remainingCapacity": 3765
             },
             "12": {
@@ -6520,7 +6520,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.48,
               "remainingCapacity": 3757
             },
             "13": {
@@ -6631,7 +6631,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.21,
               "remainingCapacity": 3767
             },
             "10": {
@@ -6644,7 +6644,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.26,
               "remainingCapacity": 3765
             },
             "11": {
@@ -6657,7 +6657,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.29,
               "remainingCapacity": 3764
             },
             "12": {
@@ -6670,7 +6670,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.26,
               "remainingCapacity": 3765
             },
             "13": {
@@ -6683,7 +6683,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.32,
               "remainingCapacity": 3763
             },
             "14": {
@@ -6696,7 +6696,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.24,
               "remainingCapacity": 3766
             },
             "15": {
@@ -6709,7 +6709,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.32,
               "remainingCapacity": 3763
             },
             "16": {
@@ -6722,7 +6722,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.48,
               "remainingCapacity": 3757
             },
             "17": {
@@ -6761,7 +6761,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.45,
               "remainingCapacity": 3758
             }
           }
@@ -6781,7 +6781,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.29,
               "remainingCapacity": 3764
             },
             "10": {
@@ -8275,7 +8275,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.24,
               "remainingCapacity": 3766
             },
             "10": {
@@ -8432,7 +8432,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.16,
               "remainingCapacity": 3769
             },
             "10": {
@@ -8562,7 +8562,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.29,
               "remainingCapacity": 3764
             }
           }
@@ -8869,7 +8869,7 @@
         },
         "Thursday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.45
           },
           "hours": {
             "9": {
@@ -8882,7 +8882,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.11,
               "remainingCapacity": 3771
             },
             "10": {
@@ -8895,7 +8895,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.29,
               "remainingCapacity": 3764
             },
             "11": {
@@ -8908,7 +8908,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.32,
               "remainingCapacity": 3763
             },
             "12": {
@@ -8921,7 +8921,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.21,
               "remainingCapacity": 3767
             },
             "13": {
@@ -8934,7 +8934,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.21,
               "remainingCapacity": 3767
             },
             "14": {
@@ -8947,7 +8947,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.19,
               "remainingCapacity": 3768
             },
             "15": {
@@ -8960,7 +8960,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.29,
               "remainingCapacity": 3764
             },
             "16": {
@@ -8973,7 +8973,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.37,
               "remainingCapacity": 3761
             },
             "17": {
@@ -8986,7 +8986,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.45,
               "remainingCapacity": 3758
             },
             "18": {
@@ -8999,7 +8999,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.45,
               "remainingCapacity": 3758
             },
             "19": {
@@ -9012,14 +9012,14 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.42,
               "remainingCapacity": 3759
             }
           }
         },
         "Friday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.21
           },
           "hours": {
             "9": {
@@ -9054,11 +9054,11 @@
               "date": "2025-08-22T11:00:00+02:00",
               "minOccupancy": 0,
               "maxOccupancy": 1,
-              "averageOccupancy": 0,
+              "averageOccupancy": 0.33,
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.01,
               "remainingCapacity": 3775
             },
             "12": {
@@ -9067,11 +9067,11 @@
               "date": "2025-08-22T12:00:00+02:00",
               "minOccupancy": 0,
               "maxOccupancy": 1,
-              "averageOccupancy": 0,
+              "averageOccupancy": 0.33,
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.01,
               "remainingCapacity": 3775
             },
             "13": {
@@ -9084,7 +9084,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.13,
               "remainingCapacity": 3770
             },
             "14": {
@@ -9097,7 +9097,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "15": {
@@ -9110,7 +9110,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "16": {
@@ -9123,7 +9123,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "17": {
@@ -9136,7 +9136,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.08,
               "remainingCapacity": 3772
             },
             "18": {
@@ -9149,7 +9149,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.21,
               "remainingCapacity": 3767
             },
             "19": {
@@ -9162,14 +9162,14 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.13,
               "remainingCapacity": 3770
             }
           }
         },
         "Saturday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.08
           },
           "hours": {
             "9": {
@@ -9221,7 +9221,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.08,
               "remainingCapacity": 3772
             },
             "13": {
@@ -9234,7 +9234,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.08,
               "remainingCapacity": 3772
             },
             "14": {
@@ -9247,7 +9247,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.08,
               "remainingCapacity": 3772
             },
             "15": {
@@ -9260,7 +9260,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "16": {
@@ -9273,7 +9273,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "17": {
@@ -9319,7 +9319,7 @@
         },
         "Sunday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.21
           },
           "hours": {
             "9": {
@@ -9345,7 +9345,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "11": {
@@ -9358,7 +9358,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.08,
               "remainingCapacity": 3772
             },
             "12": {
@@ -9371,7 +9371,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.11,
               "remainingCapacity": 3771
             },
             "13": {
@@ -9384,7 +9384,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.16,
               "remainingCapacity": 3769
             },
             "14": {
@@ -9397,7 +9397,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.19,
               "remainingCapacity": 3768
             },
             "15": {
@@ -9410,7 +9410,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.21,
               "remainingCapacity": 3767
             },
             "16": {
@@ -9423,7 +9423,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "17": {
@@ -9436,7 +9436,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "18": {
@@ -9476,7 +9476,7 @@
       "days": {
         "Monday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.21
           },
           "hours": {
             "9": {
@@ -9537,11 +9537,11 @@
               "date": "2025-08-25T13:00:00+02:00",
               "minOccupancy": 0,
               "maxOccupancy": 1,
-              "averageOccupancy": 0,
+              "averageOccupancy": 0.33,
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.01,
               "remainingCapacity": 3775
             },
             "14": {
@@ -9554,7 +9554,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "15": {
@@ -9567,7 +9567,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "16": {
@@ -9580,7 +9580,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.11,
               "remainingCapacity": 3771
             },
             "17": {
@@ -9593,7 +9593,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.11,
               "remainingCapacity": 3771
             },
             "18": {
@@ -9606,7 +9606,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.21,
               "remainingCapacity": 3767
             },
             "19": {
@@ -9619,7 +9619,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.16,
               "remainingCapacity": 3769
             }
           }
@@ -9639,7 +9639,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.11,
               "remainingCapacity": 3771
             },
             "10": {
@@ -9652,7 +9652,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.32,
               "remainingCapacity": 3763
             },
             "11": {
@@ -9665,7 +9665,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.4,
               "remainingCapacity": 3760
             },
             "12": {
@@ -9678,7 +9678,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.48,
               "remainingCapacity": 3757
             },
             "13": {
@@ -9776,7 +9776,7 @@
         },
         "Wednesday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.29
           },
           "hours": {
             "9": {
@@ -9789,7 +9789,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.29,
               "remainingCapacity": 3764
             },
             "10": {
@@ -9802,7 +9802,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.24,
               "remainingCapacity": 3766
             },
             "11": {
@@ -9815,7 +9815,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "12": {
@@ -9841,7 +9841,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.24,
               "remainingCapacity": 3766
             },
             "14": {
@@ -9854,7 +9854,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.29,
               "remainingCapacity": 3764
             },
             "15": {
@@ -9863,11 +9863,11 @@
               "date": "2025-08-27T15:00:00+02:00",
               "minOccupancy": 0,
               "maxOccupancy": 1,
-              "averageOccupancy": 0,
+              "averageOccupancy": 0.33,
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.01,
               "remainingCapacity": 3775
             },
             "16": {
@@ -9880,7 +9880,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.11,
               "remainingCapacity": 3771
             },
             "17": {
@@ -9893,7 +9893,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.16,
               "remainingCapacity": 3769
             },
             "18": {
@@ -10089,7 +10089,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             },
             "10": {
@@ -10102,7 +10102,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.16,
               "remainingCapacity": 3769
             },
             "11": {
@@ -10115,7 +10115,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.26,
               "remainingCapacity": 3765
             },
             "12": {
@@ -10128,7 +10128,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.32,
               "remainingCapacity": 3763
             },
             "13": {
@@ -10206,7 +10206,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.48,
               "remainingCapacity": 3757
             },
             "19": {
@@ -10219,7 +10219,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.03,
               "remainingCapacity": 3774
             }
           }
@@ -10239,7 +10239,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.16,
               "remainingCapacity": 3769
             },
             "10": {
@@ -10252,7 +10252,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.32,
               "remainingCapacity": 3763
             },
             "11": {
@@ -10265,7 +10265,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.32,
               "remainingCapacity": 3763
             },
             "12": {
@@ -10278,7 +10278,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.45,
               "remainingCapacity": 3758
             },
             "13": {
@@ -10376,7 +10376,7 @@
         },
         "Sunday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.21
           },
           "hours": {
             "9": {
@@ -10441,7 +10441,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "14": {
@@ -10454,7 +10454,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.08,
               "remainingCapacity": 3772
             },
             "15": {
@@ -10467,7 +10467,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.08,
               "remainingCapacity": 3772
             },
             "16": {
@@ -10480,7 +10480,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.13,
               "remainingCapacity": 3770
             },
             "17": {
@@ -10493,7 +10493,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.19,
               "remainingCapacity": 3768
             },
             "18": {
@@ -10506,7 +10506,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.21,
               "remainingCapacity": 3767
             },
             "19": {
@@ -10519,7 +10519,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.19,
               "remainingCapacity": 3768
             }
           }
@@ -10528,12 +10528,12 @@
     },
     "2026-05-25": {
       "maxWeekValues": {
-        "utilizationRate": 0
+        "utilizationRate": 0.24
       },
       "days": {
         "Saturday": {
           "maxDayValues": {
-            "utilizationRate": 0
+            "utilizationRate": 0.24
           },
           "hours": {
             "9": {
@@ -10559,7 +10559,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.05,
               "remainingCapacity": 3773
             },
             "11": {
@@ -10572,7 +10572,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.11,
               "remainingCapacity": 3771
             },
             "12": {
@@ -10585,7 +10585,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.19,
               "remainingCapacity": 3768
             },
             "13": {
@@ -10598,7 +10598,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.24,
               "remainingCapacity": 3766
             },
             "14": {
@@ -10611,7 +10611,7 @@
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
+              "utilizationRate": 0.16,
               "remainingCapacity": 3769
             },
             "15": {
@@ -10620,12 +10620,12 @@
               "date": "2026-05-30T15:00:00+02:00",
               "minOccupancy": 3,
               "maxOccupancy": 6,
-              "averageOccupancy": 5,
+              "averageOccupancy": 6,
               "maximumCapacity": 3775,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 0,
-              "remainingCapacity": 3770
+              "utilizationRate": 0.16,
+              "remainingCapacity": 3769
             }
           }
         }
