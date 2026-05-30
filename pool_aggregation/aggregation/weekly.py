@@ -60,7 +60,7 @@ def build_weekly_map(
             "totalLanes": total_lanes,
             "openLanes": open_lanes,
             "utilizationRate": util,
-            "remainingCapacity": max_cap - avg_occ,
+            "remainingCapacity": py_round(max_cap - avg_occ),
         }
 
     result = {}

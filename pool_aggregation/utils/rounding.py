@@ -4,8 +4,15 @@ from statistics import median
 
 
 def py_round(x: float) -> int:
-    """Round to nearest int using standard 'round half up' logic."""
-    return math.floor(x + 0.5)
+    """Round to nearest int using standard 'round half up' logic.
+    But rounds to 2 decimal places if x < 0.5.
+    """
+    if x <= 0:
+        return 0
+    elif x < 0.5:
+        return math.floor(x * 100 + 0.5) / 100
+    else:
+        return math.floor(x + 0.5)
 
 
 def _weight(r: float) -> float:
