@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-01T10:50:04.205664+02:00",
+  "generatedAt": "2026-06-01T11:00:04.581917+02:00",
   "timezone": "Europe/Prague",
   "dataRange": {
     "firstRecordAt": "2025-06-23T06:00:00+02:00",
-    "lastRecordAt": "2026-06-01T10:00:00+02:00"
+    "lastRecordAt": "2026-06-01T11:00:00+02:00"
   },
   "poolName": "Aquapark Kohoutovice",
   "availableWeekIds": [
@@ -66681,6 +66681,19 @@
               "openLanes": null,
               "utilizationRate": 21,
               "remainingCapacity": 216
+            },
+            "11": {
+              "day": "Monday",
+              "hour": 11,
+              "date": "2026-06-01T11:00:00+02:00",
+              "minOccupancy": 42,
+              "maxOccupancy": 42,
+              "averageOccupancy": 42,
+              "maximumCapacity": 273,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 15,
+              "remainingCapacity": 231
             }
           }
         }
