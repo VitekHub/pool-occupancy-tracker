@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-03T16:50:05.090695+02:00",
+  "generatedAt": "2026-06-03T17:00:05.812371+02:00",
   "timezone": "Europe/Prague",
   "dataRange": {
     "firstRecordAt": "2025-06-23T06:00:00+02:00",
-    "lastRecordAt": "2026-06-03T16:00:00+02:00"
+    "lastRecordAt": "2026-06-03T17:00:00+02:00"
   },
   "poolName": "Bazény Lužánky",
   "availableWeekIds": [
@@ -67182,7 +67182,7 @@
     },
     "2026-06-01": {
       "maxWeekValues": {
-        "utilizationRate": 36
+        "utilizationRate": 43
       },
       "days": {
         "Monday": {
@@ -67617,7 +67617,7 @@
         },
         "Wednesday": {
           "maxDayValues": {
-            "utilizationRate": 32
+            "utilizationRate": 43
           },
           "hours": {
             "6": {
@@ -67762,6 +67762,19 @@
               "openLanes": null,
               "utilizationRate": 32,
               "remainingCapacity": 433
+            },
+            "17": {
+              "day": "Wednesday",
+              "hour": 17,
+              "date": "2026-06-03T17:00:00+02:00",
+              "minOccupancy": 273,
+              "maxOccupancy": 273,
+              "averageOccupancy": 273,
+              "maximumCapacity": 634,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 43,
+              "remainingCapacity": 361
             }
           }
         }
