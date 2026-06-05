@@ -100,3 +100,20 @@ def test_available_week_ids_first_entry_is_earliest_data_monday():
     records = [_rec("22.7.2024", "Monday", 10), _rec("15.7.2024", "Monday", 10)]
     result = available_week_ids(records)
     assert result[0] == "2024-07-15"
+
+
+def test_available_week_ids_includes_extra_forecast_weeks():
+    records = [_rec("15.7.2024", "Monday", 10)]
+    result = available_week_ids(records, extra_week_ids=["2024-07-22", "2024-07-29"])
+    assert result == ["2024-07-15", "2024-07-22", "2024-07-29"]
+
+
+def test_available_week_ids_extra_deduplicates_with_records():
+    records = [_rec("15.7.2024", "Monday", 10)]
+    result = available_week_ids(records, extra_week_ids=["2024-07-15", "2024-07-22"])
+    assert result == ["2024-07-15", "2024-07-22"]
+
+
+def test_available_week_ids_empty_records_with_extra():
+    result = available_week_ids([], extra_week_ids=["2024-07-22", "2024-07-15"])
+    assert result == ["2024-07-15", "2024-07-22"]

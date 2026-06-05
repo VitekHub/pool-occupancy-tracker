@@ -1,9 +1,17 @@
 from __future__ import annotations
 from collections import defaultdict
+from collections.abc import Iterable
 from datetime import date, datetime, timedelta
 
 from pool_aggregation.models.records import OccupancyRecord
 from pool_aggregation.utils.timezones import PRAGUE
+
+_DAY_NAMES = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+
+
+def day_name_from_date_str(date_str: str) -> str:
+    """Return the English weekday name for a date_str in d.M.yyyy format."""
+    return _DAY_NAMES[_parse_date(date_str).weekday()]
 
 
 def _parse_date(date_str: str) -> date:
@@ -29,14 +37,19 @@ def bucket_records(
     return dict(buckets)
 
 
-def available_week_ids(records: list[OccupancyRecord]) -> list[str]:
-    """Ascending Monday ISO dates for weeks that actually have records.
+def available_week_ids(
+    records: list[OccupancyRecord],
+    extra_week_ids: Iterable[str] = (),
+) -> list[str]:
+    """Ascending Monday ISO dates for weeks that have records or capacity data.
 
-    If records is empty, returns only the current Prague week.
+    If both sources are empty, returns only the current Prague week.
     """
-    if not records:
+    from_records = {week_id(r.date_str) for r in records}
+    merged = from_records | set(extra_week_ids)
+    if not merged:
         today = datetime.now(tz=PRAGUE).date()
         current_monday = today - timedelta(days=today.weekday())
         return [current_monday.isoformat()]
 
-    return sorted({week_id(r.date_str) for r in records})
+    return sorted(merged)

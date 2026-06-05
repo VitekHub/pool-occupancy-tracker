@@ -37,8 +37,8 @@ def process_pool(pool_name: str, pool_cfg: dict, data_dir: Path, output_dir: Pat
     records = read_records(csv_path)
 
     data_range = build_data_range(records)
-    available_weeks = available_week_ids(records)
     weekly_map = build_weekly_map(records, pool_cfg)
+    available_weeks = available_week_ids(records, weekly_map.keys())
     overall_map = build_overall_map(weekly_map)
     current_occ = build_current_occupancy(records, pool_cfg, overall_map, now)
 

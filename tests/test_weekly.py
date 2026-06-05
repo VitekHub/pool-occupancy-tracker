@@ -1,6 +1,7 @@
 from pool_aggregation.aggregation.weekly import build_weekly_map
 from pool_aggregation.io.capacity_reader import clear_cache
 from pool_aggregation.models.records import OccupancyRecord
+import pool_aggregation.aggregation.weekly as weekly_mod
 import pytest
 
 
@@ -221,3 +222,141 @@ def test_hourly_capacity_resolution(monkeypatch, tmp_path):
     hour = build_weekly_map(records, cfg)["2024-07-15"]["days"]["Monday"]["hours"]["14"]
     assert hour["maximumCapacity"] == 90
     assert hour["remainingCapacity"] == 90 - 45
+
+
+# --- future capacity-only slots ---
+
+def test_future_slot_appears_when_no_occupancy(monkeypatch, tmp_path):
+    """A capacity CSV row with no matching occupancy record creates a null-occ slot."""
+    csv_path = tmp_path / "cap.csv"
+    # 18.7.2024 is a Thursday in week 2024-07-15
+    csv_path.write_text("Date,Day,Hour,Maximum Occupancy\n18.7.2024,Thursday,10:00:00,120\n")
+
+    monkeypatch.setattr(weekly_mod, "_DATA_DIR", tmp_path)
+    import pool_aggregation.aggregation.capacity as cap_mod
+    monkeypatch.setattr(cap_mod, "_DATA_DIR", tmp_path)
+
+    cfg = {"maximumCapacity": 135, "data": {"capacity": {"forecast": "cap.csv"}}}
+    records = [_rec("15.7.2024", "Monday", 14, 42)]
+    wmap = build_weekly_map(records, cfg)
+
+    thursday_hours = wmap["2024-07-15"]["days"]["Thursday"]["hours"]
+    assert "10" in thursday_hours
+    slot = thursday_hours["10"]
+    assert slot["minOccupancy"] is None
+    assert slot["maxOccupancy"] is None
+    assert slot["averageOccupancy"] is None
+    assert slot["utilizationRate"] is None
+    assert slot["remainingCapacity"] is None
+    assert slot["maximumCapacity"] == 120
+    assert slot["day"] == "Thursday"
+    assert slot["hour"] == 10
+
+
+def test_future_slot_date_iso8601(monkeypatch, tmp_path):
+    csv_path = tmp_path / "cap.csv"
+    csv_path.write_text("Date,Day,Hour,Maximum Occupancy\n18.7.2024,Thursday,10:00:00,120\n")
+
+    monkeypatch.setattr(weekly_mod, "_DATA_DIR", tmp_path)
+    import pool_aggregation.aggregation.capacity as cap_mod
+    monkeypatch.setattr(cap_mod, "_DATA_DIR", tmp_path)
+
+    cfg = {"maximumCapacity": 135, "data": {"capacity": {"forecast": "cap.csv"}}}
+    slot = build_weekly_map([], cfg)["2024-07-15"]["days"]["Thursday"]["hours"]["10"]
+    assert slot["date"].startswith("2024-07-18T10:")
+    assert "+02:00" in slot["date"]
+
+
+def test_future_slot_uses_forecast(monkeypatch, tmp_path):
+    """Forecast CSV drives future slots."""
+    (tmp_path / "forecast.csv").write_text(
+        "Date,Day,Hour,Maximum Occupancy\n18.7.2024,Thursday,10:00:00,80\n"
+    )
+
+    monkeypatch.setattr(weekly_mod, "_DATA_DIR", tmp_path)
+    import pool_aggregation.aggregation.capacity as cap_mod
+    monkeypatch.setattr(cap_mod, "_DATA_DIR", tmp_path)
+
+    cfg = {"maximumCapacity": 135, "data": {"capacity": {"forecast": "forecast.csv"}}}
+    slot = build_weekly_map([], cfg)["2024-07-15"]["days"]["Thursday"]["hours"]["10"]
+    assert slot["maximumCapacity"] == 80
+
+
+def test_occupied_slot_not_replaced_by_future(monkeypatch, tmp_path):
+    """A capacity CSV row for a date/hour that has occupancy data is not overwritten."""
+    csv_path = tmp_path / "cap.csv"
+    csv_path.write_text("Date,Day,Hour,Maximum Occupancy\n15.7.2024,Monday,14:00:00,90\n")
+
+    monkeypatch.setattr(weekly_mod, "_DATA_DIR", tmp_path)
+    import pool_aggregation.aggregation.capacity as cap_mod
+    monkeypatch.setattr(cap_mod, "_DATA_DIR", tmp_path)
+
+    cfg = {"maximumCapacity": 135, "data": {"capacity": {"forecast": "cap.csv"}}}
+    records = [_rec("15.7.2024", "Monday", 14, 42)]
+    slot = build_weekly_map(records, cfg)["2024-07-15"]["days"]["Monday"]["hours"]["14"]
+    # Must have real occupancy, not null
+    assert slot["averageOccupancy"] == 42
+    assert slot["maximumCapacity"] == 90
+
+
+def test_future_slot_open_lanes_inside_pool(monkeypatch, tmp_path):
+    csv_path = tmp_path / "cap.csv"
+    # resolved=90, static=135, lanes=6 → round(90*6/135) = round(4.0) = 4
+    csv_path.write_text("Date,Day,Hour,Maximum Occupancy\n18.7.2024,Thursday,10:00:00,90\n")
+
+    monkeypatch.setattr(weekly_mod, "_DATA_DIR", tmp_path)
+    import pool_aggregation.aggregation.capacity as cap_mod
+    monkeypatch.setattr(cap_mod, "_DATA_DIR", tmp_path)
+
+    cfg = {"maximumCapacity": 135, "totalLanes": 6, "data": {"capacity": {"forecast": "cap.csv"}}}
+    slot = build_weekly_map([], cfg)["2024-07-15"]["days"]["Thursday"]["hours"]["10"]
+    assert slot["totalLanes"] == 6
+    assert slot["openLanes"] == 4
+
+
+def test_future_slot_open_lanes_null_outside_pool(monkeypatch, tmp_path):
+    csv_path = tmp_path / "cap.csv"
+    csv_path.write_text("Date,Day,Hour,Maximum Occupancy\n18.7.2024,Thursday,10:00:00,500\n")
+
+    monkeypatch.setattr(weekly_mod, "_DATA_DIR", tmp_path)
+    import pool_aggregation.aggregation.capacity as cap_mod
+    monkeypatch.setattr(cap_mod, "_DATA_DIR", tmp_path)
+
+    cfg = {"maximumCapacity": 500, "data": {"capacity": {"forecast": "cap.csv"}}}
+    slot = build_weekly_map([], cfg)["2024-07-15"]["days"]["Thursday"]["hours"]["10"]
+    assert slot["totalLanes"] is None
+    assert slot["openLanes"] is None
+
+
+def test_max_day_values_null_when_only_future_slots(monkeypatch, tmp_path):
+    """maxDayValues.utilizationRate is null when the day has only future slots."""
+    csv_path = tmp_path / "cap.csv"
+    csv_path.write_text("Date,Day,Hour,Maximum Occupancy\n18.7.2024,Thursday,10:00:00,120\n")
+
+    monkeypatch.setattr(weekly_mod, "_DATA_DIR", tmp_path)
+    import pool_aggregation.aggregation.capacity as cap_mod
+    monkeypatch.setattr(cap_mod, "_DATA_DIR", tmp_path)
+
+    cfg = {"maximumCapacity": 135, "data": {"capacity": {"forecast": "cap.csv"}}}
+    wmap = build_weekly_map([], cfg)
+    assert wmap["2024-07-15"]["days"]["Thursday"]["maxDayValues"]["utilizationRate"] is None
+    assert wmap["2024-07-15"]["maxWeekValues"]["utilizationRate"] is None
+
+
+def test_max_week_values_ignores_null_util_from_future(monkeypatch, tmp_path):
+    """maxWeekValues picks from real occupancy util even when future slots are present."""
+    csv_path = tmp_path / "cap.csv"
+    # 18.7.2024 Thursday is future; 15.7.2024 Monday has occupancy
+    csv_path.write_text(
+        "Date,Day,Hour,Maximum Occupancy\n"
+        "18.7.2024,Thursday,10:00:00,120\n"
+    )
+
+    monkeypatch.setattr(weekly_mod, "_DATA_DIR", tmp_path)
+    import pool_aggregation.aggregation.capacity as cap_mod
+    monkeypatch.setattr(cap_mod, "_DATA_DIR", tmp_path)
+
+    cfg = {"maximumCapacity": 135, "data": {"capacity": {"forecast": "cap.csv"}}}
+    records = [_rec("15.7.2024", "Monday", 14, 90)]  # util = 67
+    wmap = build_weekly_map(records, cfg)
+    assert wmap["2024-07-15"]["maxWeekValues"]["utilizationRate"] == 67

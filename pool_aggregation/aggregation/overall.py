@@ -14,7 +14,8 @@ def build_overall_map(weekly_map: dict) -> dict:
     for week in weekly_map.values():
         for day, day_data in week["days"].items():
             for hour_key, hour_data in day_data["hours"].items():
-                slot_rates[(day, hour_key)].append(hour_data["utilizationRate"])
+                if hour_data["utilizationRate"] is not None:
+                    slot_rates[(day, hour_key)].append(hour_data["utilizationRate"])
 
     if not slot_rates:
         return {}
