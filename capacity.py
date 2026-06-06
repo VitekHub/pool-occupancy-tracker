@@ -1,20 +1,18 @@
-import urllib.request
 import csv
 from datetime import datetime, timedelta
 import os
 import re
 from bs4 import BeautifulSoup
 
+from http_utils import fetch_url
+
 def get_capacity_data(date_str):
     """Fetch capacity data for a given date."""
     try:
         url = f"https://www.kravihora-brno.cz/kryta-plavecka-hala/rozpis?from={date_str}"
-        req = urllib.request.Request(
-            url,
-            headers={'User-Agent': 'Mozilla/5.0'}
-        )
-        response = urllib.request.urlopen(req)
-        html = response.read().decode('utf-8')
+        html = fetch_url(url)
+        if html is None:
+            return []
         
         # Use BeautifulSoup to parse the HTML
         soup = BeautifulSoup(html, 'html.parser')

@@ -1,4 +1,4 @@
-import urllib.request
+from http_utils import fetch_url
 import re
 import csv
 import json
@@ -29,17 +29,11 @@ def save_pool_config(pool_configs):
         return False
 
 def fetch_html(url):
-    """Fetch HTML content from a given URL."""
-    try:
-        req = urllib.request.Request(
-            url,
-            headers={'User-Agent': 'Mozilla/5.0'}
-        )
-        response = urllib.request.urlopen(req)
-        return response.read().decode('utf-8')
-    except Exception as e:
-        print(f"Error fetching HTML from {url}: {e}")
-        return None
+    """Fetch HTML content from a given URL, respecting robots.txt."""
+    result = fetch_url(url)
+    if result is None:
+        print(f"Blocked by robots.txt or fetch failed: {url}")
+    return result
 
 def is_pool_open(pool_type_config):
     def get_opening_hours(hours):
