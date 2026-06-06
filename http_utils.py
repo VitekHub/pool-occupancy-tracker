@@ -63,10 +63,11 @@ def can_fetch(url: str) -> bool:
         rp.set_url(f"{domain}/robots.txt")
         try:
             rp.read()
-        except Exception:
+        except Exception as e:
             logging.warning(
-                "Could not fetch robots.txt for %s, assuming allowed", domain
+                "Could not fetch robots.txt for %s, assuming allowed: %s", domain, e
             )
+            return True
         _robots_cache[domain] = rp
 
     return _robots_cache[domain].can_fetch(BOT_USER_AGENT, url)
