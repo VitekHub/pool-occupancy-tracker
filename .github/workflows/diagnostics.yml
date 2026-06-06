@@ -20,7 +20,7 @@ jobs:
       run: pip install -r requirements.txt
 
     - name: Run diagnostics
-      run: python diagnostics.py
+      run: python occupancy.py
       env:
         BOT_NAME: ${{ vars.BOT_NAME }}
         BOT_VERSION: ${{ vars.BOT_VERSION }}

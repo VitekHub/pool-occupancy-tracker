@@ -67,6 +67,7 @@ def can_fetch(url: str) -> bool:
             logging.warning(
                 "Could not fetch robots.txt for %s, assuming allowed: %s", domain, e
             )
+            return True
         _robots_cache[domain] = rp
 
     return _robots_cache[domain].can_fetch(BOT_USER_AGENT, url)
