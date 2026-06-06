@@ -2,11 +2,12 @@ import os
 import urllib.request
 import urllib.robotparser
 import logging
+from pathlib import Path
 from urllib.parse import urlparse
 
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(Path(__file__).parent / ".env")
 
 
 def build_user_agent():
