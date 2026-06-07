@@ -46,6 +46,8 @@ def build_user_agent():
 
 BOT_USER_AGENT = build_user_agent()
 
+_FETCH_TIMEOUT = 5  # seconds
+
 _robots_cache: dict[str, urllib.robotparser.RobotFileParser] = {}
 
 
@@ -62,7 +64,12 @@ def can_fetch(url: str) -> bool:
         rp = urllib.robotparser.RobotFileParser()
         rp.set_url(f"{domain}/robots.txt")
         try:
-            rp.read()
+            req = urllib.request.Request(
+                f"{domain}/robots.txt",
+                headers={"User-Agent": BOT_USER_AGENT},
+            )
+            resp = urllib.request.urlopen(req, timeout=_FETCH_TIMEOUT)
+            rp.parse(resp.read().decode("utf-8").splitlines())
         except Exception as e:
             logging.warning(
                 "Could not fetch robots.txt for %s, assuming allowed: %s", domain, e
@@ -85,7 +92,7 @@ def fetch_url(url: str) -> str | None:
 
     try:
         req = urllib.request.Request(url, headers={"User-Agent": BOT_USER_AGENT})
-        response = urllib.request.urlopen(req)
+        response = urllib.request.urlopen(req, timeout=_FETCH_TIMEOUT)
         return response.read().decode("utf-8")
     except Exception as e:
         logging.error("Error fetching %s: %s", url, e)
