@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-26T16:20:18.917408+02:00",
+  "generatedAt": "2026-06-26T16:30:17.186255+02:00",
   "timezone": "Europe/Prague",
   "dataRange": {
     "firstRecordAt": "2025-06-16T08:00:00+02:00",
@@ -23622,7 +23622,7 @@
         },
         "Friday": {
           "maxDayValues": {
-            "utilizationRate": 29
+            "utilizationRate": 30
           },
           "hours": {
             "7": {
@@ -23747,13 +23747,13 @@
               "hour": 16,
               "date": "2026-06-26T16:00:00+02:00",
               "minOccupancy": 558,
-              "maxOccupancy": 605,
-              "averageOccupancy": 582,
+              "maxOccupancy": 639,
+              "averageOccupancy": 596,
               "maximumCapacity": 2000,
               "totalLanes": null,
               "openLanes": null,
-              "utilizationRate": 29,
-              "remainingCapacity": 1418
+              "utilizationRate": 30,
+              "remainingCapacity": 1404
             }
           }
         }
