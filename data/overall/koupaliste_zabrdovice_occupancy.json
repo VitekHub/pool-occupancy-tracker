@@ -1,27 +1,27 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-28T15:50:05.704948+02:00",
+  "generatedAt": "2026-06-28T16:00:06.433078+02:00",
   "timezone": "Europe/Prague",
   "dataRange": {
     "firstRecordAt": "2025-06-23T09:00:00+02:00",
-    "lastRecordAt": "2026-06-28T15:00:00+02:00"
+    "lastRecordAt": "2026-06-28T16:00:00+02:00"
   },
   "poolName": "Koupaliště Zábrdovice",
   "currentOccupancy": {
-    "occupancy": 1422,
-    "time": "15:50",
-    "timestamp": "2026-06-28T15:50:00+02:00",
-    "currentUtilizationRate": 38,
-    "averageUtilizationRate": 10,
+    "occupancy": 1488,
+    "time": "16:00",
+    "timestamp": "2026-06-28T16:00:00+02:00",
+    "currentUtilizationRate": 39,
+    "averageUtilizationRate": 11,
     "maximumCapacity": 3775,
     "totalLanes": null,
     "openLanes": null
   },
   "overallOccupancyMap": {
     "maxOverallValues": {
-      "averageUtilizationRate": 10,
+      "averageUtilizationRate": 11,
       "weightedAverageUtilizationRate": 22,
-      "medianUtilizationRate": 4
+      "medianUtilizationRate": 5
     },
     "days": {
       "Monday": {
@@ -410,9 +410,9 @@
       },
       "Sunday": {
         "maxDayValues": {
-          "averageUtilizationRate": 10,
-          "weightedAverageUtilizationRate": 17,
-          "medianUtilizationRate": 4
+          "averageUtilizationRate": 11,
+          "weightedAverageUtilizationRate": 19,
+          "medianUtilizationRate": 5
         },
         "hours": {
           "9": {
@@ -451,9 +451,9 @@
             "medianUtilizationRate": 4
           },
           "16": {
-            "averageUtilizationRate": 9,
-            "weightedAverageUtilizationRate": 17,
-            "medianUtilizationRate": 4
+            "averageUtilizationRate": 11,
+            "weightedAverageUtilizationRate": 19,
+            "medianUtilizationRate": 5
           },
           "17": {
             "averageUtilizationRate": 10,
