@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-29T17:20:06.192486+02:00",
+  "generatedAt": "2026-06-29T17:30:06.678638+02:00",
   "timezone": "Europe/Prague",
   "dataRange": {
     "firstRecordAt": "2025-06-16T08:00:00+02:00",
@@ -8,11 +8,11 @@
   },
   "poolName": "Kraví Hora (venkovní)",
   "currentOccupancy": {
-    "occupancy": 708,
-    "time": "17:20",
-    "timestamp": "2026-06-29T17:20:00+02:00",
-    "currentUtilizationRate": 35,
-    "averageUtilizationRate": 11,
+    "occupancy": 682,
+    "time": "17:30",
+    "timestamp": "2026-06-29T17:30:00+02:00",
+    "currentUtilizationRate": 34,
+    "averageUtilizationRate": 10,
     "maximumCapacity": 2000,
     "totalLanes": null,
     "openLanes": null
@@ -26,8 +26,8 @@
     "days": {
       "Monday": {
         "maxDayValues": {
-          "averageUtilizationRate": 11,
-          "weightedAverageUtilizationRate": 15,
+          "averageUtilizationRate": 10,
+          "weightedAverageUtilizationRate": 14,
           "medianUtilizationRate": 7
         },
         "hours": {
@@ -77,8 +77,8 @@
             "medianUtilizationRate": 7
           },
           "17": {
-            "averageUtilizationRate": 11,
-            "weightedAverageUtilizationRate": 15,
+            "averageUtilizationRate": 10,
+            "weightedAverageUtilizationRate": 14,
             "medianUtilizationRate": 7
           },
           "18": {
