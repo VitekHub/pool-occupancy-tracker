@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-18T19:50:07.228850+02:00",
+  "generatedAt": "2026-07-18T20:00:07.965521+02:00",
   "timezone": "Europe/Prague",
   "dataRange": {
     "firstRecordAt": "2025-06-23T09:00:00+02:00",
-    "lastRecordAt": "2026-07-18T19:00:00+02:00"
+    "lastRecordAt": "2026-07-18T20:00:00+02:00"
   },
   "poolName": "Koupaliště Riviéra",
   "currentOccupancy": {
-    "occupancy": 950,
-    "time": "19:50",
-    "timestamp": "2026-07-18T19:50:00+02:00",
+    "occupancy": 943,
+    "time": "20:00",
+    "timestamp": "2026-07-18T20:00:00+02:00",
     "currentUtilizationRate": 12,
-    "averageUtilizationRate": 16,
+    "averageUtilizationRate": 27,
     "maximumCapacity": 7850,
     "totalLanes": null,
     "openLanes": null
@@ -371,9 +371,9 @@
       },
       "Saturday": {
         "maxDayValues": {
-          "averageUtilizationRate": 32,
-          "weightedAverageUtilizationRate": 37,
-          "medianUtilizationRate": 16
+          "averageUtilizationRate": 27,
+          "weightedAverageUtilizationRate": 30,
+          "medianUtilizationRate": 14
         },
         "hours": {
           "9": {
@@ -432,9 +432,9 @@
             "medianUtilizationRate": 7
           },
           "20": {
-            "averageUtilizationRate": 32,
-            "weightedAverageUtilizationRate": 37,
-            "medianUtilizationRate": 16
+            "averageUtilizationRate": 27,
+            "weightedAverageUtilizationRate": 30,
+            "medianUtilizationRate": 14
           }
         }
       },
