@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-27T09:58:38.478410+02:00",
+  "generatedAt": "2026-07-27T10:08:42.402496+02:00",
   "timezone": "Europe/Prague",
   "dataRange": {
     "firstRecordAt": "2025-03-24T05:00:00+01:00",
-    "lastRecordAt": "2026-07-27T09:00:00+02:00"
+    "lastRecordAt": "2026-07-27T10:00:00+02:00"
   },
   "poolName": "Kraví Hora (vnitřní)",
   "availableWeekIds": [
@@ -72611,12 +72611,12 @@
     },
     "2026-07-27": {
       "maxWeekValues": {
-        "utilizationRate": 11
+        "utilizationRate": 21
       },
       "days": {
         "Monday": {
           "maxDayValues": {
-            "utilizationRate": 11
+            "utilizationRate": 21
           },
           "hours": {
             "9": {
@@ -72631,6 +72631,19 @@
               "openLanes": 6,
               "utilizationRate": 11,
               "remainingCapacity": 120
+            },
+            "10": {
+              "day": "Monday",
+              "hour": 10,
+              "date": "2026-07-27T10:00:00+02:00",
+              "minOccupancy": 23,
+              "maxOccupancy": 23,
+              "averageOccupancy": 23,
+              "maximumCapacity": 112,
+              "totalLanes": 6,
+              "openLanes": 5,
+              "utilizationRate": 21,
+              "remainingCapacity": 89
             },
             "6": {
               "day": "Monday",
@@ -72668,19 +72681,6 @@
               "maximumCapacity": 0,
               "totalLanes": 6,
               "openLanes": 0,
-              "utilizationRate": null,
-              "remainingCapacity": null
-            },
-            "10": {
-              "day": "Monday",
-              "hour": 10,
-              "date": "2026-07-27T10:00:00+02:00",
-              "minOccupancy": null,
-              "maxOccupancy": null,
-              "averageOccupancy": null,
-              "maximumCapacity": 112,
-              "totalLanes": 6,
-              "openLanes": 5,
               "utilizationRate": null,
               "remainingCapacity": null
             },
