@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-30T09:50:08.817451+02:00",
+  "generatedAt": "2026-07-30T10:00:11.955650+02:00",
   "timezone": "Europe/Prague",
   "dataRange": {
     "firstRecordAt": "2025-06-23T09:00:00+02:00",
-    "lastRecordAt": "2026-07-30T09:00:00+02:00"
+    "lastRecordAt": "2026-07-30T10:00:00+02:00"
   },
   "poolName": "Koupaliště Dobrák",
   "availableWeekIds": [
@@ -14988,6 +14988,19 @@
               "openLanes": null,
               "utilizationRate": 6,
               "remainingCapacity": 2817
+            },
+            "10": {
+              "day": "Thursday",
+              "hour": 10,
+              "date": "2026-07-30T10:00:00+02:00",
+              "minOccupancy": 50,
+              "maxOccupancy": 50,
+              "averageOccupancy": 50,
+              "maximumCapacity": 2988,
+              "totalLanes": null,
+              "openLanes": null,
+              "utilizationRate": 2,
+              "remainingCapacity": 2938
             }
           }
         }
