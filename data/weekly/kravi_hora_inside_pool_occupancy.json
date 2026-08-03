@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-03T16:50:10.526760+02:00",
+  "generatedAt": "2026-08-03T17:00:09.177041+02:00",
   "timezone": "Europe/Prague",
   "dataRange": {
     "firstRecordAt": "2025-03-24T05:00:00+01:00",
-    "lastRecordAt": "2026-08-03T16:00:00+02:00"
+    "lastRecordAt": "2026-08-03T17:00:00+02:00"
   },
   "poolName": "Kraví Hora (vnitřní)",
   "availableWeekIds": [
@@ -73747,12 +73747,12 @@
     },
     "2026-08-03": {
       "maxWeekValues": {
-        "utilizationRate": 29
+        "utilizationRate": 69
       },
       "days": {
         "Monday": {
           "maxDayValues": {
-            "utilizationRate": 29
+            "utilizationRate": 69
           },
           "hours": {
             "9": {
@@ -73859,6 +73859,19 @@
               "utilizationRate": 29,
               "remainingCapacity": 96
             },
+            "17": {
+              "day": "Monday",
+              "hour": 17,
+              "date": "2026-08-03T17:00:00+02:00",
+              "minOccupancy": 46,
+              "maxOccupancy": 46,
+              "averageOccupancy": 46,
+              "maximumCapacity": 67,
+              "totalLanes": 6,
+              "openLanes": 3,
+              "utilizationRate": 69,
+              "remainingCapacity": 21
+            },
             "6": {
               "day": "Monday",
               "hour": 6,
@@ -73895,19 +73908,6 @@
               "maximumCapacity": 0,
               "totalLanes": 6,
               "openLanes": 0,
-              "utilizationRate": null,
-              "remainingCapacity": null
-            },
-            "17": {
-              "day": "Monday",
-              "hour": 17,
-              "date": "2026-08-03T17:00:00+02:00",
-              "minOccupancy": null,
-              "maxOccupancy": null,
-              "averageOccupancy": null,
-              "maximumCapacity": 67,
-              "totalLanes": 6,
-              "openLanes": 3,
               "utilizationRate": null,
               "remainingCapacity": null
             },
