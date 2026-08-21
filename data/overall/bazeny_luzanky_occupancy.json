@@ -1,13 +1,22 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-21T05:52:30.109210+02:00",
+  "generatedAt": "2026-08-21T06:09:30.362468+02:00",
   "timezone": "Europe/Prague",
   "dataRange": {
     "firstRecordAt": "2025-06-23T06:00:00+02:00",
-    "lastRecordAt": "2026-08-20T21:00:00+02:00"
+    "lastRecordAt": "2026-08-21T06:00:00+02:00"
   },
   "poolName": "Bazény Lužánky",
-  "currentOccupancy": null,
+  "currentOccupancy": {
+    "occupancy": 19,
+    "time": "06:09",
+    "timestamp": "2026-08-21T06:09:00+02:00",
+    "currentUtilizationRate": 3,
+    "averageUtilizationRate": 7,
+    "maximumCapacity": 634,
+    "totalLanes": null,
+    "openLanes": null
+  },
   "overallOccupancyMap": {
     "maxOverallValues": {
       "averageUtilizationRate": 30,
