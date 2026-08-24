@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T15:58:20.273660+02:00",
+  "generatedAt": "2026-08-24T16:00:10.984876+02:00",
   "timezone": "Europe/Prague",
   "dataRange": {
     "firstRecordAt": "2025-03-24T05:00:00+01:00",
-    "lastRecordAt": "2026-08-24T15:00:00+02:00"
+    "lastRecordAt": "2026-08-24T16:00:00+02:00"
   },
   "poolName": "Kraví Hora (vnitřní)",
   "availableWeekIds": [
@@ -77181,12 +77181,12 @@
     },
     "2026-08-24": {
       "maxWeekValues": {
-        "utilizationRate": 18
+        "utilizationRate": 22
       },
       "days": {
         "Monday": {
           "maxDayValues": {
-            "utilizationRate": 18
+            "utilizationRate": 22
           },
           "hours": {
             "9": {
@@ -77280,6 +77280,19 @@
               "utilizationRate": 16,
               "remainingCapacity": 114
             },
+            "16": {
+              "day": "Monday",
+              "hour": 16,
+              "date": "2026-08-24T16:00:00+02:00",
+              "minOccupancy": 30,
+              "maxOccupancy": 30,
+              "averageOccupancy": 30,
+              "maximumCapacity": 135,
+              "totalLanes": 6,
+              "openLanes": 6,
+              "utilizationRate": 22,
+              "remainingCapacity": 105
+            },
             "6": {
               "day": "Monday",
               "hour": 6,
@@ -77316,19 +77329,6 @@
               "maximumCapacity": 0,
               "totalLanes": 6,
               "openLanes": 0,
-              "utilizationRate": null,
-              "remainingCapacity": null
-            },
-            "16": {
-              "day": "Monday",
-              "hour": 16,
-              "date": "2026-08-24T16:00:00+02:00",
-              "minOccupancy": null,
-              "maxOccupancy": null,
-              "averageOccupancy": null,
-              "maximumCapacity": 135,
-              "totalLanes": 6,
-              "openLanes": 6,
               "utilizationRate": null,
               "remainingCapacity": null
             },
