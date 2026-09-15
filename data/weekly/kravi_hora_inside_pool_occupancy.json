@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-15T17:58:22.855983+02:00",
+  "generatedAt": "2026-09-15T18:08:22.619789+02:00",
   "timezone": "Europe/Prague",
   "dataRange": {
     "firstRecordAt": "2025-03-24T05:00:00+01:00",
-    "lastRecordAt": "2026-09-15T17:00:00+02:00"
+    "lastRecordAt": "2026-09-15T18:00:00+02:00"
   },
   "poolName": "Kraví Hora (vnitřní)",
   "availableWeekIds": [
@@ -78318,7 +78318,7 @@
     },
     "2026-09-14": {
       "maxWeekValues": {
-        "utilizationRate": 43
+        "utilizationRate": 56
       },
       "days": {
         "Monday": {
@@ -78499,7 +78499,7 @@
         },
         "Tuesday": {
           "maxDayValues": {
-            "utilizationRate": 43
+            "utilizationRate": 56
           },
           "hours": {
             "7": {
@@ -78645,23 +78645,23 @@
               "utilizationRate": 43,
               "remainingCapacity": 64
             },
-            "6": {
-              "day": "Tuesday",
-              "hour": 6,
-              "date": "2026-09-15T06:00:00+02:00",
-              "minOccupancy": null,
-              "maxOccupancy": null,
-              "averageOccupancy": null,
-              "maximumCapacity": 135,
-              "totalLanes": 6,
-              "openLanes": 6,
-              "utilizationRate": null,
-              "remainingCapacity": null
-            },
             "18": {
               "day": "Tuesday",
               "hour": 18,
               "date": "2026-09-15T18:00:00+02:00",
+              "minOccupancy": 75,
+              "maxOccupancy": 75,
+              "averageOccupancy": 75,
+              "maximumCapacity": 135,
+              "totalLanes": 6,
+              "openLanes": 6,
+              "utilizationRate": 56,
+              "remainingCapacity": 60
+            },
+            "6": {
+              "day": "Tuesday",
+              "hour": 6,
+              "date": "2026-09-15T06:00:00+02:00",
               "minOccupancy": null,
               "maxOccupancy": null,
               "averageOccupancy": null,
