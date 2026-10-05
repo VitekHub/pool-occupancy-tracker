@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T15:53:09.418798+02:00",
+  "generatedAt": "2026-10-05T16:03:08.821930+02:00",
   "timezone": "Europe/Prague",
   "dataRange": {
     "firstRecordAt": "2025-03-24T05:00:00+01:00",
-    "lastRecordAt": "2026-10-05T15:00:00+02:00"
+    "lastRecordAt": "2026-10-05T16:00:00+02:00"
   },
   "poolName": "Kraví Hora (vnitřní)",
   "availableWeekIds": [
@@ -81829,12 +81829,12 @@
     },
     "2026-10-05": {
       "maxWeekValues": {
-        "utilizationRate": 56
+        "utilizationRate": 84
       },
       "days": {
         "Monday": {
           "maxDayValues": {
-            "utilizationRate": 56
+            "utilizationRate": 84
           },
           "hours": {
             "7": {
@@ -81954,6 +81954,19 @@
               "utilizationRate": 56,
               "remainingCapacity": 20
             },
+            "16": {
+              "day": "Monday",
+              "hour": 16,
+              "date": "2026-10-05T16:00:00+02:00",
+              "minOccupancy": 38,
+              "maxOccupancy": 38,
+              "averageOccupancy": 38,
+              "maximumCapacity": 45,
+              "totalLanes": 6,
+              "openLanes": 2,
+              "utilizationRate": 84,
+              "remainingCapacity": 7
+            },
             "6": {
               "day": "Monday",
               "hour": 6,
@@ -81964,19 +81977,6 @@
               "maximumCapacity": 135,
               "totalLanes": 6,
               "openLanes": 6,
-              "utilizationRate": null,
-              "remainingCapacity": null
-            },
-            "16": {
-              "day": "Monday",
-              "hour": 16,
-              "date": "2026-10-05T16:00:00+02:00",
-              "minOccupancy": null,
-              "maxOccupancy": null,
-              "averageOccupancy": null,
-              "maximumCapacity": 45,
-              "totalLanes": 6,
-              "openLanes": 2,
               "utilizationRate": null,
               "remainingCapacity": null
             },
