@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-21T14:57:27.712109+02:00",
+  "generatedAt": "2026-10-21T15:07:24.557990+02:00",
   "timezone": "Europe/Prague",
   "dataRange": {
     "firstRecordAt": "2025-03-24T05:00:00+01:00",
-    "lastRecordAt": "2026-10-21T14:00:00+02:00"
+    "lastRecordAt": "2026-10-21T15:00:00+02:00"
   },
   "poolName": "Kraví Hora (vnitřní)",
   "availableWeekIds": [
@@ -84245,7 +84245,7 @@
     },
     "2026-10-19": {
       "maxWeekValues": {
-        "utilizationRate": 73
+        "utilizationRate": 80
       },
       "days": {
         "Monday": {
@@ -84641,7 +84641,7 @@
         },
         "Wednesday": {
           "maxDayValues": {
-            "utilizationRate": 27
+            "utilizationRate": 80
           },
           "hours": {
             "8": {
@@ -84735,6 +84735,19 @@
               "utilizationRate": 21,
               "remainingCapacity": 106
             },
+            "15": {
+              "day": "Wednesday",
+              "hour": 15,
+              "date": "2026-10-21T15:00:00+02:00",
+              "minOccupancy": 36,
+              "maxOccupancy": 36,
+              "averageOccupancy": 36,
+              "maximumCapacity": 45,
+              "totalLanes": 6,
+              "openLanes": 2,
+              "utilizationRate": 80,
+              "remainingCapacity": 9
+            },
             "6": {
               "day": "Wednesday",
               "hour": 6,
@@ -84758,19 +84771,6 @@
               "maximumCapacity": 112,
               "totalLanes": 6,
               "openLanes": 5,
-              "utilizationRate": null,
-              "remainingCapacity": null
-            },
-            "15": {
-              "day": "Wednesday",
-              "hour": 15,
-              "date": "2026-10-21T15:00:00+02:00",
-              "minOccupancy": null,
-              "maxOccupancy": null,
-              "averageOccupancy": null,
-              "maximumCapacity": 45,
-              "totalLanes": 6,
-              "openLanes": 2,
               "utilizationRate": null,
               "remainingCapacity": null
             },
