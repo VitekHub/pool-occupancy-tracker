@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T10:50:49.365765+01:00",
+  "generatedAt": "2026-10-27T11:00:50.957312+01:00",
   "timezone": "Europe/Prague",
   "dataRange": {
     "firstRecordAt": "2025-03-24T05:00:00+01:00",
-    "lastRecordAt": "2026-10-27T10:00:00+01:00"
+    "lastRecordAt": "2026-10-27T11:00:00+01:00"
   },
   "poolName": "Kraví Hora (vnitřní)",
   "availableWeekIds": [
@@ -85329,7 +85329,7 @@
     },
     "2026-10-26": {
       "maxWeekValues": {
-        "utilizationRate": 28
+        "utilizationRate": 49
       },
       "days": {
         "Monday": {
@@ -85380,7 +85380,7 @@
         },
         "Tuesday": {
           "maxDayValues": {
-            "utilizationRate": 28
+            "utilizationRate": 49
           },
           "hours": {
             "8": {
@@ -85422,6 +85422,19 @@
               "utilizationRate": 21,
               "remainingCapacity": 106
             },
+            "11": {
+              "day": "Tuesday",
+              "hour": 11,
+              "date": "2026-10-27T11:00:00+01:00",
+              "minOccupancy": 33,
+              "maxOccupancy": 33,
+              "averageOccupancy": 33,
+              "maximumCapacity": 67,
+              "totalLanes": 6,
+              "openLanes": 3,
+              "utilizationRate": 49,
+              "remainingCapacity": 34
+            },
             "6": {
               "day": "Tuesday",
               "hour": 6,
@@ -85439,19 +85452,6 @@
               "day": "Tuesday",
               "hour": 7,
               "date": "2026-10-27T07:00:00+01:00",
-              "minOccupancy": null,
-              "maxOccupancy": null,
-              "averageOccupancy": null,
-              "maximumCapacity": 67,
-              "totalLanes": 6,
-              "openLanes": 3,
-              "utilizationRate": null,
-              "remainingCapacity": null
-            },
-            "11": {
-              "day": "Tuesday",
-              "hour": 11,
-              "date": "2026-10-27T11:00:00+01:00",
               "minOccupancy": null,
               "maxOccupancy": null,
               "averageOccupancy": null,
