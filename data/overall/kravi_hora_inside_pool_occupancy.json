@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-19T10:30:08.604409+01:00",
+  "generatedAt": "2026-11-19T10:40:08.873932+01:00",
   "timezone": "Europe/Prague",
   "dataRange": {
     "firstRecordAt": "2025-03-24T05:00:00+01:00",
@@ -8,10 +8,10 @@
   },
   "poolName": "Kraví Hora (vnitřní)",
   "currentOccupancy": {
-    "occupancy": 38,
-    "time": "10:30",
-    "timestamp": "2026-11-19T10:30:00+01:00",
-    "currentUtilizationRate": 28,
+    "occupancy": 37,
+    "time": "10:40",
+    "timestamp": "2026-11-19T10:40:00+01:00",
+    "currentUtilizationRate": 27,
     "averageUtilizationRate": 22,
     "maximumCapacity": 135,
     "totalLanes": 6,
@@ -250,8 +250,8 @@
       "Wednesday": {
         "maxDayValues": {
           "averageUtilizationRate": 57,
-          "weightedAverageUtilizationRate": 59,
-          "medianUtilizationRate": 59
+          "weightedAverageUtilizationRate": 58,
+          "medianUtilizationRate": 58
         },
         "hours": {
           "5": {
@@ -275,8 +275,8 @@
             "medianUtilizationRate": 22
           },
           "9": {
-            "averageUtilizationRate": 17,
-            "weightedAverageUtilizationRate": 18,
+            "averageUtilizationRate": 16,
+            "weightedAverageUtilizationRate": 17,
             "medianUtilizationRate": 16
           },
           "10": {
@@ -287,7 +287,7 @@
           "11": {
             "averageUtilizationRate": 21,
             "weightedAverageUtilizationRate": 22,
-            "medianUtilizationRate": 20
+            "medianUtilizationRate": 19
           },
           "12": {
             "averageUtilizationRate": 21,
@@ -305,18 +305,18 @@
             "medianUtilizationRate": 21
           },
           "15": {
-            "averageUtilizationRate": 37,
-            "weightedAverageUtilizationRate": 38,
-            "medianUtilizationRate": 36
+            "averageUtilizationRate": 36,
+            "weightedAverageUtilizationRate": 37,
+            "medianUtilizationRate": 34
           },
           "16": {
             "averageUtilizationRate": 57,
-            "weightedAverageUtilizationRate": 59,
-            "medianUtilizationRate": 59
+            "weightedAverageUtilizationRate": 58,
+            "medianUtilizationRate": 58
           },
           "17": {
-            "averageUtilizationRate": 50,
-            "weightedAverageUtilizationRate": 52,
+            "averageUtilizationRate": 49,
+            "weightedAverageUtilizationRate": 51,
             "medianUtilizationRate": 51
           },
           "18": {
