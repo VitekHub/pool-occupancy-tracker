@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-23T12:53:03.019548+01:00",
+  "generatedAt": "2026-11-23T13:03:03.075577+01:00",
   "timezone": "Europe/Prague",
   "dataRange": {
     "firstRecordAt": "2025-03-24T05:00:00+01:00",
-    "lastRecordAt": "2026-11-23T12:00:00+01:00"
+    "lastRecordAt": "2026-11-23T13:00:00+01:00"
   },
   "poolName": "Kraví Hora (vnitřní)",
   "availableWeekIds": [
@@ -89898,12 +89898,12 @@
     },
     "2026-11-23": {
       "maxWeekValues": {
-        "utilizationRate": 29
+        "utilizationRate": 34
       },
       "days": {
         "Monday": {
           "maxDayValues": {
-            "utilizationRate": 29
+            "utilizationRate": 34
           },
           "hours": {
             "9": {
@@ -89958,6 +89958,19 @@
               "utilizationRate": 29,
               "remainingCapacity": 96
             },
+            "13": {
+              "day": "Monday",
+              "hour": 13,
+              "date": "2026-11-23T13:00:00+01:00",
+              "minOccupancy": 46,
+              "maxOccupancy": 46,
+              "averageOccupancy": 46,
+              "maximumCapacity": 135,
+              "totalLanes": 6,
+              "openLanes": 6,
+              "utilizationRate": 34,
+              "remainingCapacity": 89
+            },
             "6": {
               "day": "Monday",
               "hour": 6,
@@ -89994,19 +90007,6 @@
               "maximumCapacity": 67,
               "totalLanes": 6,
               "openLanes": 3,
-              "utilizationRate": null,
-              "remainingCapacity": null
-            },
-            "13": {
-              "day": "Monday",
-              "hour": 13,
-              "date": "2026-11-23T13:00:00+01:00",
-              "minOccupancy": null,
-              "maxOccupancy": null,
-              "averageOccupancy": null,
-              "maximumCapacity": 135,
-              "totalLanes": 6,
-              "openLanes": 6,
               "utilizationRate": null,
               "remainingCapacity": null
             },
