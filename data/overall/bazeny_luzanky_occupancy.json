@@ -1,25 +1,25 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-25T16:40:05.854013+01:00",
+  "generatedAt": "2026-11-25T17:00:07.412715+01:00",
   "timezone": "Europe/Prague",
   "dataRange": {
     "firstRecordAt": "2025-06-23T06:00:00+02:00",
-    "lastRecordAt": "2026-11-25T16:00:00+01:00"
+    "lastRecordAt": "2026-11-25T17:00:00+01:00"
   },
   "poolName": "Bazény Lužánky",
   "currentOccupancy": {
-    "occupancy": 211,
-    "time": "16:40",
-    "timestamp": "2026-11-25T16:40:00+01:00",
-    "currentUtilizationRate": 33,
-    "averageUtilizationRate": 27,
+    "occupancy": 300,
+    "time": "17:00",
+    "timestamp": "2026-11-25T17:00:00+01:00",
+    "currentUtilizationRate": 47,
+    "averageUtilizationRate": 32,
     "maximumCapacity": 634,
     "totalLanes": null,
     "openLanes": null
   },
   "overallOccupancyMap": {
     "maxOverallValues": {
-      "averageUtilizationRate": 31,
+      "averageUtilizationRate": 32,
       "weightedAverageUtilizationRate": 33,
       "medianUtilizationRate": 36
     },
@@ -204,7 +204,7 @@
       },
       "Wednesday": {
         "maxDayValues": {
-          "averageUtilizationRate": 31,
+          "averageUtilizationRate": 32,
           "weightedAverageUtilizationRate": 33,
           "medianUtilizationRate": 36
         },
@@ -265,7 +265,7 @@
             "medianUtilizationRate": 31
           },
           "17": {
-            "averageUtilizationRate": 31,
+            "averageUtilizationRate": 32,
             "weightedAverageUtilizationRate": 33,
             "medianUtilizationRate": 35
           },
