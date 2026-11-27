@@ -1,21 +1,21 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-27T08:51:08.296785+01:00",
+  "generatedAt": "2026-11-27T12:09:13.907172+01:00",
   "timezone": "Europe/Prague",
   "dataRange": {
     "firstRecordAt": "2025-03-24T05:00:00+01:00",
-    "lastRecordAt": "2026-11-27T08:00:00+01:00"
+    "lastRecordAt": "2026-11-27T12:00:00+01:00"
   },
   "poolName": "Kraví Hora (vnitřní)",
   "currentOccupancy": {
-    "occupancy": 16,
-    "time": "08:51",
-    "timestamp": "2026-11-27T08:51:00+01:00",
-    "currentUtilizationRate": 24,
-    "averageUtilizationRate": 24,
-    "maximumCapacity": 67,
+    "occupancy": 31,
+    "time": "12:09",
+    "timestamp": "2026-11-27T12:09:00+01:00",
+    "currentUtilizationRate": 28,
+    "averageUtilizationRate": 25,
+    "maximumCapacity": 112,
     "totalLanes": 6,
-    "openLanes": 3
+    "openLanes": 5
   },
   "overallOccupancyMap": {
     "maxOverallValues": {
@@ -168,11 +168,11 @@
           "9": {
             "averageUtilizationRate": 19,
             "weightedAverageUtilizationRate": 20,
-            "medianUtilizationRate": 19
+            "medianUtilizationRate": 18
           },
           "10": {
             "averageUtilizationRate": 20,
-            "weightedAverageUtilizationRate": 21,
+            "weightedAverageUtilizationRate": 20,
             "medianUtilizationRate": 20
           },
           "11": {
@@ -196,13 +196,13 @@
             "medianUtilizationRate": 21
           },
           "15": {
-            "averageUtilizationRate": 43,
-            "weightedAverageUtilizationRate": 44,
+            "averageUtilizationRate": 42,
+            "weightedAverageUtilizationRate": 43,
             "medianUtilizationRate": 44
           },
           "16": {
-            "averageUtilizationRate": 52,
-            "weightedAverageUtilizationRate": 52,
+            "averageUtilizationRate": 51,
+            "weightedAverageUtilizationRate": 51,
             "medianUtilizationRate": 52
           },
           "17": {
@@ -249,7 +249,7 @@
       },
       "Wednesday": {
         "maxDayValues": {
-          "averageUtilizationRate": 57,
+          "averageUtilizationRate": 56,
           "weightedAverageUtilizationRate": 58,
           "medianUtilizationRate": 58
         },
@@ -287,7 +287,7 @@
           "11": {
             "averageUtilizationRate": 21,
             "weightedAverageUtilizationRate": 22,
-            "medianUtilizationRate": 20
+            "medianUtilizationRate": 19
           },
           "12": {
             "averageUtilizationRate": 21,
@@ -306,18 +306,18 @@
           },
           "15": {
             "averageUtilizationRate": 36,
-            "weightedAverageUtilizationRate": 38,
-            "medianUtilizationRate": 35
+            "weightedAverageUtilizationRate": 37,
+            "medianUtilizationRate": 34
           },
           "16": {
-            "averageUtilizationRate": 57,
+            "averageUtilizationRate": 56,
             "weightedAverageUtilizationRate": 58,
             "medianUtilizationRate": 58
           },
           "17": {
-            "averageUtilizationRate": 50,
+            "averageUtilizationRate": 49,
             "weightedAverageUtilizationRate": 51,
-            "medianUtilizationRate": 51
+            "medianUtilizationRate": 50
           },
           "18": {
             "averageUtilizationRate": 48,
@@ -363,9 +363,9 @@
       },
       "Thursday": {
         "maxDayValues": {
-          "averageUtilizationRate": 55,
-          "weightedAverageUtilizationRate": 57,
-          "medianUtilizationRate": 57
+          "averageUtilizationRate": 54,
+          "weightedAverageUtilizationRate": 56,
+          "medianUtilizationRate": 55
         },
         "hours": {
           "5": {
@@ -381,10 +381,10 @@
           "7": {
             "averageUtilizationRate": 19,
             "weightedAverageUtilizationRate": 22,
-            "medianUtilizationRate": 21
+            "medianUtilizationRate": 20
           },
           "8": {
-            "averageUtilizationRate": 24,
+            "averageUtilizationRate": 23,
             "weightedAverageUtilizationRate": 25,
             "medianUtilizationRate": 22
           },
@@ -420,16 +420,16 @@
           },
           "15": {
             "averageUtilizationRate": 30,
-            "weightedAverageUtilizationRate": 32,
-            "medianUtilizationRate": 30
+            "weightedAverageUtilizationRate": 31,
+            "medianUtilizationRate": 28
           },
           "16": {
-            "averageUtilizationRate": 55,
-            "weightedAverageUtilizationRate": 57,
-            "medianUtilizationRate": 57
+            "averageUtilizationRate": 54,
+            "weightedAverageUtilizationRate": 56,
+            "medianUtilizationRate": 55
           },
           "17": {
-            "averageUtilizationRate": 50,
+            "averageUtilizationRate": 49,
             "weightedAverageUtilizationRate": 52,
             "medianUtilizationRate": 49
           },
